@@ -21,7 +21,7 @@ class M_artikel extends CI_Model{
 
 	public function getWhere($where,$table)
 	{		
-	return $this->db->get_where($table,$where);
+		return $this->db->get_where($table,$where);
 	}
 
 }
