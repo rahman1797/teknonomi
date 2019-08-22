@@ -44,7 +44,7 @@
 							</a>
 
 							<h3 class="how1-child2 m-t-14 m-b-10">
-								<a href="blog-detail-01.html" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+								<a href="<?php echo site_url('artikel/detail/'.$this->m_artikel->getArtikelByID('1')->id) ?>" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
 									<?php echo $this->m_artikel->getArtikelByID('1')->judul ?>
 								</a>
 							</h3>
