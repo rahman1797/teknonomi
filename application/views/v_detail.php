@@ -66,9 +66,11 @@
 								<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $detail->foto ?>" alt="IMG">
 							</div>
 
-							<p class="f1-s-11 cl6 p-b-25" style="text-align: justify;">
-								<?php echo $detail->isi ?>
-							</p>
+							<?php echo $detail->isi ?>
+
+							<!-- <p class="f1-s-11 cl6 p-b-25" style="text-align: justify;">
+							</p> -->
+							
 
 							<!-- Share -->
 							<div class="flex-s-s">

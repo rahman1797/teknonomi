@@ -14,7 +14,7 @@ class Artikel extends CI_Controller {
 		);
 		$this->load->view('element/head');
 		$this->load->view('element/header');
-		$this->load->view('v_index');
+		$this->load->view('v_index', $data);
 		$this->load->view('element/footer');
 	}
 

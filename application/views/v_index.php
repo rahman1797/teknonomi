@@ -133,7 +133,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8">
 					<div class="p-b-20">
-						<!-- Entertainment -->
+						<!-- Energi -->
 						<div class="tab01 p-b-20">
 							<div class="tab01-head how2 how2-cl1 bocl12 flex-s-c m-r-10 m-r-0-sr991">
 								<!-- Brand tab -->
@@ -811,7 +811,7 @@
 							</div>
 						</div>
 
-						<!-- Keuangan -->
+						<!-- Jasa -->
 						<div class="tab01 p-b-20">
 							<div class="tab01-head how2 how2-cl2 bocl12 flex-s-c m-r-10 m-r-0-sr991">
 								<!-- Brand tab -->
@@ -1360,7 +1360,7 @@
 							</div>
 						</div>
 
-						<!-- Travel -->
+						<!-- Industri -->
 						<div class="tab01 p-b-20">
 							<div class="tab01-head how2 how2-cl3 bocl12 flex-s-c m-r-10 m-r-0-sr991">
 								<!-- Brand tab -->
@@ -2059,57 +2059,23 @@
 							</div>
 
 							<ul class="p-t-35">
-								<li class="flex-wr-sb-s p-b-22">
+
+								<?php $no = 1;
+								 foreach(array_slice($artikel, 0, 4) as $a ) { ?>
+									<li class="flex-wr-sb-s p-b-22">
 									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										1
+										<?php
+										echo $no;
+											$no++;
+										 ?>
 									</div>
 
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit
+									<a href="<?php echo site_url('Artikel/detail/'.$a->id) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										<?php echo $a->judul; ?>
 									</a>
 								</li>
+								<?php } ?>
 
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										2
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Proin velit consectetur non neque
-									</a>
-								</li>
-
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										3
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Nunc vestibulum, enim vitae condimentum volutpat lobortis ante
-									</a>
-								</li>
-
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										4
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Proin velit justo consectetur non neque elementum
-									</a>
-								</li>
-
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0">
-										5
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Proin velit consectetur non neque
-									</a>
-								</li>
-							</ul>
-						</div>
 
 						<!--  -->
 						<div class="flex-c-s p-t-8">

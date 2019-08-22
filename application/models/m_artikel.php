@@ -19,6 +19,13 @@ class M_artikel extends CI_Model{
 		return $query->row();
 	}
 
+	function getArtikelBySub($sub){
+		$this->db->select('*');
+		$this->db->where('subkategori', $sub);
+		$query = $this->db->get('artikel');
+		return $query->row();
+	}
+
 	public function getWhere($where,$table)
 	{		
 		return $this->db->get_where($table,$where);
