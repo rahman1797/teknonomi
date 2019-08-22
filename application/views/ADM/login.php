@@ -1,27 +1,27 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Login SIM OPMAWA</title>
+    <title>Login Dashboard Admin Teknonomi</title>
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="<?php echo base_url('assets/plugins/bootstrap/css/bootstrap.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/ADM_TEMP/plugins/bootstrap/css/bootstrap.css')?>" rel="stylesheet">
 
     <!-- Waves Effect Css -->
-    <link href="<?php echo base_url('assets/plugins/node-waves/waves.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/ADM_TEMP/plugins/node-waves/waves.css')?>" rel="stylesheet" />
 
     <!-- Animation Css -->
-    <link href="<?php echo base_url('assets/plugins/animate-css/animate.css')?>" rel="stylesheet" />
+    <link href="<?php echo base_url('assets/ADM_TEMP/plugins/animate-css/animate.css')?>" rel="stylesheet" />
 
     <!-- Custom Css -->
-    <link href="<?php echo base_url('assets/css/style.css')?>" rel="stylesheet">
+    <link href="<?php echo base_url('assets/ADM_TEMP/css/style.css')?>" rel="stylesheet">
 </head>
 <style type="text/css">
   body {
-    background-image: url("assets/images/4028.jpg");
+    background-image: url("assets/ADM_TEMP/images/4028.jpg");
   }
 </style>
 <body class="login-page">
@@ -31,8 +31,6 @@
             <small>Sistem Informasi Manajemen OPMAWA FMIPA</small>
 
             <!-- <?PHP print_r($_SESSION); ?> -->
-
-
 
         </div>
         <div class="card">
@@ -44,7 +42,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="user_NIM" id="user_NIM" placeholder="NIM" required autofocus>
+                            <input type="text" class="form-control" name="user_NIM" id="user_NIM" placeholder="Username" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -66,20 +64,20 @@
     </div>
 
     <!-- Jquery Core Js -->
-    <script src="<?php echo base_url('assets/plugins/jquery/jquery.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/ADM_TEMP/plugins/jquery/jquery.min.js')?>"></script>
 
     <!-- Bootstrap Core Js -->
-    <script src="<?php echo base_url('assets/plugins/bootstrap/js/bootstrap.js')?>"></script>
+    <script src="<?php echo base_url('assets/ADM_TEMP/plugins/bootstrap/js/bootstrap.js')?>"></script>
 
     <!-- Waves Effect Plugin Js -->
-    <script src="<?php echo base_url('assets/plugins/node-waves/waves.js')?>"></script>
+    <script src="<?php echo base_url('assets/ADM_TEMP/plugins/node-waves/waves.js')?>"></script>
 
     <!-- Validation Plugin Js -->
-    <script src="<?php echo base_url('assets/plugins/jquery-validation/jquery.validate.js')?>"></script>
+    <script src="<?php echo base_url('assets/ADM_TEMP/plugins/jquery-validation/jquery.validate.js')?>"></script>
 
     <!-- Custom Js -->
-    <script src="<?php echo base_url('assets/js/admin.js')?>"></script>
-    <script src="<?php echo base_url('assets/js/pages/examples/sign-in.js')?>"></script>
+    <script src="<?php echo base_url('assets/ADM_TEMP/js/admin.js')?>"></script>
+    <script src="<?php echo base_url('assets/ADM_TEMP/js/pages/examples/sign-in.js')?>"></script>
 
     <!-- Sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>

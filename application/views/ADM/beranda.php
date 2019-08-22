@@ -9,7 +9,7 @@
                             <i class="material-icons">playlist_add_check</i>
                         </div>
                         <div class="content">
-                            <div class="text">DAFTAR TUGAS</div>
+                            <div class="text">Total Post</div>
                             <div class="number count-to" data-from="0" data-to="10" data-speed="1000" data-fresh-interval="20"></div>
                         </div>
                     </div>
