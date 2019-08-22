@@ -33,7 +33,7 @@
 						<!-- Blog Detail -->
 						<div class="p-b-70">
 							<a href="#" class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
-								Transportasi
+								<?php echo $detail->subkategori ?>
 							</a>
 
 							<h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
