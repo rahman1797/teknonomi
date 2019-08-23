@@ -21,14 +21,16 @@
 </head>
 <style type="text/css">
   body {
-    background-image: url("assets/ADM_TEMP/images/4028.jpg");
+    background-image: url("../assets/ADM_TEMP/images/logback.jpg");
+    background-size:     cover;
+    background-repeat:   no-repeat;
   }
 </style>
 <body class="login-page">
     <div class="login-box">
         <div class="logo">
-            <a href="javascript:void(0);">Login <b>SIM</b></a>
-            <small>Sistem Informasi Manajemen OPMAWA FMIPA</small>
+            <a href="javascript:void(0);">Login</a>
+            <small>Teknonomi Admin Dashboard</small>
 
             <!-- <?PHP print_r($_SESSION); ?> -->
 
@@ -55,7 +57,7 @@
                     </div>
                     <div class="row">
                         <div class="col-xs-4">
-                            <button class="btn btn-block bg-pink waves-effect" type="submit">MASUK</button>
+                            <button class="btn btn-block bg-blue waves-effect" type="submit">Enter</button>
                         </div>
                     </div>
                 </form>
