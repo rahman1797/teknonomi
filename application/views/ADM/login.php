@@ -42,7 +42,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="user_NIM" id="user_NIM" placeholder="Username" required autofocus>
+                            <input type="text" class="form-control" name="username_admin" id="username_admin" placeholder="Username" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -50,7 +50,7 @@
                             <i class="material-icons">lock</i>
                         </span>
                         <div class="form-line">
-                            <input type="password" class="form-control" name="user_pass" id="user_pass" placeholder="Password" required>
+                            <input type="password" class="form-control" name="pass" id="pass" placeholder="Password" required>
                         </div>
                     </div>
                     <div class="row">

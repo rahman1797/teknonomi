@@ -106,8 +106,18 @@
                     <img src="<?php echo base_url('assets/ADM_TEMP/images/DefaultUser.jpg')?>" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['user_nama']; ?></div>
-                    <div class="email"><?php echo $_SESSION['user_NIM']; ?></div>
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    
+                        111
+                        <!-- <?php echo $_SESSION['user_nama']; ?> -->        
+                    
+                    </div>
+                    <div class="email">
+                    
+                        111
+                        <!-- <?php echo $_SESSION['adminNama']; ?> -->
+                            
+                    </div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right" id="round">
@@ -135,7 +145,7 @@
                             <span>Daftar Admin</span>
                         </a>
                     </li>
-                       <li>
+                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">list</i>
                             <span>Daftar Post</span>
@@ -146,6 +156,18 @@
                             </li>
                             <li>
                                 <a href="#">Artikel</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">list</i>
+                            <span>Registrasi Sistem</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="<?php echo base_url('ADM/listAdmin')  ?>">Kategori</a>
                             </li>
                         </ul>
                     </li>
