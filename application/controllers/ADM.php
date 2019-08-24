@@ -5,7 +5,7 @@ class ADM extends CI_Controller {
 	 function __construct(){
 	    parent::__construct();    
 	    $this->load->model('m_artikel');
-	    $this->load->model('m_admin');
+	    $this->load->model('m_user');
   }
 
 	function Login(){
@@ -15,7 +15,7 @@ class ADM extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'listAdmin' => $this->m_admin->getAdminList()
+			'listuser' => $this->m_user->getuserList()
 		);
 		$this->load->view('ADM/layout/header');
 		$this->load->view('ADM/beranda', $data);
@@ -23,22 +23,22 @@ class ADM extends CI_Controller {
 	}
 
 	public function sessLogin(){
-        $username = $this->input->post('username_admin');
+        $username = $this->input->post('username_user');
         $pass = $this->input->post('pass');
         $where = array(
-            'admin_username' => $username,
-            'admin_password' => $pass
+            'user_username' => $username,
+            'user_password' => $pass
             );
 
-        $cek2 = $this->m_admin->cekLogin("admin",$where);
-        $cek = $this->m_admin->cekLogin("admin",$where)->num_rows();
+        $cek2 = $this->m_user->cekLogin("user",$where);
+        $cek = $this->m_user->cekLogin("user",$where)->num_rows();
          
         if($cek > 0){
            foreach ($cek2->result() as $sess ) {
             	$sessionData['logged_in'] = 'Done';
-                $sessionData['username'] = $sess->admin_username;
-                $sessionData['pass'] = $sess->admin_password;
-                $sessionData['nama'] = $sess->admin_nama;             
+                $sessionData['username'] = $sess->user_username;
+                $sessionData['pass'] = $sess->user_password;
+                $sessionData['nama'] = $sess->user_nama;             
         
             }
                 $this->session->set_userdata($sessionData);
@@ -55,13 +55,13 @@ class ADM extends CI_Controller {
 
         }
 
-	public function listAdmin()
+	public function listuser()
 	{
 		$data = array(
-			'listAdmin' => $this->m_admin->getAdminList()->result()
+			'listuser' => $this->m_user->getuserList()->result()
 		);
 		$this->load->view('ADM/layout/header');
-		$this->load->view('ADM/admin_list', $data);
+		$this->load->view('ADM/user_list', $data);
 		$this->load->view('ADM/layout/footer');
 	}
 

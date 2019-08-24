@@ -141,7 +141,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="<?php echo base_url('ADM/listAdmin') ?>">
+                        <a href="<?php echo base_url('ADM/listUser') ?>">
                             <i class="material-icons">group</i>
                             <span>Daftar Admin</span>
                         </a>
@@ -168,7 +168,7 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url('ADM/listAdmin')  ?>">Kategori</a>
+                                <a href="<?php echo base_url('ADM/listUser')  ?>">Kategori</a>
                             </li>
                         </ul>
                     </li>

@@ -46,7 +46,7 @@
                             <i class="material-icons">person</i>
                         </span>
                         <div class="form-line">
-                            <input type="text" class="form-control" name="username_admin" id="username_admin" placeholder="Username" required autofocus>
+                            <input type="text" class="form-control" name="username_user" id="username_user" placeholder="Username" required autofocus>
                         </div>
                     </div>
                     <div class="input-group">
@@ -91,7 +91,7 @@
 
   function Login()
   {
-   var username = $("#username_admin").val();
+   var username = $("#username_user").val();
    var pass = $("#pass").val();
    
    if(username != "" && pass != "")
@@ -102,7 +102,7 @@
         url:"<?php echo base_url('ADM/sessLogin') ?>",
         data:{
             // postinput : var
-            username_admin:username, 
+            username_user:username, 
             pass:pass
         },
        
