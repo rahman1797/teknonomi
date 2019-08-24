@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2019 at 06:23 AM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Generation Time: Aug 24, 2019 at 08:40 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `teknonomi`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `admin_username` varchar(25) NOT NULL,
+  `admin_password` varchar(25) NOT NULL,
+  `admin_nama` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `admin_username`, `admin_password`, `admin_nama`) VALUES
+(1, 'mrahman', '123', 'Maulana Rahman Nur');
 
 -- --------------------------------------------------------
 
@@ -49,9 +69,38 @@ INSERT INTO `artikel` (`id`, `judul`, `isi`, `penulis`, `tanggal_dibuat`, `foto`
 (3, 'Tren Sistem T&D dalam Pembangkit Listrik Sedang Terjadi', 'Jakarta -- Studi terbaru oleh GE menunjukkan, dunia sedang bertransisi dari sistem kelistrikan berdasarkan teknologi pusat pembangkitan, transmisi dan distribusi (T & D) generasi tradisional, ke sistem yang merangkul teknologi baru, berbasis digital dan ramah lingkungan. Sistem energi global berkembang menuju jaringan terpadu dan hibridisasi yang memadukan unsur-unsur teknologi lama dan baru yang bekerja secara sinergis untuk menyediakan tenaga listrik yang dapat diandalkan, terjangkau, dan berkelanjutan untuk pabrik, bisnis, dan masyarakat di seluruh dunia.\r\n\r\n\"Selama beberapa dekade ke depan, pembangkit listrik yang besar dan berada di pusat akan menjadi semakin efisien. Selain itu, mereka akan dilengkapi dengan sistem perangkat keras dan perangkat lunak baru, yang sering kali lebih kecil, yang didistribusikan ke seluruh sistem T & D,\" kata David \r\nDavid Hutagalung, Country Director GE Power Indonesia,dalam suata kesempatan di kantor GE Indonesia.\r\n\r\nPada saat yang sama, alat digital akan semakin terintegrasi dengan teknologi di seluruh jaringan listrik. Adopsi teknologi digital terbaru akan meningkatkan dan mengoptimalkan aset dan jaringan energi Indonesia, dikombinasikan dengan penerapan turbin gas paling efisien atau menggunakan teknologi batu bara ultra-super critical, atau mengupgrade pembangkit listrik yang sudah ada berikut jaringan transmisi dan distribusinya. Nantinya Indonesia dapat melakukan penghematan atau efisiensi substansial sekaligus pengurangan emisi karbon besar-besaran. (W3)\r\n', 'Admin', 'April 19, 2019', 'putra1.JPG', 'Energi', 'Listrik'),
 (4, 'Canggih, Elnusa Gunakan Teknologi NODAL untuk Data Seismik Migas', 'Jakarta --Saat ini, Elnusa mulai mengembangkan akuisisi data seismik dengan menggunakan teknologi Ocean Bottom Nodes (Nodal). Direktur Operasi Elnusa, Arief Riyanto mempaparkan bahwa, “Penemuan cadangan migas bergantung pada kualitas data seismik yang dihasilkan. Akuisisi data seismik dengan menggunakan nodal akan mendukung hasil data yang lebih kaya. Hal ini tentunya baik untuk mendapatkan gambaran struktur bawah bumi yang lebih akurat dan karakter reservoir yang lebih baik.”\r\n\r\nNodal memiliki empat komponen sensor dengan kelebihan mampu menangkap jenis gelombang seismik yang lebih banyak. Penambahan teknologi ini adalah untuk melengkapi kapabilitas Elnusa dalam jasa akuisisi data seismik baik di darat, zona transisi maupun laut, sesuai kebutuhan data yang diperlukan. Keunggulan lain nodal dalam eksplorasi migas adalah dapat digunakan secara independen, tidak memerlukan alat perekaman tambahan (autonomous recording), serta dapat disesuaikan dengan berbagai kebutuhan eksplorasi.\r\n\r\n“Pengembangan kapabilitas ini tentunya melengkapi kemampuan Elnusa dalam jasa akuisisi data seismik. Dengan peningkatan kapabilitas dan pengalaman lebih dari 45 tahun,  kami yakin mampu mendukung peningkatan kapasitas nasional”, imbuh Arief.\r\n\r\nElnusa telah memulai menggunakan nodal pada survei seismik zona transisi di Blok South West Matindok dan South East Senoro. Aktivitas survei untuk kedua blok telah selesai tepat waktu pada Desember 2018 dan Maret 2019.  Dengan berbagai keunggulan yang dimiliki nodal, survei eksplorasi migas terbukti dapat lebih efektif dan efisien. \r\n\r\n“Akuisisi data seismik dengan nodal belum banyak dilakukan di Indonesia. Elnusa merupakan salah satu pioneer dalam penggunaan teknologi ini. Dengan kemampuan baru ini, Elnusa merupakan salah satu perusahaan jasa akuisisi data seismik darat dan laut dengan kapabilitas terlengkap di Indonesia dan Asia Tenggara.” Tutup Arief. (W2)', 'Admin', 'April 22, 2019', 'NODAL1.JPG', 'Energi', 'Migas');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `kategori`
+--
+
+CREATE TABLE `kategori` (
+  `kategori_id` int(11) NOT NULL,
+  `kategori_nama` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subkategori`
+--
+
+CREATE TABLE `subkategori` (
+  `subkategori_id` int(11) NOT NULL,
+  `id_kategori` int(11) NOT NULL,
+  `subkategori_nama` varchar(25) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `admin`
+--
+ALTER TABLE `admin`
+  ADD PRIMARY KEY (`admin_id`);
 
 --
 -- Indexes for table `artikel`
@@ -60,14 +109,55 @@ ALTER TABLE `artikel`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `kategori`
+--
+ALTER TABLE `kategori`
+  ADD PRIMARY KEY (`kategori_id`);
+
+--
+-- Indexes for table `subkategori`
+--
+ALTER TABLE `subkategori`
+  ADD PRIMARY KEY (`subkategori_id`),
+  ADD KEY `getKategori` (`id_kategori`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `admin`
+--
+ALTER TABLE `admin`
+  MODIFY `admin_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `kategori`
+--
+ALTER TABLE `kategori`
+  MODIFY `kategori_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `subkategori`
+--
+ALTER TABLE `subkategori`
+  MODIFY `subkategori_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `subkategori`
+--
+ALTER TABLE `subkategori`
+  ADD CONSTRAINT `getKategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
