@@ -54,6 +54,10 @@
 </head>
 
 <body class="theme-red">
+
+    <?php if ($_SESSION['logged_in'] != 'Done') {
+        Redirect(base_url('ADM/Login'));
+    } ?>
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
