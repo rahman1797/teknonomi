@@ -141,7 +141,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="<?php echo base_url('ADM/listAdmin') ?>">
                             <i class="material-icons">group</i>
                             <span>Daftar Admin</span>
                         </a>
