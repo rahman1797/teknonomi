@@ -1,5 +1,5 @@
 <?php
-class M_artikel extends CI_Model{	
+class m_artikel extends CI_Model{	
 
 	function getArtikel(){
 		$this->db->select('*');
