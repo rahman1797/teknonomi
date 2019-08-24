@@ -8,6 +8,7 @@
 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/template/images/icons/favicon.png"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/template/vendor/bootstrap/css/bootstrap.min.css">
+	<script src="<?php echo base_url(); ?>assets/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!--===============================================================================================-->
 <!-- 	<link rel="stylesheet" type="text/css" href="fonts/fontawesome-5.0.8/css/fontawesome-all.min.css"> -->
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/template/fonts/fontawesome-free-5.9.0-web/css/all.css">
