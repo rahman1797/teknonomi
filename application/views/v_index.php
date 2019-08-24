@@ -190,28 +190,28 @@
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/migas.jpg" alt="IMG">
+												<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('Energi')->id) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularByKategori('Energi')->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															Lorem ipsum dolor sit amet consectetur 
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('Energi')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularByKategori('Energi')->judul?>  
 														</a>
 													</h5>
 
 													<span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Migas
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('Energi')->id) ?>" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularByKategori('Energi')->subkategori ?> 
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
-															<i class="far fa-eye"> 120</i>
+															<i class="far fa-eye"> <?php echo $this->m_artikel->getMostPopularByKategori('Energi')->viewers ?> </i>
 														</span>
 
 														<span class="f1-s-3">
-															<i class="far fa-calendar-alt"> Feb 18</i>
+															<i class="far fa-calendar-alt"> <?php echo $this->m_artikel->getMostPopularByKategori('Energi')->tanggal_dibuat ?> </i>
 														</span>
 													</span>
 												</div>
@@ -219,92 +219,40 @@
 										</div>
 
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$maxviewers = $this->m_artikel->getMostPopularByKategori('Energi')->viewers;
+											$popularByKategori = $this->m_artikel->getPopularByKategori('Energi',$maxviewers);
+											foreach (array_slice($popularByKategori, 0,3) as $k) {
+											?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/listrik.jpg" alt="IMG">
+												<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
+														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Listirk
+															<?php echo $k->subkategori ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
-															<i class="far fa-eye"> 120</i>
+															<i class="far fa-eye"> <?php echo $k->viewers ?></i>
 														</span>
 
 														<span class="f1-s-3">
-															<i class="far fa-calendar-alt"> Feb 18</i>
+															<i class="far fa-calendar-alt"> <?php echo $k->tanggal_dibuat ?></i>
 														</span>
 													</span>
 												</div>
 											</div>
-											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-07.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
-
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-08.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
-												</div>
-											</div>
+											<?php } ?>
 										</div>
 									</div>
 								</div>

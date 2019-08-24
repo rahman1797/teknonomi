@@ -26,9 +26,30 @@ class m_artikel extends CI_Model{
 		return $query->row();
 	}
 
-	public function getWhere($where,$table)
-	{		
+	public function getWhere($where,$table){		
 		return $this->db->get_where($table,$where);
+	}
+
+	function getMostPopularByKategori($kategori){
+		$this->db->select('*');
+		$this->db->where('kategori', $kategori);
+		$this->db->select_max('viewers');
+		$query = $this->db->get('artikel');
+		return $query->row();
+	}
+
+	function getPopularByKategori($kategori, $viewersmax){
+		$this->db->select('*');
+		$this->db->where('kategori', $kategori);
+		$this->db->where('viewers <', $viewersmax);
+		$this->db->order_by('viewers', 'DESC');
+		$query = $this->db->get('artikel');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return false;
+		}
 	}
 
 }
