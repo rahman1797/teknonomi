@@ -8,7 +8,7 @@
 				<div class="content-topbar container h-100">
 					<div class="left-topbar">
 
-						<a href="about.html" class="left-topbar-item">
+						<a href="<?php echo site_url('About') ?>" class="left-topbar-item">
 							About
 						</a>
 
@@ -27,15 +27,15 @@
 
 					<div class="right-topbar">
 						<a href="#">
-							<span class="fab fa-facebook-f"></span>
+							<i class="fab fa-facebook-f"></i>
 						</a>
 
 						<a href="#">
-							<span class="fab fa-twitter"></span>
+							<i class="fab fa-twitter"></i>
 						</a>
 
 						<a href="#">
-							<span class="fab fa-youtube"></span>
+							<i class="fab fa-instagram"></i>
 						</a>
 					</div>
 				</div>
@@ -63,7 +63,7 @@
 					</li>
 
 					<li class="left-topbar">
-						<a href="#" class="left-topbar-item">
+						<a href="<?php echo site_url('About') ?>" class="left-topbar-item">
 							About
 						</a>
 
