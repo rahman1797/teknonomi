@@ -112,14 +112,11 @@
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     
-                        111
-                        <!-- <?php echo $_SESSION['user_nama']; ?> -->        
+                     
+                        <?php echo $_SESSION['nama']; ?>        
                     
                     </div>
                     <div class="email">
-                    
-                        111
-                        <!-- <?php echo $_SESSION['adminNama']; ?> -->
                             
                     </div>
                     <div class="btn-group user-helper-dropdown">

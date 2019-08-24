@@ -37,7 +37,9 @@
         </div>
         <div class="card">
             <div class="body">
-                <form id="sign_in" method="POST" href="<?php echo base_url('ADM/sessLogin') ?>" name="loginForm">
+
+              <!-- <form id="sign_in" method="POST" action="<?php echo base_url('ADM/sessLogin') ?>" name="loginForm"> -->
+                <form id="sign_in" method="POST" onsubmit="return Login()" name="loginForm">
                     
                     <div class="input-group">
                         <span class="input-group-addon">
@@ -58,7 +60,6 @@
                     <div class="row">
                         <div class="col-xs-4">
                             <input type="submit" class="btn btn-block bg-blue waves-effect" >
-                            <?php echo $this->input->POST('username_admin');   ?>
                         </div>
                     </div>
                 </form>
@@ -85,7 +86,7 @@
     <!-- Sweetalert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
-   <!--  <script type="text/javascript">
+    <script type="text/javascript">
   
 
   function Login()
@@ -93,33 +94,35 @@
    var username = $("#username_admin").val();
    var pass = $("#pass").val();
    
-   if(username!="" && pass!="")
+   if(username != "" && pass != "")
    { 
       $.ajax
       ({
         type:'post',
         url:"<?php echo base_url('ADM/sessLogin') ?>",
         data:{
-          admin_username:username, 
-          admin_password:pass
-      },
-      
-      success:function(response) {
-        if(response=='sukses')
+            // postinput : var
+            username_admin:username, 
+            pass:pass
+        },
+       
+       success:function(response) {
+        if(response == 'sukses')
         {
           swal({
-          title: "Sukses!",
-            text: "Selamat Datang di SIM OPMAWA!",
+            title: "Sukses!",
+            text: "Selamat Datang!",
             icon: "success",
             button: "Lanjutkan!"
           }).then(function() {
-              window.location = "ADM";
+              window.location = "index";
           });
           
         }
         
         else
         {
+          
           swal ( "Maaf" ,  "username/password salah" ,  "error" );
         }
         
@@ -129,6 +132,6 @@
 
    return false;
   }
-</script> -->
+</script>
 
 </body>

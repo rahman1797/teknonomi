@@ -42,14 +42,15 @@ class ADM extends CI_Controller {
         
             }
                 $this->session->set_userdata($sessionData);
-                echo "sukses";
+                echo 'sukses';
+
             }
             else{
                 echo " <script>
                          alert('username atau password salah!');
                          
                         </script>";
-                        print_r($_SESSION);
+                        // print_r($_SESSION);
             }
 
         }
@@ -66,7 +67,7 @@ class ADM extends CI_Controller {
 
 	public function logout()
 	{
-		$logoutData = array('username','pass', 'nama' );
+		$logoutData = array('username','pass', 'nama', 'logged_in' );
 		$this->session->unset_userdata($logoutData);
 		$this->load->view('ADM/login');
 	}
