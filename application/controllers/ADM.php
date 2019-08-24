@@ -27,7 +27,8 @@ class ADM extends CI_Controller {
         $pass = $this->input->post('pass');
         $where = array(
             'user_username' => $username,
-            'user_password' => $pass
+            'user_password' => $pass,
+            'user_role' => 'admin'
             );
 
         $cek2 = $this->m_user->cekLogin("user",$where);
@@ -55,10 +56,10 @@ class ADM extends CI_Controller {
 
         }
 
-	public function listuser()
+	public function listUser()
 	{
 		$data = array(
-			'listuser' => $this->m_user->getuserList()->result()
+			'listUser' => $this->m_user->getuserList()->result()
 		);
 		$this->load->view('ADM/layout/header');
 		$this->load->view('ADM/user_list', $data);

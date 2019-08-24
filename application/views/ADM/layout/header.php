@@ -143,7 +143,7 @@
                     <li>
                         <a href="<?php echo base_url('ADM/listUser') ?>">
                             <i class="material-icons">group</i>
-                            <span>Daftar Admin</span>
+                            <span>Daftar User</span>
                         </a>
                     </li>
                     <li>

@@ -19,6 +19,8 @@
                                         <tr>
                                             <th>Nama</th>
                                             <th>Username</th>
+                                            <th>Posisi</th>
+                                            <th>Jenis Kelamin</th>
                                             <th>Kelola</th>
                                         </tr>
                                     </thead>
@@ -26,6 +28,8 @@
                                         <tr>
                                             <th>Nama</th>
                                             <th>Username</th>
+                                            <th>Posisi</th>
+                                            <th>Jenis Kelamin</th>
                                             <th>Kelola</th>
                                         </tr>
                                     </tfoot>
@@ -33,13 +37,15 @@
 
                                         <?php 
                                        
-                                            foreach($listAdmin as $la){ 
+                                            foreach($listUser as $lu){ 
                                             ?>
                                             <tr>
-                                                <td><?php echo $la->admin_nama ?></td>
-                                                <td><?php echo $la->admin_username ?></td>
+                                                <td><?php echo $lu->user_nama ?></td>
+                                                <td><?php echo $lu->user_username ?></td>
+                                                <td><?php echo $lu->user_posisi ?></td>
+                                                <td><?php echo $lu->user_jeniskelamin ?></td>
                                                 <td>
-                                                    <a href="#"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>
+                                                    <a href="javascript:void(0)"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -79,8 +85,8 @@
                                     </div>
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input type="text" class="form-control" name="user_NIM" id="user_NIM" required>
-                                            <label class="form-label">Nomor Induk Mahasiswa</label>
+                                            <input type="text" class="form-control" name="user_username" id="user_username" required>
+                                            <label class="form-label">Username</label>
                                         </div>
                                     </div>
                                     <div class="form-group form-float">
@@ -102,24 +108,9 @@
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <select class="form-control show-tick" name="user_prodi">
-                                                <option value="">-- Prodi --</option>
-                                                <?php 
-                                                    foreach ($prodi_data as $pd) {
-                                                        echo "<option value='$pd->prodi_ID'>".$pd->prodi_nama ."</option>";
-                                                    }
-                                                ?>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <select class="form-control show-tick" name="user_departemen">
-                                                <option value="">-- Departemen --</option>
-                                                <?php 
-                                                    foreach ($departemen_data as $dd) {
-                                                        echo "<option value='$dd->departemen_ID'>".$dd->departemen_nama ."</option>";
-                                                    }
-                                                ?>
+                                                <option value="">-- Jenis Kelamin --</option>
+                                                <option value="Laki-laki">Laki-laki</option>
+                                                <option value="Perempuan">Perempuan</option>
                                             </select>
                                         </div>
                                     </div>
@@ -135,9 +126,6 @@
                                             </select>
                                         </div>
                                     </div>
-                                    <input type="hidden" name="user_opmawa" value="<?php echo $_SESSION['user_opmawa'] ?>">
-                                    <input type="hidden" name="user_tahun" value="<?php echo $_SESSION['user_tahun'] ?>">
-                                     <input type="hidden" name="user_role" value="<?php echo $_SESSION['user_role'] ?>">
                                     <button class="btn btn-primary waves-effect btn-lg" type="submit" id="round">Simpan</button>
                                 </form>
 
@@ -154,9 +142,9 @@
 
 <script type="text/javascript">
 
-     function submitAdmin() {
+     function submitUser() {
 
-         var data = $('.formAdmin').serialize();
+         var data = $('.formUser').serialize();
          var pass = document.formAnggota.user_pass.value;  
          var pass_check = document.formAnggota.user_pass_check.value;  
         
