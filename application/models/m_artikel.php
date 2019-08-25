@@ -13,6 +13,18 @@ class m_artikel extends CI_Model{
 		}
 	}
 
+	function getRecentArtikel(){
+		$this->db->select('*');
+		$this->db->order_by('tanggal_dibuat', 'DESC');
+		$query = $this->db->get('artikel');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return false;
+		}
+	}
+
 	function getArtikelByID($id){
 		$this->db->select('*');
 		$this->db->where('id', $id);

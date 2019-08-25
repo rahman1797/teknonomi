@@ -11,7 +11,8 @@ class Artikel extends CI_Controller {
 	public function index()
 	{
 		$data = array(
-			'artikel' => $this->m_artikel->getArtikelDesc()
+			'artikel' => $this->m_artikel->getArtikelDesc(),
+			'recent' => $this->m_artikel->getRecentArtikel()
 		);
 		$this->load->view('element/head');
 		$this->load->view('element/header');
