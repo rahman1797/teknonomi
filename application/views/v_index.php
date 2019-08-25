@@ -162,14 +162,14 @@
 								</ul>
 
 								<!--  -->
-								<a href="category-01.html" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+								<a href="<?php echo site_url('Artikel/kategori/1') ?>" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
 									View all
 									<i class="fs-12 m-l-5 fa fa-caret-right"></i>
 								</a>
 							</div>
 								
 
-							<!-- Tab panes -->
+							<!-- Tab panes Energi -->
 							<div class="tab-content p-t-35">
 								<!-- - -->
 								<div class="tab-pane fade show active" id="tab1-1" role="tabpanel">
@@ -244,26 +244,26 @@
 									</div>
 								</div>
 
-								<!-- - -->
+								<!-- Migas - Energi -->
 								<div class="tab-pane fade" id="tab1-2" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
 												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-09.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularBySub('1')->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															American live music lorem ipsum dolor sit amet consectetur 
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('1')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularBySub('1')->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularBySub('1')->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -279,22 +279,26 @@
 										</div>
 
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$maxviewers = $this->m_artikel->getMostPopularBySub('1')->viewers;
+											$popularBySub = $this->m_artikel->getPopularBySub('1',$maxviewers);
+											foreach (array_slice($popularBySub, 0,2) as $k) { ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
 												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-08.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
+														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -307,88 +311,31 @@
 													</span>
 												</div>
 											</div>
-
-											<!-- Item post -->	
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-06.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
-												</div>
-											</div>
-											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-07.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
+										<?php } ?>
 										</div>
 									</div>
 								</div>
 
-								<!-- - -->
+								<!-- EBT - Energi -->
 								<div class="tab-pane fade" id="tab1-3" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
 												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-08.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularBySub('2')->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															American live music lorem ipsum dolor sit amet consectetur 
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('2')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularBySub('2')->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularBySub('2')->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -407,7 +354,7 @@
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
 												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-07.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
@@ -432,88 +379,30 @@
 													</span>
 												</div>
 											</div>
-
-											<!-- Item post -->	
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-06.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
-												</div>
-											</div>
-											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-05.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- - -->
+								<!-- Konservasi - Energi -->
 								<div class="tab-pane fade" id="tab1-4" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
 												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-06.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularBySub('3')->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															American live music lorem ipsum dolor sit amet consectetur 
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('3')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularBySub('2')->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularBySub('3')->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -532,7 +421,7 @@
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
 												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-09.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
@@ -557,88 +446,30 @@
 													</span>
 												</div>
 											</div>
-
-											<!-- Item post -->	
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-07.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
-												</div>
-											</div>
-											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-08.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- - -->
+								<!-- Listrik - Energi -->
 								<div class="tab-pane fade" id="tab1-5" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
 												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-07.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularBySub('4')->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															American live music lorem ipsum dolor sit amet consectetur 
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('4')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularBySub('1')->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Music
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularBySub('4')->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -654,22 +485,26 @@
 										</div>
 
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$maxviewers = $this->m_artikel->getMostPopularBySub('4')->viewers;
+											$popularBySub = $this->m_artikel->getPopularBySub('4',$maxviewers);
+											foreach (array_slice($popularBySub, 0,2) as $k) { ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
 												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-08.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
+														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -682,67 +517,11 @@
 													</span>
 												</div>
 											</div>
-
-											<!-- Item post -->	
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-06.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Music
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
-												</div>
-											</div>
-											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-09.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Game
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
+										<?php } ?>
 										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
 
@@ -771,6 +550,9 @@
 									<li class="nav-item">
 										<a class="nav-link" data-toggle="tab" href="#tab2-4" role="tab">Transportasi</a>
 									</li>
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#tab2-5" role="tab">Logistik</a>
+									</li>
 
 									<li class="nav-item-more dropdown dis-none">
 										<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
@@ -784,23 +566,163 @@
 								</ul>
 
 								<!--  -->
-								<a href="category-01.html" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+								<a href="<?php echo site_url('Artikel/kategori/2') ?>" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
 									View all
 									<i class="fs-12 m-l-5 fa fa-caret-right"></i>
 								</a>
 							</div>
 								
 
-							<!-- Tab panes -->
+							<!-- Tab panes Jasa-->
 							<div class="tab-content p-t-35">
-								<!-- - -->
+								<!-- most popular jasa -->
 								<div class="tab-pane fade show active" id="tab2-1" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
+												<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('2')->id) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularByKategori('2')->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('2')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularByKategori('2')->judul?>  
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('2')->id) ?>" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularByKategori('2')->id_subkategori)->subkategori_nama ?> 
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															<i class="far fa-eye"> <?php echo $this->m_artikel->getMostPopularByKategori('2')->viewers ?> </i>
+														</span>
+
+														<span class="f1-s-3">
+															<i class="far fa-calendar-alt"> <?php echo $this->m_artikel->getMostPopularByKategori('2')->tanggal_dibuat ?> </i>
+														</span>
+													</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$maxviewers = $this->m_artikel->getMostPopularByKategori('2')->viewers;
+											$popularByKategori = $this->m_artikel->getPopularByKategori('2',$maxviewers);
+											foreach (array_slice($popularByKategori, 0,3) as $k) {
+											?>
+											<!-- Item post -->	
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img style="width: 100px;height: 70px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															<i class="far fa-eye"> <?php echo $k->viewers ?></i>
+														</span>
+
+														<span class="f1-s-3">
+															<i class="far fa-calendar-alt"> <?php echo $k->tanggal_dibuat ?></i>
+														</span>
+													</span>
+												</div>
+											</div>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+
+								<!-- keuangan - jasa -->
+								<div class="tab-pane fade" id="tab2-2" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<!-- Item post -->	
+											<div class="m-b-30">
 												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-10.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularBySub('11')->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('11')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularBySub('11')->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularBySub('11')->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															Feb 18
+														</span>
+													</span>
+												</div>
+											</div>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<!-- Item post -->
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+															Donec metus orci, malesuada et lectus vitae
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															Celebrity
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															Feb 12
+														</span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- medis - jasa -->
+								<div class="tab-pane fade" id="tab2-3" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
@@ -812,7 +734,7 @@
 
 													<span class="cl8">
 														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Keuangan
+															Medis
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -831,7 +753,7 @@
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
 												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/medical.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
@@ -857,337 +779,30 @@
 												</div>
 											</div>
 											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/transportasi2.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Transportasi
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
-
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-13.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
-												</div>
-											</div>
 										</div>
 									</div>
 								</div>
 
-								<!-- - -->
-								<div class="tab-pane fade" id="tab2-2" role="tabpanel">
-									<div class="row">
-										<div class="col-sm-6 p-r-25 p-r-15-sr991">
-											<!-- Item post -->	
-											<div class="m-b-30">
-												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-13.jpg" alt="IMG">
-												</a>
-
-												<div class="p-t-20">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															Bitcoin lorem ipsum dolor sit amet consectetur 
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Finance
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-sm-6 p-r-25 p-r-15-sr991">
-											<!-- Item post -->	
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-12.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Small Keuangan
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
-												</div>
-											</div>
-											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-11.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Economy
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
-
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-10.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- - -->
-								<div class="tab-pane fade" id="tab2-3" role="tabpanel">
-									<div class="row">
-										<div class="col-sm-6 p-r-25 p-r-15-sr991">
-											<!-- Item post -->	
-											<div class="m-b-30">
-												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-11.jpg" alt="IMG">
-												</a>
-
-												<div class="p-t-20">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															Bitcoin lorem ipsum dolor sit amet consectetur 
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Finance
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 18
-														</span>
-													</span>
-												</div>
-											</div>
-										</div>
-
-										<div class="col-sm-6 p-r-25 p-r-15-sr991">
-											<!-- Item post -->	
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-12.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Small Keuangan
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 17
-														</span>
-													</span>
-												</div>
-											</div>
-											
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-13.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Economy
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
-
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-10.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 12
-														</span>
-													</span>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-
-								<!-- - -->
+								<!-- transportasi - jasa -->
 								<div class="tab-pane fade" id="tab2-4" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
 												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-12.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularBySub('12')->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															Bitcoin lorem ipsum dolor sit amet consectetur 
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('12')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularBySub('12')->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
 														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Finance
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularBySub('12')->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -1203,22 +818,57 @@
 										</div>
 
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<!-- Item post -->
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
+															Donec metus orci, malesuada et lectus vitae
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															Celebrity
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															Feb 12
+														</span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- logistik - jasa -->
+								<div class="tab-pane fade" id="tab2-5" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-13.jpg" alt="IMG">
+											<div class="m-b-30">
+												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $this->m_artikel->getMostPopularBySub('13')->foto ?>" alt="IMG">
 												</a>
 
-												<div class="size-w-2">
+												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('11')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $this->m_artikel->getMostPopularBySub('13')->judul ?>
 														</a>
 													</h5>
 
 													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Small Keuangan
+														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($this->m_artikel->getMostPopularBySub('13')->id_subkategori)->subkategori_nama ?>
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -1226,16 +876,18 @@
 														</span>
 
 														<span class="f1-s-3">
-															Feb 17
+															Feb 18
 														</span>
 													</span>
 												</div>
 											</div>
-											
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
 												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-10.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
@@ -1247,36 +899,7 @@
 
 													<span class="cl8">
 														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Economy
-														</a>
-
-														<span class="f1-s-3 m-rl-3">
-															-
-														</span>
-
-														<span class="f1-s-3">
-															Feb 16
-														</span>
-													</span>
-												</div>
-											</div>
-
-											<!-- Item post -->
-											<div class="flex-wr-sb-s m-b-30">
-												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/post-11.jpg" alt="IMG">
-												</a>
-
-												<div class="size-w-2">
-													<h5 class="p-b-5">
-														<a href="blog-detail-01.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-															Donec metus orci, malesuada et lectus vitae
-														</a>
-													</h5>
-
-													<span class="cl8">
-														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Money & Markets
+															Celebrity
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -1345,7 +968,7 @@
 								</ul>
 
 								<!--  -->
-								<a href="category-01.html" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+								<a href="<?php echo site_url('Artikel/kategori/3') ?>" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
 									View all
 									<i class="fs-12 m-l-5 fa fa-caret-right"></i>
 								</a>
@@ -1354,20 +977,23 @@
 
 							<!-- Tab panes -->
 							<div class="tab-content p-t-35">
-								<!-- - -->
+								<!-- most popuplar industri -->
 								<div class="tab-pane fade show active" id="tab3-1" role="tabpanel">
 									<div class="row">
+										<?php 
+										$artikel = $this->m_artikel->getPopularByKategoriVer2('3');
+										foreach (array_slice($artikel, 0,1) as $k) { ?>
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
 												<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/military.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
 														<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
-															You wish lorem ipsum dolor sit amet consectetur 
+															<?php echo $k->judul ?> 
 														</a>
 													</h5>
 
@@ -1387,6 +1013,7 @@
 												</div>
 											</div>
 										</div>
+										<?php } ?>
 
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
@@ -1996,7 +1623,7 @@
 							<ul class="p-t-35">
 
 								<?php $no = 1;
-								 foreach(array_slice($artikel, 0, 4) as $a ) { ?>
+								 foreach(array_slice($popular, 0, 4) as $a ) { ?>
 									<li class="flex-wr-sb-s p-b-22">
 									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
 										<?php

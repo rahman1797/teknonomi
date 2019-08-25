@@ -64,7 +64,12 @@ class m_artikel extends CI_Model{
 		$this->db->select('*');
 		$this->db->where('id_subkategori', $sub);
 		$query = $this->db->get('artikel');
-		return $query->row();
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return false;
+		}
 	}
 
 	function getWhere($where,$table){		
@@ -74,6 +79,7 @@ class m_artikel extends CI_Model{
 	function getMostPopularByKategori($kategori){
 		$this->db->select('*');
 		$this->db->where('id_kategori', $kategori);
+		$this->db->order_by('viewers', 'DESC');
 		$this->db->select_max('viewers');
 		$query = $this->db->get('artikel');
 		return $query->row();
@@ -94,19 +100,53 @@ class m_artikel extends CI_Model{
 	}
 
 
-	  // KELOLA ARTIKEL
+	function getPopularByKategoriVer2($id_kategori){
+		$this->db->select('*');
+		$this->db->where('id_kategori', $id_kategori);
+		$this->db->order_by('viewers', 'DESC');
+		$query = $this->db->get('artikel');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return false;
+		}
+	}
 
-	
-  	public function getKategori(){
-  		return $this->db->get_where('kategori');
-  	}
+	function getMostPopularBySub($sub){
+		$this->db->select('*');
+		$this->db->where('id_subkategori', $sub);
+		$this->db->select_max('viewers');
+		$query = $this->db->get('artikel');
+		return $query->row();
+	}
 
-  	public function getSubKategori(){
-  		return $this->db->get_where('subkategori');
-  	}
+	function getPopularBySub($sub, $viewersmax){
+		$this->db->select('*');
+		$this->db->where('id_subkategori', $sub);
+		$this->db->where('viewers <', $viewersmax);
+		$this->db->order_by('viewers', 'DESC');
+		$query = $this->db->get('artikel');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return false;
+		}
+	}
 
-  	function inputArtikel($data) {
-		$this->db->insert('artikel', $data);
+	function getArtikelByKategori($id_kategori){
+		$this->db->select('*');
+		$this->db->where('id_kategori', $id_kategori);
+		$this->db->order_by('viewers', 'DESC');
+		$query = $this->db->get('artikel');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return false;
+		}
+
 	}
 
 }

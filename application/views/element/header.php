@@ -16,10 +16,6 @@
 							Contact
 						</a>
 
-						<a href="#" class="left-topbar-item">
-							Sing up
-						</a>
-
 						<a href="template_admin/login_v2.html" class="left-topbar-item">
 							Log in
 						</a>
@@ -97,51 +93,28 @@
 
 				<ul class="main-menu-m">
 					<li>
-						<a href="index.html">Home</a>
+						<a href="<?php echo site_url('Artikel') ?>">Beranda</a>
 					</li>
 
 					<li>
-						<a href="category-01.html">News</a>
+						<a href="<?php echo site_url('Artikel') ?>">Video</a>
 					</li>
-
+					
+					<?php foreach ($kategori as $k) { ?>
 					<li>
-						<a href="category-02.html">Entertainment </a>
-					</li>
-
-					<li>
-						<a href="category-01.html">Keuangan</a>
-					</li>
-
-					<li>
-						<a href="category-02.html">Travel</a>
-					</li>
-
-					<li>
-						<a href="category-01.html">Life Style</a>
-					</li>
-
-					<li>
-						<a href="category-02.html">Video</a>
-					</li>
-
-					<li>
-						<a href="#">Features</a>
+						<a href="#"><?php echo $k->kategori_nama; ?></a>
 						<ul class="sub-menu-m">
-							<li><a href="category-01.html">Category Page v1</a></li>
-							<li><a href="category-02.html">Category Page v2</a></li>
-							<li><a href="blog-grid.html">Blog Grid Sidebar</a></li>
-							<li><a href="blog-list-01.html">Blog List Sidebar v1</a></li>
-							<li><a href="blog-list-02.html">Blog List Sidebar v2</a></li>
-							<li><a href="blog-detail-01.html">Blog Detail Sidebar</a></li>
-							<li><a href="blog-detail-02.html">Blog Detail No Sidebar</a></li>
-							<li><a href="about.html">About Us</a></li>
-							<li><a href="contact.html">Contact Us</a></li>
+							<?php $sub = $this->m_kategori->getSubByKategori($k->kategori_id);
+							foreach ($sub as $s ) {
+							 ?>
+							<li><a href="category-01.html"><?php echo $s->subkategori_nama ?></a></li>
+						<?php } ?>
 						</ul>
-
 						<span class="arrow-main-menu-m">
 							<i class="fa fa-angle-right" aria-hidden="true"></i>
 						</span>
 					</li>
+				<?php } ?>
 				</ul>
 			</div>
 			
@@ -172,35 +145,21 @@
 								<a href="<?php echo site_url('Artikel') ?>">Beranda</a>
 							</li>
 							<li>
-								<a href="category-02.html">Video</a>
+								<a href="#">Video</a>
 							</li>
+							<?php foreach ($kategori as $k) { ?>
 							<li>
-								<a href="#">Energi</a>
+								<a href="#"><?php echo $k->kategori_nama; ?></a>
 								<ul class="sub-menu">
-									<li><a href="category-01.html">Migas</a></li>
-									<li><a href="category-02.html">EBT</a></li>
-									<li><a href="category-02.html">Konservaasi</a></li>
-									<li><a href="blog-grid.html">Listrik</a></li>
+									<?php $sub = $this->m_kategori->getSubByKategori($k->kategori_id);
+									foreach ($sub as $s ) {
+									 ?>
+									<li><a href="<?php echo site_url('Artikel/subkategori/'.$s->subkategori_id) ?>"><?php echo $s->subkategori_nama ?></a></li>
+								<?php } ?>
 								</ul>
 							</li>
-							<li>
-								<a href="#">Industri</a>
-								<ul class="sub-menu">
-									<li><a href="category-01.html">Aviasi</a></li>
-									<li><a href="blog-grid.html">Medis</a></li>
-									<li><a href="category-02.html">Kapal</a></li>
-									<li><a href="blog-grid.html">Militer</a></li>
-									<li><a href="blog-grid.html">Pertanian</a></li>
-									<li><a href="blog-grid.html">Makanan</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#">Jasa</a>
-								<ul class="sub-menu">
-									<li><a href="blog-grid.html">Medis</a></li>
-									<li><a href="category-02.html">Keuangan</a></li>
-									<li><a href="category-02.html">Transportasi</a></li>
-							</li>
+						<?php } ?>
+							
 						</ul>
 					</nav>
 				</div>
