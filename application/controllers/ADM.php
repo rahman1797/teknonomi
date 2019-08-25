@@ -66,16 +66,52 @@ class ADM extends CI_Controller {
 		$this->load->view('ADM/layout/footer');
 	}
 
+
+// MANAGE ARTIKEL
 	public function listArtikel()
 	{
 		$data = array(
 			'listArtikel' => $this->m_user->getartikelList()->result()
 		);
 		$this->load->view('ADM/layout/header');
-		$this->load->view('ADM/artikel_list', $data);
+		$this->load->view('ADM/artikel/artikel_list', $data);
 		$this->load->view('ADM/layout/footer');
 	}
 
+	public function addArtikelPage()
+	{
+		$this->load->view('ADM/layout/header');
+		$this->load->view('ADM/artikel/add_artikel');
+		$this->load->view('ADM/layout/footer');
+	}
+
+	public function addArtikel()
+	{
+		$judul = $this->input->post('judul');
+		$NIM = $this->input->post('user_NIM');
+		$pass = $this->input->post('user_pass_check');
+		$prodi = $this->input->post('user_prodi');
+		$posisi = $this->input->post('user_posisi');
+		$idOpmawa = $this->input->post('user_opmawa');
+		$idDepartemen = $this->input->post('user_departemen');
+		$tahun = $this->input->post('user_tahun');
+		$role = $this->input->post('user_role');
+		$data = array(
+			'user_nama' => $nama,
+			'user_NIM' => $NIM,
+			'user_pass' => $pass,
+			'id_prodi' => $prodi,
+			'id_posisi' => $posisi,
+			'id_opmawa' => $idOpmawa,
+			'id_departemen' => $idDepartemen,
+			'user_tahun' => $tahun,
+			'user_role' => $role
+		);
+		$this->M_user->inputAnggota($data);
+	}
+
+// END MANAGE ARTIKEL
+	
 	public function logout()
 	{
 		$logoutData = array('username','pass', 'nama', 'logged_in' );

@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -34,6 +34,9 @@
 
    <!-- JQuery DataTable Css -->
     <link href="<?php echo base_url('assets/ADM_TEMP/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css')?>" rel="stylesheet">
+
+    <!-- Summernote -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
 
     <!-- Custom Css -->
     <link href="<?php echo base_url('assets/ADM_TEMP/css/style.css')?>" rel="stylesheet">

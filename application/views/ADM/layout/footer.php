@@ -4,6 +4,10 @@
     <!-- Bootstrap Core Js -->
     <script src="<?php echo base_url('assets/ADM_TEMP/plugins/bootstrap/js/bootstrap.js')?>"></script>
 
+<!-- Summernote -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
+
+
     <!-- Bootstrap Datepicker Plugin Js -->
     <script src="<?php echo base_url('assets/ADM_TEMP/plugins/bootstrap-datepicker/js/bootstrap-datepicker.js')?>"></script>
 
@@ -21,6 +25,8 @@
 
     <!-- Moment Plugin Js -->
     <script src="<?php echo base_url('assets/ADM_TEMP/plugins/momentjs/moment.js')?>"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 
     <!-- Bootstrap Material Datetime Picker Plugin Js -->
     <script src="<?php echo base_url('assets/ADM_TEMP/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js')?>"></script>
@@ -44,7 +50,6 @@
     <script src="<?php echo base_url('assets/ADM_TEMP/js/pages/ui/modals.js')?>"></script>
     <script src="<?php echo base_url('assets/ADM_TEMP/js/pages/index.js')?>"></script>
 
-    
 
     <!-- Demo Js -->
     <script src="<?php echo base_url('assets/ADM_TEMP/js/demo.js')?>"></script>

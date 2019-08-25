@@ -9,6 +9,7 @@
                         <div class="header" align="center">
                             <h2><strong>Daftar Artikel</strong></h2>
                             <p></p>  
+                            <a href="<?php echo base_url('ADM/addArtikelPage') ?>">Add Artikel</a>   
                         </div>
                         
                         <div class="body">
