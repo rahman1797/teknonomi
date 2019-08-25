@@ -81,7 +81,7 @@ class ADM extends CI_Controller {
 
 	public function addArtikelPage()
 	{	
-		$data['listSubKategori'] = $this->m_artikel->getSubKategori()->result();
+		$data['listSubKategori'] = $this->m_user->getSubKategori()->result();
 
 		$this->load->view('ADM/layout/header');
 		$this->load->view('ADM/artikel/add_artikel', $data);

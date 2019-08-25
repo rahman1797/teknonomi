@@ -33,6 +33,17 @@ class m_user extends CI_Model{
 	function delUser($data) {
 		$this->db->delete('user', $data);
 	}
+
+	public function getKategori(){
+  		return $this->db->get_where('kategori');
+  	}
+
+  	public function getSubKategori(){
+  		return $this->db->get_where('subkategori');
+  	}
+
+  	function inputArtikel($data) {
+		$this->db->insert('artikel', $data);
 	
 
 }
