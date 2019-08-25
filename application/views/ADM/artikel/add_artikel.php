@@ -19,7 +19,7 @@
                         
                         <div class="body">
 
-                            <form id="form_validation" method="post" action="<?php echo base_url('ADM/addArtikel') ?>">
+                            <form id="form_validation" method="post" enctype="multipart/form-data" action="<?php echo site_url('ADM/addArtikel') ?>" name="userfile">
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="judul" required>
@@ -29,36 +29,29 @@
 
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="file" class="form-control" name="judul" required>
+                                        <input type="file" class="form-control" name="userfile" required>
                                     </div>
                                 </div>
 
-                                <div class="form-line">
-                                    <select class="form-control show-tick" name="user_posisi">
-                                        <option value="">-- Posisi --</option>
-                                        <?php 
-                                            foreach ($posisi_data as $pod) {
-                                                echo "<option value='$pod->posisi_ID'>".$pod->posisi_nama ."</option>";
-                                            }
-                                        ?>
-                                    </select>
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <select class="form-control show-tick" name="subkategori" id="kategori">
+                                            <option value="">-- Sub Kategori --</option>
+                                            <?php 
+                                                foreach ($listSubKategori as $lsk) {
+                                                    echo "<option value='$lsk->subkategori_id'>".$lsk->subkategori_nama ."</option>";
+                                                }
+                                            ?>
+                                        </select>
+                                    </div>
                                 </div>
-
-                                <div class="form-line">
-                                    <select class="form-control show-tick" name="user_posisi">
-                                        <option value="">-- Posisi --</option>
-                                        <?php 
-                                            foreach ($posisi_data as $pod) {
-                                                echo "<option value='$pod->posisi_ID'>".$pod->posisi_nama ."</option>";
-                                            }
-                                        ?>
-                                    </select>
-                                </div>
-
-                                Isi Dari Artikel
-                               <textarea id="summernote">TEST</textarea>
-
-                               <input type="hidden" name="penulis" value="<?php echo $_SESSION['nama'] ?>">
+                                
+                                <div class="form-group form-float">
+                                    <textarea class="form-control no-resize" required cols="30" rows="5" id="summernote" name="isi"></textarea>
+                                </div> 
+                                
+                                
+                                <input class="btn btn-success" type="submit">
                             </form>
 
                         </div>
@@ -74,8 +67,7 @@
 </script>
 <script>
       $('#summernote').summernote({
-        tabsize: 5,
-        dialogsFade: true,
+
         toolbar: [
             [ 'font', [ 'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript'] ],
             [ 'fontname', [ 'fontname' ] ],

@@ -54,6 +54,7 @@
     <!-- Demo Js -->
     <script src="<?php echo base_url('assets/ADM_TEMP/js/demo.js')?>"></script>
     <script src="<?php echo base_url('assets/ADM_TEMP/js/canvasjs.min.js')?>"></script>
+    <script src="<?php echo base_url('assets/ADM_TEMP/js/jquery.chained.min.js')?>"></script>
     <script src="<?php echo base_url('assets/ADM_TEMP/js/pages/forms/basic-form-elements.js')?>"></script>
 </body>
 

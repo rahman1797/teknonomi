@@ -30,4 +30,5 @@ class Artikel extends CI_Controller {
 		$this->load->view('v_detail',$data);
 		$this->load->view('element/footer');
   }
+
 }
