@@ -33,7 +33,7 @@
 						<!-- Blog Detail -->
 						<div class="p-b-70">
 							<a href="#" class="f1-s-10 cl2 hov-cl10 trans-03 text-uppercase">
-								<?php echo $detail->subkategori ?>
+								<?php echo $this->m_kategori->getSubByID($detail->id_subkategori)->subkategori_nama ?>
 							</a>
 
 							<h3 class="f1-l-3 cl2 p-b-16 p-t-33 respon2">
@@ -70,8 +70,6 @@
 
 							<!-- <p class="f1-s-11 cl6 p-b-25" style="text-align: justify;">
 							</p> -->
-							
-
 							<!-- Share -->
 							<div class="flex-s-s">
 								<span class="f1-s-12 cl5 p-t-1 m-r-15">
@@ -87,16 +85,6 @@
 									<a href="#" class="dis-block f1-s-13 cl0 bg-twitter borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
 										<i class="fab fa-twitter m-r-7"></i>
 										Twitter
-									</a>
-
-									<a href="#" class="dis-block f1-s-13 cl0 bg-google borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-										<i class="fab fa-google-plus-g m-r-7"></i>
-										Google+
-									</a>
-
-									<a href="#" class="dis-block f1-s-13 cl0 bg-pinterest borad-3 p-tb-4 p-rl-18 hov-btn1 m-r-3 m-b-3 trans-03">
-										<i class="fab fa-pinterest-p m-r-7"></i>
-										Pinterest
 									</a>
 								</div>
 							</div>
@@ -141,35 +129,17 @@
 							</div>
 
 							<ul class="p-t-35">
+								<?php 
+								$id_kategori = $detail->id_kategori;
+								$subByKategori = $this->m_kategori->getSubByKategori($id_kategori);
+									foreach ($subByKategori as $k) {
+								 ?>
 								<li class="how-bor3 p-rl-4">
 									<a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
-										Fashion
+										<?php echo $k->subkategori_nama; ?>
 									</a>
 								</li>
-
-								<li class="how-bor3 p-rl-4">
-									<a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
-										Beauty
-									</a>
-								</li>
-
-								<li class="how-bor3 p-rl-4">
-									<a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
-										Street Style
-									</a>
-								</li>
-
-								<li class="how-bor3 p-rl-4">
-									<a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
-										Life Style
-									</a>
-								</li>
-
-								<li class="how-bor3 p-rl-4">
-									<a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
-										DIY & Crafts
-									</a>
-								</li>
+							<?php } ?>
 							</ul>
 						</div>
 
@@ -289,21 +259,22 @@
 							</div>
 
 							<ul class="p-t-35">
+								<?php foreach (array_slice($artikel, 0,3) as $k) { ?>
 								<li class="flex-wr-sb-s p-b-30">
-									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
-										<img src="images/popular-post-04.jpg" alt="IMG">
+									<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="size-w-10 wrap-pic-w hov1 trans-03">
+										<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 									</a>
 
 									<div class="size-w-11">
 										<h6 class="p-b-4">
-											<a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-												Donec metus orci, malesuada et lectus vitae
+											<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+												<?php echo $k->judul ?>
 											</a>
 										</h6>
 
 										<span class="cl8 txt-center p-b-24">
 											<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-												Music
+												<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 											</a>
 
 											<span class="f1-s-3 m-rl-3">
@@ -316,62 +287,7 @@
 										</span>
 									</div>
 								</li>
-
-								<li class="flex-wr-sb-s p-b-30">
-									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
-										<img src="images/popular-post-05.jpg" alt="IMG">
-									</a>
-
-									<div class="size-w-11">
-										<h6 class="p-b-4">
-											<a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-												Donec metus orci, malesuada et lectus vitae
-											</a>
-										</h6>
-
-										<span class="cl8 txt-center p-b-24">
-											<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-												Game
-											</a>
-
-											<span class="f1-s-3 m-rl-3">
-												-
-											</span>
-
-											<span class="f1-s-3">
-												Feb 16
-											</span>
-										</span>
-									</div>
-								</li>
-
-								<li class="flex-wr-sb-s p-b-30">
-									<a href="#" class="size-w-10 wrap-pic-w hov1 trans-03">
-										<img src="images/popular-post-06.jpg" alt="IMG">
-									</a>
-
-									<div class="size-w-11">
-										<h6 class="p-b-4">
-											<a href="blog-detail-02.html" class="f1-s-5 cl3 hov-cl10 trans-03">
-												Donec metus orci, malesuada et lectus vitae
-											</a>
-										</h6>
-
-										<span class="cl8 txt-center p-b-24">
-											<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-												Celebrity
-											</a>
-
-											<span class="f1-s-3 m-rl-3">
-												-
-											</span>
-
-											<span class="f1-s-3">
-												Feb 12
-											</span>
-										</span>
-									</div>
-								</li>
+							<?php } ?>
 							</ul>
 						</div>
 
