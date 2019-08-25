@@ -5,12 +5,13 @@ class Artikel extends CI_Controller {
 	 function __construct(){
 	    parent::__construct();    
 	    $this->load->model('m_artikel');
+	     $this->load->model('m_kategori');
   }
 
 	public function index()
 	{
 		$data = array(
-			'artikel' => $this->m_artikel->getArtikel()
+			'artikel' => $this->m_artikel->getArtikelDesc()
 		);
 		$this->load->view('element/head');
 		$this->load->view('element/header');
