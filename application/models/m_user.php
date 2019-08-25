@@ -45,5 +45,5 @@ class m_user extends CI_Model{
   	function inputArtikel($data) {
 		$this->db->insert('artikel', $data);
 	
-
+	}
 }
