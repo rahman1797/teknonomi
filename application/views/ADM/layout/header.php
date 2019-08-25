@@ -156,7 +156,7 @@
                                 <a href="#">Banner</a>
                             </li>
                             <li>
-                                <a href="#">Artikel</a>
+                                <a href="<?php echo base_url('ADM/listArtikel') ?>">Artikel</a>
                             </li>
                         </ul>
                     </li>

@@ -66,6 +66,16 @@ class ADM extends CI_Controller {
 		$this->load->view('ADM/layout/footer');
 	}
 
+	public function listArtikel()
+	{
+		$data = array(
+			'listArtikel' => $this->m_user->getartikelList()->result()
+		);
+		$this->load->view('ADM/layout/header');
+		$this->load->view('ADM/artikel_list', $data);
+		$this->load->view('ADM/layout/footer');
+	}
+
 	public function logout()
 	{
 		$logoutData = array('username','pass', 'nama', 'logged_in' );
