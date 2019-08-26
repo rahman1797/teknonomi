@@ -42,7 +42,7 @@
             <div class="row clearfix">
                
                 <!-- INFO STATUS PROKER -->
-                <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                     <div class="card" id="round">
                         <div class="header">
                             <h2>INFO PROGRAM KERJA</h2>
@@ -90,7 +90,7 @@
 
 
                 <!-- Info Tugas Saya -->
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
                     <div class="card" id="round">
                         <div class="header">
                             <h2>INFO Tugas Saya</h2>
@@ -129,7 +129,7 @@
                 <!-- #END# Info Tugas Saya -->
 
                   <!-- Keuangan Chart -->
-                <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
+          <div class="col-lg-12 col-md-6 col-sm-12 col-xs-12">
                     <div class="card" id="round">
                         <div class="header">
                             <h2>Grafik Keuangan</h2>
@@ -141,10 +141,10 @@
                 </div>
                 <!-- #END# Keuangan Chart -->
 
-            </div>           
+    </div>           
         </div>
     </section>
-
+ 
 
     <script>
         window.onload = function () {

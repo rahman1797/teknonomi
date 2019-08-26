@@ -44,7 +44,7 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url('assets/ADM_TEMP/css/themes/all-themes.css')?>" rel="stylesheet" />
 
-    
+
 
     <style type="text/css">
       #round {
@@ -140,7 +140,7 @@
                 <ul class="list">
                     <li class="header">NAVIGASI UTAMA</li>
                     <li class="active">
-                        <a href="<?php echo base_url('Main_C') ?>">
+                        <a href="<?php echo base_url('ADM') ?>">
                             <i class="material-icons">home</i>
                             <span>Beranda</span>
                         </a>
