@@ -1,9 +1,4 @@
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+ 
 
       <section class="content">
         <div class="container-fluid">
@@ -45,23 +40,31 @@
                                         <select class="form-control show-tick" name="kategori" id="kategori">
                                             <option value="">-- Kategori --</option>
                                             <?php 
-                                                foreach ($data as $lk) {
-                                                    echo "<option value='$lk->kategori_id'>".$lk->kategori_nama ."</option>";
+                                                foreach ($kategori as $k) {
+                                                    echo "<option value='$k->kategori_id'>".$k->kategori_nama ."</option>";
                                                 }
                                             ?>
                                         </select>
                                     </div>
                                 </div>
 
+
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <select class="form-control show-tick subkategori" name="subkategori" id="subkategori">
-                                            <option value="0">-PILIH-</option>
+                                        <select class="form-control show-tick" name="sub" id="sub">
+                                            <option value="">Please Select</option>
+                                            <?php
+                                            foreach ($sub as $s) {
+                                                ?>
+                                                <!--di sini kita tambahkan class berisi id provinsi-->
+                                                <option <?php echo $sub_selected == $s->id_kategori ? 'selected="selected"' : '' ?>
+                                                    class="<?php echo $s->id_kategori ?>" value="<?php echo $s->subkategori_id ?>"><?php echo $s->subkategori_nama ?></option>
+                                                <?php
+                                            }
+                                            ?>
                                         </select>
                                     </div>
                                 </div>
-
-
 
 
 
@@ -86,6 +89,13 @@
         </div>
     </section>
 
+<!-- Summernote -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
 
 <script>
       $('#summernote').summernote({
@@ -104,26 +114,39 @@
 
 
 
+    $("#sub").remoteChained("#kategori");
+    // document.getElementById("sub").disabled = false;
 
-      $(document).ready(function(){
-        $('#kategori').change(function(){
-            var id = $(this).val();
-            $.ajax({
-                url : "<?php echo base_url('ADM/get_subkategori');?>",
-                method : "POST",
-                data : {id: id},
-                async : false,
-                dataType : 'json',
-                success: function(data){
-                    var html = '';
-                    var i;
-                    for(i=0; i<data.length; i++){
-                        html += '<option>'+data[i].subkategori_nama+'</option>';
-                    }
-                    $('.subkategori').html(html);
+
+    // $(document).ready(function(){
+    //     $('#kategori').change
+    // })
+
+
+    //   $(document).ready(function(){
+    //     $('#kategori').change(function(){
+    //         var id = $(this).val();
+    //         $.ajax({
+    //             url : "<?php echo base_url('ADM/get_subkategori');?>",
+    //             method : "POST",
+    //             data : {id: id},
+               
+    //             dataType : 'json',
+    //             success: function(data){
+    //                 var html = '';
+    //                 var i;
+    //                 for(i = 0; i < data.length; i++){
+    //                     html += '<option value='+ data[i].subkategori_id +'>'+ data[i].subkategori_nama + '</option>';
+    //                 }
+    //                 $('.subkategori').html(html);
+
+    //                 alert(html);
                      
-                }
-            });
-        });
-    });
+    //             }
+    //         });
+    //     });
+    // });
+
+
+
     </script>

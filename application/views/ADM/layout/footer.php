@@ -1,11 +1,8 @@
- <!-- Jquery Core Js -->
-    <script src="<?php echo base_url('assets/ADM_TEMP/plugins/jquery/jquery.min.js')?>"></script>
+    <!-- Jquery Core Js -->
+    <script src="<?php echo base_url('assets/js/jquery-2.2.3.min.js')?>"></script>
 
     <!-- Bootstrap Core Js -->
     <script src="<?php echo base_url('assets/ADM_TEMP/plugins/bootstrap/js/bootstrap.js')?>"></script>
-
-<!-- Summernote -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"></script>
 
 
     <!-- Bootstrap Datepicker Plugin Js -->
@@ -56,6 +53,7 @@
     <script src="<?php echo base_url('assets/ADM_TEMP/js/canvasjs.min.js')?>"></script>
     <script src="<?php echo base_url('assets/ADM_TEMP/js/jquery.chained.min.js')?>"></script>
     <script src="<?php echo base_url('assets/ADM_TEMP/js/pages/forms/basic-form-elements.js')?>"></script>
+
 </body>
 
 </html>

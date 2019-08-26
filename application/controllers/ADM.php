@@ -96,7 +96,11 @@ class ADM extends CI_Controller {
 
 	public function addArtikelPage()
 	{	
-		$data['data'] = $this->m_kategori->getKategori();
+		$data = array(
+			'kategori' => $this->m_kategori->get_kategori(),
+			'sub' => $this->m_kategori->get_sub(),  
+			'sub_selected' => ''
+		);
 
 		$this->load->view('ADM/layout/header');
 		$this->load->view('ADM/artikel/add_artikel', $data);
@@ -127,7 +131,7 @@ class ADM extends CI_Controller {
 	public function addArtikel()
 	{
 
-				$config['upload_path']= 'uploads/';
+				 $config['upload_path']= 'assets/images/artikel/';
 			     $config['allowed_types'] = 'gif|jpg|png'; 
 			     $config['max_size']      = 10000; 
 
@@ -147,21 +151,21 @@ class ADM extends CI_Controller {
 
 
 			        $database = array(
-			            'judul' => 'test',
-			            'isi' => 'ini isi',
+			            'judul' => $this->input->post('judul'),
+			            'isi' => $this->input->post('isi'),
 			            'penulis' => $_SESSION['nama'],
-			            'foto' => 'ini foto',
-			            'id_subkategori' => 1,
-			            'id_kategori' => 1,
+			            'foto' => $file_name,
+			            'id_subkategori' => $this->input->post('sub'),
+			            'id_kategori' => $this->input->post('kategori'),
 			            'viewers' => 0 
 			            );
 
 			        $result = $this->db->insert('artikel', $database);
 
-			        echo $file_name;
+			        redirect(base_url('ADM/listArtikel'));
 
 			     } else {
-
+			     	echo "Terjadi kesalahan";
 			        $error = array('error' => $this->upload->display_errors());
 			        print_r($error);
 

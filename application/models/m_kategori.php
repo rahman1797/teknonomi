@@ -55,17 +55,27 @@ class m_kategori extends CI_Model{
 	// Mendapatkan kategori untuk artikel
 
 
-	function get_kategori(){
-        $hasil = $this->db->query("SELECT * FROM kategori");
+	// function get_kategori(){
+ //        $hasil = $this->db->query("SELECT * FROM kategori");
         
-        return $hasil;
-    }
+ //        return $hasil;
+ //    }
  
-    function get_subkategori($id){
-        $hasil = $this->db->query("SELECT * FROM subkategori WHERE id_kategori='$id'");
+ //    function get_subkategori($id){
+ //        $hasil = $this->db->query("SELECT * FROM subkategori WHERE id_kategori ='$id'");
         
-        return $hasil->result();
-    }
+ //        return $hasil->result();
+ //    }
+
+
+	public function get_kategori() {
+		 return $this->db->get('kategori')->result();
+	}
+
+	public function get_sub() {
+		$this->db->join('kategori', 'subkategori.id_kategori = kategori.kategori_id');
+        return $this->db->get('subkategori')->result();
+	}
 
 	
 	// END Mendapatkan kategori untuk artikel

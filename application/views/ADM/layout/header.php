@@ -36,13 +36,15 @@
     <link href="<?php echo base_url('assets/ADM_TEMP/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css')?>" rel="stylesheet">
 
     <!-- Summernote -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.css" rel="stylesheet">
 
     <!-- Custom Css -->
     <link href="<?php echo base_url('assets/ADM_TEMP/css/style.css')?>" rel="stylesheet">
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url('assets/ADM_TEMP/css/themes/all-themes.css')?>" rel="stylesheet" />
+
+    
 
     <style type="text/css">
       #round {
