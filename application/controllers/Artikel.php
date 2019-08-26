@@ -20,7 +20,7 @@ class Artikel extends CI_Controller {
 		$this->load->view('element/head');
 		$this->load->view('element/header', $data);
 		$this->load->view('v_index', $data);
-		$this->load->view('element/footer');
+		$this->load->view('element/footer', $data);
 	}
 
 	public function detail($id) {
@@ -34,7 +34,7 @@ class Artikel extends CI_Controller {
 	        $this->load->view('element/head');
 			$this->load->view('element/header',$data);
 			$this->load->view('v_detail',$data);
-			$this->load->view('element/footer');
+			$this->load->view('element/footer',$data);
   }
 
   public function kategori($id) {
@@ -48,7 +48,7 @@ class Artikel extends CI_Controller {
 	    $this->load->view('element/head');
 		$this->load->view('element/header',$data);
 		$this->load->view('v_artikel-kategori',$data);
-		$this->load->view('element/footer');
+		$this->load->view('element/footer',$data);
   }
 
     public function subkategori($id) {
@@ -62,7 +62,7 @@ class Artikel extends CI_Controller {
 	    $this->load->view('element/head');
 		$this->load->view('element/header',$data);
 		$this->load->view('v_artikel-subkategori',$data);
-		$this->load->view('element/footer');
+		$this->load->view('element/footer',$data);
   }
 
 }

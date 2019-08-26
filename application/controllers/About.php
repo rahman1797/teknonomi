@@ -18,7 +18,7 @@ class About extends CI_Controller {
 		$this->load->view('element/head');
 		$this->load->view('element/header', $data);
 		$this->load->view('v_about', $data);
-		$this->load->view('element/footer');
+		$this->load->view('element/footer',$data);
 	}
 
 }

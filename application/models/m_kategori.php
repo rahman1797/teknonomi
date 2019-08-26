@@ -45,6 +45,12 @@ class m_kategori extends CI_Model{
 		}
 	}
 
+	function getNumberKategori($id) {	
+	  $this->db->from('artikel');
+	  $this->db->where('id_kategori', $id);
+	  return $num_rows = $this->db->count_all_results();
+	}
+
 
 
 }
