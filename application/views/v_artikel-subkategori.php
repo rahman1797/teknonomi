@@ -1,27 +1,27 @@
 <!-- Breadcrumb -->
-	<div class="container">
-		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
-			<div class="f2-s-1 p-r-30 m-tb-6">
-				<a href="index.html" class="breadcrumb-item f1-s-3 cl9">
-					Home 
-				</a>
+<!-- 	<div class="container">
+	<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
+		<div class="f2-s-1 p-r-30 m-tb-6">
+			<a href="index.html" class="breadcrumb-item f1-s-3 cl9">
+				Home 
+			</a>
 
-				<span class="breadcrumb-item f1-s-3 cl9">
-					Blog
-				</span>
-			</div>
+			<span class="breadcrumb-item f1-s-3 cl9">
+				Blog
+			</span>
+		</div>
 
-			<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
-				<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search">
-				<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
-					<i class="zmdi zmdi-search"></i>
-				</button>
-			</div>
+		<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+			<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search">
+			<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
+				<i class="zmdi zmdi-search"></i>
+			</button>
 		</div>
 	</div>
+</div> -->
 
 	<!-- Page heading -->
-	<div class="container p-t-4 p-b-40">
+	<div class="container p-t-4 p-b-40 p-tb-50">
 		<h2 class="f1-l-1 cl2">
 			<?php echo $this->m_kategori->getSubByID($id_subkategori)->subkategori_nama ?>
 		</h2>
@@ -63,10 +63,10 @@
 									</div>
 
 									<p class="f1-s-1 cl6 p-b-24">
-										Duis eu felis id tortor congue consequat. Sed vitae vestibulum enim, et pharetra magna
+										<?php 	echo substr($k->isi,60,110); ?>
 									</p>
 
-									<a href="blog-detail-02.html" class="f1-s-1 cl9 hov-cl10 trans-03">
+									<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-1 cl9 hov-cl10 trans-03">
 										Read More
 										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
 									</a>
@@ -84,24 +84,6 @@
 
 				<div class="col-md-10 col-lg-4 p-b-80">
 					<div class="p-l-10 p-rl-0-sr991">							
-						<!-- Subscribe -->
-						<div class="bg10 p-rl-35 p-t-28 p-b-35 m-b-50">
-							<h5 class="f1-m-5 cl0 p-b-10">
-								Subscribe
-							</h5>
-
-							<p class="f1-s-1 cl0 p-b-25">
-								Get all latest content delivered to your email a few times a month.
-							</p>
-
-							<form class="size-a-9 pos-relative">
-								<input class="s-full f1-m-6 cl6 plh9 p-l-20 p-r-55" type="text" name="email" placeholder="Email">
-
-								<button class="size-a-10 flex-c-c ab-t-r fs-16 cl9 hov-cl10 trans-03">
-									<i class="fa fa-arrow-right"></i>
-								</button>
-							</form>
-						</div>
 
 						<!-- Most Popular -->
 						<div class="p-b-23">
@@ -112,107 +94,73 @@
 							</div>
 
 							<ul class="p-t-35">
-								<li class="flex-wr-sb-s p-b-22">
+								<?php $no = 1;
+								 foreach(array_slice($popular, 0, 4) as $a ) { ?>
+									<li class="flex-wr-sb-s p-b-22">
 									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										1
+										<?php
+										echo $no;
+											$no++;
+										 ?>
 									</div>
 
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Lorem ipsum dolor sit amet, consectetur adipiscing elit
+									<a href="<?php echo site_url('Artikel/detail/'.$a->id) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										<?php echo $a->judul; ?>
 									</a>
 								</li>
-
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										2
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Proin velit consectetur non neque
-									</a>
-								</li>
-
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										3
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Nunc vestibulum, enim vitae condimentum volutpat lobortis ante
-									</a>
-								</li>
-
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										4
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Proin velit justo consectetur non neque elementum
-									</a>
-								</li>
-
-								<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0">
-										5
-									</div>
-
-									<a href="#" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										Proin velit consectetur non neque
-									</a>
-								</li>
+								<?php } ?>
 							</ul>
 						</div>
 
 						<!--  -->
 						<div class="flex-c-s p-b-50">
 							<a href="#">
-								<img class="max-w-full" src="images/banner-02.jpg" alt="IMG">
+								<img class="max-w-full" src="<?php echo base_url(); ?>assets/template/images/icons/sidebar-ads.jpg" alt="IMG">
 							</a>
 						</div>
 						
 						<!-- Tag -->
-						<div>
-							<div class="how2 how2-cl4 flex-s-c m-b-30">
-								<h3 class="f1-m-2 cl3 tab01-title">
-									Tags
-								</h3>
-							</div>
+<!-- 						<div>
+	<div class="how2 how2-cl4 flex-s-c m-b-30">
+		<h3 class="f1-m-2 cl3 tab01-title">
+			Tags
+		</h3>
+	</div>
 
-							<div class="flex-wr-s-s m-rl--5">
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									Fashion
-								</a>
+	<div class="flex-wr-s-s m-rl--5">
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			Fashion
+		</a>
 
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									Lifestyle
-								</a>
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			Lifestyle
+		</a>
 
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									Denim
-								</a>
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			Denim
+		</a>
 
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									Streetstyle
-								</a>
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			Streetstyle
+		</a>
 
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									Crafts
-								</a>
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			Crafts
+		</a>
 
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									Magazine
-								</a>
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			Magazine
+		</a>
 
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									News
-								</a>
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			News
+		</a>
 
-								<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
-									Blogs
-								</a>
-							</div>	
-						</div>
+		<a href="#" class="flex-c-c size-h-2 bo-1-rad-20 bocl12 f1-s-1 cl8 hov-btn2 trans-03 p-rl-20 p-tb-5 m-all-5">
+			Blogs
+		</a>
+	</div>	
+</div> -->
 					</div>
 				</div>
 			</div>

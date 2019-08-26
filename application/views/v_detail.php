@@ -63,7 +63,7 @@
 							</div>
 
 							<div class="wrap-pic-max-w p-b-30">
-								<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $detail->foto ?>" alt="IMG">
+								<img style="width: 680px;height: 350px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $detail->foto ?>" alt="IMG">
 							</div>
 
 							<?php echo $detail->isi ?>

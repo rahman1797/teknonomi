@@ -12,11 +12,11 @@
 							About
 						</a>
 
-						<a href="contact.html" class="left-topbar-item">
+						<a href="#" class="left-topbar-item">
 							Contact
 						</a>
 
-						<a href="template_admin/login_v2.html" class="left-topbar-item">
+						<a href="<?php echo site_url('ADM') ?>" class="left-topbar-item">
 							Log in
 						</a>
 					</div>
@@ -67,11 +67,7 @@
 							Contact
 						</a>
 
-						<a href="#" class="left-topbar-item">
-							Sing up
-						</a>
-
-						<a href="template_admin/login_v2.html" class="left-topbar-item">
+						<a href="<?php echo site_url('ADM') ?>" class="left-topbar-item">
 							Log in
 						</a>
 					</li>

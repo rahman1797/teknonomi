@@ -15,6 +15,7 @@ class Artikel extends CI_Controller {
 			'recent' => $this->m_artikel->getRecentArtikel(),
 			'kategori' => $this->m_kategori->getKategori(),
 			'subkategori' => $this->m_kategori->getSub(),
+			'mostpopular' => $this->m_artikel->getMostPopularVer2(),
 		);
 		$this->load->view('element/head');
 		$this->load->view('element/header', $data);
@@ -55,6 +56,7 @@ class Artikel extends CI_Controller {
 	        'id_subkategori' =>$id,
 	        'artikel' => $this->m_artikel->getArtikelBySub($id),
 	        'kategori' => $this->m_kategori->getKategori(),
+	        'popular' => $this->m_artikel->getArtikelDesc(),
 			'subkategori' => $this->m_kategori->getSub(),
 	    );
 	    $this->load->view('element/head');

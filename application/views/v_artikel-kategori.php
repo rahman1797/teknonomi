@@ -38,7 +38,7 @@
 				<div class="col-md-6 p-rl-1 p-b-2">
 					<?php foreach (array_slice($artikel, 0,1) as $k) { ?>
 					<div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url(<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>);">
-						<a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
+						<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="dis-block how1-child1 trans-03"></a>
 
 						<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
 							<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
@@ -74,7 +74,7 @@
 						<?php foreach (array_slice($artikel, 1,4) as $k) { ?>
 						<div class="col-sm-6 p-rl-1 p-b-2">
 							<div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url(<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>);">
-								<a href="blog-detail-01.html" class="dis-block how1-child1 trans-03"></a>
+								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="dis-block how1-child1 trans-03"></a>
 
 								<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
 									<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
@@ -106,7 +106,7 @@
 						<div class="col-sm-6 p-r-25 p-r-15-sr991">
 							<!-- Item latest -->	
 							<div class="m-b-45">
-								<a href="blog-detail-01.html" class="wrap-pic-w hov1 trans-03">
+								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>l" class="wrap-pic-w hov1 trans-03">
 									<img style="width: 350px;height: 200px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 								</a>
 
