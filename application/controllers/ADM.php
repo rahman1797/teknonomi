@@ -6,6 +6,7 @@ class ADM extends CI_Controller {
 	    parent::__construct();    
 	    $this->load->helper(array('form', 'url'));
 	    $this->load->model('m_artikel');
+	    $this->load->model('m_kategori');
 	    $this->load->model('m_user');
   }
 
@@ -79,14 +80,49 @@ class ADM extends CI_Controller {
 		$this->load->view('ADM/layout/footer');
 	}
 
+	
+
+
+
+
+
+
+
+
+
+
+
+	// Menambahkan artikel
+
 	public function addArtikelPage()
 	{	
-		$data['listSubKategori'] = $this->m_user->getSubKategori()->result();
+		$data['data'] = $this->m_kategori->getKategori();
 
 		$this->load->view('ADM/layout/header');
 		$this->load->view('ADM/artikel/add_artikel', $data);
 		$this->load->view('ADM/layout/footer');
 	}
+
+		function get_subkategori(){
+	        $id = $this->input->post('id');
+	        $data = $this->m_kategori->get_subkategori($id);
+	        echo json_encode($data);
+	    }
+
+	// END Menambahkan artikel
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	public function addArtikel()
 	{
