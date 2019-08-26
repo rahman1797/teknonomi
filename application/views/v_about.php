@@ -24,7 +24,7 @@
   <div class="container py-5">
     <div class="row h-100 align-items-center py-5">
       <div class="col-lg-6">
-        <h1 class="display-4">About us page</h1>
+        <h1 class="display-4">About us</h1>
         <p class="lead text-muted mb-0"></p>
         <p class="lead text-muted"></a>
         </p>
@@ -47,14 +47,15 @@
     <div class="row align-items-center mb-5">
       <div class="col-lg-5 px-5 mx-auto"><img src="<?php echo base_url(); ?>assets/images/icons/vi-office1.png" alt="dd" class="img-fluid mb-4 mb-lg-0"></div>
       <div class="col-lg-6"><i class="fa fa-leaf fa-2x mb-3 text-primary"></i>
-        <h5 class="">Address</h5>
-        <p class="text-muted" style="font-size: 25px">Rumah Ammar-Aimar</p>
+        <!-- <h5 class="">Address</h5> -->
+        <p class="text-muted" style="font-size: 25px">Address</p>
         <p class="text-muted mb-4"style="font-size: 20px">Jalan Cipinang Pulo No.32 RT006/014, Jatinegara Jakarta Timur</p>
       </div>
     </div>
     <div class="row align-items-center">
       <div class="col-lg-6 order-2 order-lg-1"><i class="fas fa-globe fa-2x mb-3 text-primary"></i>
-        <h5 class="">Contact</h5>
+        <!-- <h5 class="">Contact</h5> -->
+        <p class="text-muted" style="font-size: 25px">Contact</p>
         <p class="text-muted" style="font-size: 20px">redaksi@teknonomi.com</p>
         <p class="text-muted mb-4"style="font-size: 20px">marketing@teknonomi.com</p>
       </div>

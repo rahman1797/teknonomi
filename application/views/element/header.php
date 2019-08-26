@@ -96,13 +96,18 @@
 						<a href="<?php echo site_url('Artikel') ?>">Video</a>
 					</li>
 					
-					<?php foreach ($kategori as $k) { ?>
+					<?php 
+						foreach ($kategori as $k) {
+						?>
 					<li>
 						<a href="#"><?php echo $k->kategori_nama; ?></a>
 						<ul class="sub-menu-m">
-							<?php $sub = $this->m_kategori->getSubByKategori($k->kategori_id);
-							foreach ($sub as $s ) {
-							 ?>
+							<?php 
+							if ($k->kategori_nama == 'Perspektif') {
+										break;
+									}
+							$sub = $this->m_kategori->getSubByKategori($k->kategori_id);
+							foreach ($sub as $s ) {							 ?>
 							<li><a href="category-01.html"><?php echo $s->subkategori_nama ?></a></li>
 						<?php } ?>
 						</ul>
@@ -145,9 +150,13 @@
 							</li>
 							<?php foreach ($kategori as $k) { ?>
 							<li>
-								<a href="#"><?php echo $k->kategori_nama; ?></a>
+								<a href="<?php echo site_url('Artikel/kategori/'.$k->kategori_id) ?>"><?php echo $k->kategori_nama; ?></a>
 								<ul class="sub-menu">
-									<?php $sub = $this->m_kategori->getSubByKategori($k->kategori_id);
+									<?php 
+									if ($k->kategori_nama == 'Perspektif') {
+										break;
+									}
+									$sub = $this->m_kategori->getSubByKategori($k->kategori_id);
 									foreach ($sub as $s ) {
 									 ?>
 									<li><a href="<?php echo site_url('Artikel/subkategori/'.$s->subkategori_id) ?>"><?php echo $s->subkategori_nama ?></a></li>

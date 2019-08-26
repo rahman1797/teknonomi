@@ -71,7 +71,7 @@
 
 				<div class="col-md-6 p-rl-1">
 					<div class="row m-rl--1">
-						<?php foreach (array_slice($artikel, 1,4) as $k) { ?>
+						<?php foreach (array_slice($artikel, 2,4) as $k) { ?>
 						<div class="col-sm-6 p-rl-1 p-b-2">
 							<div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url(<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>);">
 								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="dis-block how1-child1 trans-03"></a>
@@ -102,7 +102,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8 p-b-80">
 					<div class="row">
-						<?php foreach (array_slice($artikel, 4) as $k) { ?>
+						<?php foreach (array_slice($artikel, 6) as $k) { ?>
 						<div class="col-sm-6 p-r-25 p-r-15-sr991">
 							<!-- Item latest -->	
 							<div class="m-b-45">

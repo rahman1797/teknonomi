@@ -52,21 +52,6 @@ class m_kategori extends CI_Model{
 	}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	// Mendapatkan kategori untuk artikel
 
 
