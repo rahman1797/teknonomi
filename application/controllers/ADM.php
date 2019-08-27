@@ -117,7 +117,7 @@ class ADM extends CI_Controller {
 	{
 
 				 $config['upload_path']= 'assets/images/artikel/';
-			     $config['allowed_types'] = 'gif|jpg|png'; 
+			     $config['allowed_types'] = 'gif|jpg|png|jpeg'; 
 			     $config['max_size']      = 10000; 
 
 			 

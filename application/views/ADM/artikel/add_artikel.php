@@ -18,7 +18,7 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="judul" required>
-                                        <label class="form-label">Judul Artikel</label>
+                                        <label class="form-label">Masukkan Judul Artikel</label>
                                     </div>
                                 </div>
 
@@ -26,6 +26,7 @@
                                     <div class="form-line">
                                         <input type="file" class="form-control" name="userfile" required>
                                     </div>
+                                    <font color="red">*Format : jpg, jpeg, dan png (Max 10mb)</font>
                                 </div>
 
 
@@ -38,7 +39,7 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control show-tick" name="kategori" id="kategori">
-                                            <option value="">-- Kategori --</option>
+                                            <option value="">-- Pilih Kategori --</option>
                                             <?php 
                                                 foreach ($kategori as $k) {
                                                     echo "<option value='$k->kategori_id'>".$k->kategori_nama ."</option>";
@@ -52,7 +53,7 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control show-tick" name="sub" id="sub">
-                                           <!--  <option value="">Please Select</option> -->
+                                            <option value="" class="form-label">-- Pilih Sub Kategori --</option>
                                             <?php
                                             foreach ($sub as $s) {
                                                 ?>
@@ -76,7 +77,7 @@
                                 </div> 
                                 
                                 
-                                <input class="btn btn-success" type="submit">
+                                <input class="btn btn-success" type="submit" id="round">
                             </form>
 
                         </div>
@@ -113,7 +114,7 @@
 
 
 
-    $("#sub").chained("#kategori");
+    // $("#sub").chained("#kategori");
     // document.getElementById("sub").disabled = false;
 
 
