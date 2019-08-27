@@ -82,7 +82,7 @@
 									</a>
 
 									<h3 class="how1-child2 m-t-14">
-										<a href="blog-detail-01.html" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+										<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
 											<?php echo $k->judul ?>
 										</a>
 									</h3>
@@ -106,13 +106,13 @@
 						<div class="col-sm-6 p-r-25 p-r-15-sr991">
 							<!-- Item latest -->	
 							<div class="m-b-45">
-								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>l" class="wrap-pic-w hov1 trans-03">
+								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
 									<img style="width: 350px;height: 200px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 								</a>
 
 								<div class="p-t-16">
 									<h5 class="p-b-5">
-										<a href="blog-detail-01.html" class="f1-m-3 cl2 hov-cl10 trans-03">
+										<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 											<?php echo $k->judul ?>
 										</a>
 									</h5>
