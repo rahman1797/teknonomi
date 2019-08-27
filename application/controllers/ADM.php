@@ -92,14 +92,14 @@ class ADM extends CI_Controller {
 
 
 
-	// Menambahkan artikel
+	// Manage artikel
 
 	public function addArtikelPage()
 	{	
 		$data = array(
 			'kategori' => $this->m_kategori->get_kategori(),
 			'sub' => $this->m_kategori->get_sub(),  
-			'sub_selected' => ''
+			'sub_selected' => '<option>'
 		);
 
 		$this->load->view('ADM/layout/header');
@@ -112,21 +112,6 @@ class ADM extends CI_Controller {
 	        $data = $this->m_kategori->get_subkategori($id);
 	        echo json_encode($data);
 	    }
-
-	// END Menambahkan artikel
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 	public function addArtikel()
 	{
@@ -175,6 +160,39 @@ class ADM extends CI_Controller {
 
 	}
 // END MANAGE ARTIKEL
+
+
+	// SISTEM MASTER
+
+	public function regPosisi()
+	{
+		$data = array(
+			'listPosisi' => $this->m_user->getposisiList()->result()
+		);
+		$this->load->view('ADM/layout/header');
+		$this->load->view('ADM/system_master/regposisi', $data);
+		$this->load->view('ADM/layout/footer');
+	}
+
+		function addPosisi()
+		{
+			$database = array (
+				'posisiuser_nama' => $this->input->post('namaposisi')
+			);
+
+			$result = $this->db->insert('posisiuser', $database);
+		}
+
+		public function delPosisi($id)
+		{
+			$idPosisi = array('posisiuser_id' => $id);
+			$this->m_user->delPosisi($idPosisi,'posisiuser');
+			redirect(base_url('ADM/regPosisi'));
+		}
+
+
+
+	// END SISTEM MASTER
 	
 	public function logout()
 	{

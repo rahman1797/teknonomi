@@ -9,7 +9,7 @@
                         <div class="header" align="center">
                             <h2><strong>Daftar Artikel</strong></h2>
                             <p></p>  
-                            <a class="btn btn-info" id="round" href="<?php echo base_url('ADM/addArtikelPage') ?>">Add Artikel</a>   
+                            <a class="btn btn-info" id="round" href="<?php echo base_url('ADM/addArtikelPage') ?>">Post Artikel</a>   
                         </div>
                         
                         <div class="body">
@@ -24,7 +24,7 @@
                                             <th>Kategori</th>
                                             <th>Sub kategori</th>
                                             <th>Viewers</th>
-                                            <th>Manage</th>
+                                            <th>Kelola</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
@@ -36,7 +36,7 @@
                                             <th>Kategori</th>
                                             <th>Sub kategori</th>
                                             <th>Viewers</th>
-                                            <th>Manage</th>
+                                            <th>Kelola</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
@@ -58,9 +58,9 @@
                                                 <td><?php echo $idTosubKategori['0']['subkategori_nama'] ?></td>
                                                 <td><?php echo $la->viewers ?></td>
                                                 <td>
-                                                    <a href="#"><button class="btn btn-info" id="round">Edit</button></a>
+                                                    <a href="javascript:void(0)" onclick="return notYet()"><button class="btn btn-info" id="round">Edit</button></a>
                                                     <a href="<?php echo base_url('artikel/detail/'.$la->id) ?>"><button class="btn btn-info" id="round">Go to Post</button></a>
-                                                    <a href="javascript:void(0)"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>
+                                                    <a href="javascript:void(0)"><button class="btn btn-danger" id="round" onclick="return notYet()">Delete</button></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -81,6 +81,11 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 <script type="text/javascript">
+
+    function notYet() {
+        alert('this function is under progress');
+        return false;
+    }
 
      function submitUser() {
 

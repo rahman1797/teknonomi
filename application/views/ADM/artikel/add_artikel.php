@@ -52,12 +52,11 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control show-tick" name="sub" id="sub">
-                                            <option value="">Please Select</option>
+                                           <!--  <option value="">Please Select</option> -->
                                             <?php
                                             foreach ($sub as $s) {
                                                 ?>
-                                                <!--di sini kita tambahkan class berisi id provinsi-->
-                                                <option <?php echo $sub_selected == $s->id_kategori ? 'selected="selected"' : '' ?>
+                                                <option <?php echo $sub_selected == $s->id_kategori ? "selected='selected'" : '2' ?>
                                                     class="<?php echo $s->id_kategori ?>" value="<?php echo $s->subkategori_id ?>"><?php echo $s->subkategori_nama ?></option>
                                                 <?php
                                             }
@@ -95,7 +94,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-lite.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.1/jquery.chained.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-chained/1.0.0/jquery.chained.min.js"></script>
 
 <script>
       $('#summernote').summernote({
@@ -114,7 +113,7 @@
 
 
 
-    $("#sub").remoteChained("#kategori");
+    $("#sub").chained("#kategori");
     // document.getElementById("sub").disabled = false;
 
 

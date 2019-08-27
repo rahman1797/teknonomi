@@ -173,7 +173,10 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="<?php echo base_url('ADM/listUser')  ?>">Kategori</a>
+                                <a href="<?php echo base_url('ADM/regKategori')  ?>">Kategori</a>
+                            </li>
+                            <li>
+                                <a href="<?php echo base_url('ADM/regPosisi')  ?>">Posisi User</a>
                             </li>
                         </ul>
                     </li>

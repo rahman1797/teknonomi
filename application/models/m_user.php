@@ -5,9 +5,15 @@ class m_user extends CI_Model{
 		return $this->db->get_where('user');
 	}
 
+	// Mendapatkan posisi untuk user
+
+	function getposisiList(){
+		return $this->db->get_where('posisiuser');
+	}
+
 	
 
-	// Mendapatkan kategori untuk artikel
+	// Mendapatkan list untuk artikel
 
 	function getartikelList(){
 		return $this->db->get_where('artikel');
@@ -47,6 +53,10 @@ class m_user extends CI_Model{
 	function delUser($data) {
 		$this->db->delete('user', $data);
 	}
+
+	function delPosisi($data) {
+		$this->db->delete('posisiuser', $data);
+	}	
 
   	// public function getSubKategori(){
   	// 	return $this->db->get_where('subkategori');
