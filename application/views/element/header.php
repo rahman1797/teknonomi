@@ -43,7 +43,7 @@
 			<div class="wrap-header-mobile">
 				<!-- Logo moblie -->		
 				<div class="logo-mobile">
-					<a href="index.html"><img src="<?php echo base_url(); ?>assets/template/images/icons/teknonomi.bmp" alt="IMG-LOGO"></a>
+					<a href="index.html"><img style="width: 60%" src="<?php echo base_url(); ?>assets/template/images/icons/teknonomi.bmp" alt="IMG-LOGO"></a>
 				</div>
 
 				<!-- Button show menu -->
