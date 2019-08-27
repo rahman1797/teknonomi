@@ -27,7 +27,7 @@ class Artikel extends CI_Controller {
 	    $where = array('id' => $id);
 	    $data = array(
 	        'detail' => $this->m_artikel->getArtikelByID($id),
-	        'artikel' => $this->m_artikel->getArtikelDesc(),
+	        'popular' => $this->m_artikel->getArtikelDesc(),
 	        'kategori' => $this->m_kategori->getKategori(),
 			'subkategori' => $this->m_kategori->getSub(),
 	    );

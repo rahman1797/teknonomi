@@ -100,7 +100,7 @@
 						foreach ($kategori as $k) {
 						?>
 					<li>
-						<a href="#"><?php echo $k->kategori_nama; ?></a>
+						<a href="<?php echo site_url('Artikel/kategori/'.$k->kategori_id) ?>"><?php echo $k->kategori_nama; ?></a>
 						<ul class="sub-menu-m">
 							<?php 
 							if ($k->kategori_nama == 'Perspektif') {
@@ -108,7 +108,7 @@
 									}
 							$sub = $this->m_kategori->getSubByKategori($k->kategori_id);
 							foreach ($sub as $s ) {							 ?>
-							<li><a href="category-01.html"><?php echo $s->subkategori_nama ?></a></li>
+							<li><a href="<?php echo site_url('Artikel/subkategori/'.$s->subkategori_id) ?>"><?php echo $s->subkategori_nama ?></a></li>
 						<?php } ?>
 						</ul>
 						<span class="arrow-main-menu-m">

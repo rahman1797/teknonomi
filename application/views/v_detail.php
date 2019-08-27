@@ -259,7 +259,7 @@
 							</div>
 
 							<ul class="p-t-35">
-								<?php foreach (array_slice($artikel, 0,3) as $k) { ?>
+								<?php foreach (array_slice($popular, 0,3) as $k) { ?>
 								<li class="flex-wr-sb-s p-b-30">
 									<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="size-w-10 wrap-pic-w hov1 trans-03">
 										<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
