@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 27, 2019 at 11:21 AM
+-- Generation Time: Aug 29, 2019 at 06:18 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.2
 
@@ -101,7 +101,12 @@ CREATE TABLE `posisiuser` (
 
 INSERT INTO `posisiuser` (`posisiuser_id`, `posisiuser_nama`) VALUES
 (1, 'Pengembang TI'),
-(3, 'Pembina');
+(4, 'Pembina'),
+(5, 'Pimpinan Umum'),
+(6, 'Redaksi'),
+(7, 'Foto dan Videografer'),
+(8, 'Marketing'),
+(9, 'Desain Grafis');
 
 -- --------------------------------------------------------
 
@@ -147,7 +152,7 @@ CREATE TABLE `user` (
   `user_nama` varchar(225) NOT NULL,
   `user_username` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL,
-  `user_posisi` varchar(255) NOT NULL,
+  `user_posisi` int(11) NOT NULL,
   `user_jeniskelamin` varchar(100) NOT NULL,
   `user_role` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -157,19 +162,19 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_nama`, `user_username`, `user_password`, `user_posisi`, `user_jeniskelamin`, `user_role`) VALUES
-(1, 'Khairul Rizal', '', '', 'Pembina', 'Laki-laki', ''),
-(2, 'Abdul Gafar', '', '', 'Pembina', 'Laki-laki', ''),
-(3, 'Ifnaldi Sikumbang', '', '', 'Pimpinan Umum', 'Laki-laki', ''),
-(4, 'Adi Wicaksono', 'adi.wicax@teknonomi.com', '123', 'Redaksi', 'Laki-laki', ''),
-(5, 'Devi R Ayu', '', '', 'Redaksi', 'Perempuan', ''),
-(8, 'Meidella Syahni', '', '', 'Redaksi', 'Perempuan', ''),
-(9, 'Ihsan Deny Kurnia', '', '', 'Foto dan Videografer', 'Laki-laki', ''),
-(10, 'Siti Marfuah', '', '', 'Marketing', 'Perempuan', ''),
-(11, 'Husnul Tambunan', '', '', 'Marketing', 'Laki-laki', ''),
-(12, 'Arlin', '', '', 'Marketing', 'Perempuan', ''),
-(15, 'Saulia Karina', '', '', 'Pengembang TI', 'Perempuan', ''),
-(16, 'Maulana Rahman Nur', 'mrahman', '123', 'Pengembang TI', 'Laki-laki', 'admin'),
-(17, 'Denie Kristyono', '', '', 'Desain Grafis', 'Laki-laki', '');
+(1, 'Khairul Rizal', '', '', 4, 'Laki-laki', ''),
+(2, 'Abdul Gafar', '', '', 4, 'Laki-laki', ''),
+(3, 'Ifnaldi Sikumbang', '', '', 5, 'Laki-laki', ''),
+(4, 'Adi Wicaksono', 'adi.wicax@teknonomi.com', '123', 6, 'Laki-laki', 'admin\r\n'),
+(5, 'Devi R Ayu', '', '', 6, 'Perempuan', ''),
+(8, 'Meidella Syahni', '', '', 6, 'Perempuan', ''),
+(9, 'Ihsan Deny Kurnia', '', '', 7, 'Laki-laki', ''),
+(10, 'Siti Marfuah', '', '', 8, 'Perempuan', ''),
+(11, 'Husnul Tambunan', '', '', 8, 'Laki-laki', ''),
+(12, 'Arlin', '', '', 8, 'Perempuan', ''),
+(15, 'Saulia Karina', '', '123', 1, 'Perempuan', 'admin'),
+(16, 'Maulana Rahman Nur', 'mrahman', '123', 1, 'Laki-laki', 'admin'),
+(17, 'Denie Kristyono', '', '', 9, 'Laki-laki', '');
 
 --
 -- Indexes for dumped tables
@@ -206,7 +211,8 @@ ALTER TABLE `subkategori`
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `getPosisi` (`user_posisi`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -216,7 +222,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `artikel`
 --
 ALTER TABLE `artikel`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `kategori`
@@ -228,7 +234,7 @@ ALTER TABLE `kategori`
 -- AUTO_INCREMENT for table `posisiuser`
 --
 ALTER TABLE `posisiuser`
-  MODIFY `posisiuser_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `posisiuser_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `subkategori`
@@ -258,6 +264,12 @@ ALTER TABLE `artikel`
 --
 ALTER TABLE `subkategori`
   ADD CONSTRAINT `getKategori` FOREIGN KEY (`id_kategori`) REFERENCES `kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `user`
+--
+ALTER TABLE `user`
+  ADD CONSTRAINT `getPosisi` FOREIGN KEY (`user_posisi`) REFERENCES `posisiuser` (`posisiuser_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
