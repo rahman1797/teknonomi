@@ -81,20 +81,6 @@ class ADM extends CI_Controller {
 		$this->load->view('ADM/layout/footer');
 	}
 
-	
-
-
-
-
-
-
-
-
-
-
-
-	// Manage artikel
-
 	public function addArtikelPage()
 	{	
 		$data = array(
@@ -158,11 +144,28 @@ class ADM extends CI_Controller {
 			        $error = array('error' => $this->upload->display_errors());
 			        print_r($error);
 
-			     }
-
-		// END UPLOAD FOTO			
+			     }		
 
 	}
+
+	public function editArtikelPage()
+	{	
+
+		// $data['artikel'] = $this->m_user->getArtikelbyID()->result();
+		// $id = $_GET['artikelID'];
+		$data = array(
+			'artikel' => $this->m_user->getArtikelbyID()->result(),
+			'kategori' => $this->m_kategori->get_kategori(),
+			'sub' => '',  
+			'sub_selected' => '' 
+		);
+		
+
+		$this->load->view('ADM/layout/header');
+		$this->load->view('ADM/artikel/edit_artikel', $data);
+		$this->load->view('ADM/layout/footer');
+	}
+
 // END MANAGE ARTIKEL
 
 

@@ -79,8 +79,25 @@ class m_user extends CI_Model{
   	// 	return $this->db->get_where('subkategori');
   	// }
 
+
+	// INPUT ARTIKEL
   	function inputArtikel($data) {
 		$this->db->insert('artikel', $data);
+	
+	}
+
+
+	// EDIT ARTIKEL
+
+	function getArtikelbyID(){
+		return $this->db->get_where('artikel', array('id' => $_GET['id_artikel']));
+	}
+
+	function  edit_artikel($where,$data,$table){
+		
+		$this->db->where($where);
+	
+		$this->db->update($table,$data);
 	
 	}
 

@@ -48,6 +48,7 @@
                                             foreach($listArtikel as $la){ 
                                                 $idToKategori = $this->m_user->getartikelKategori($la->id_kategori);
                                                 $idTosubKategori = $this->m_user->getartikelsubKategori($la->id_kategori);
+                                                $id_artikel = $la->id;
                                             ?>
                                             <tr>
                                                 <td>
@@ -61,9 +62,9 @@
                                                 <td><?php echo $idTosubKategori['0']['subkategori_nama'] ?></td>
                                                 <td><?php echo $la->viewers ?></td>
                                                 <td>
-                                                    <a href="javascript:void(0)" onclick="return notYet()"><button class="btn btn-info" id="round">Edit</button></a>
+                                                    <a href="<?php echo base_url('ADM/editArtikelPage?id_artikel='.$id_artikel) ?>"><button class="btn btn-info" id="round"><i class="material-icons">edit</i>Edit</button></a>
                                                     <a href="<?php echo base_url('artikel/detail/'.$la->id) ?>"><button class="btn btn-info" id="round">Go to Post</button></a>
-                                                    <a href="javascript:void(0)"><button class="btn btn-danger" id="round" onclick="return notYet()">Delete</button></a>
+                                                    <a href="javascript:void(0)"><button class="btn btn-danger" id="round" onclick="return notYet()"><i class="material-icons">delete</i>Delete</button></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
