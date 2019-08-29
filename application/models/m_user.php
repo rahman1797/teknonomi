@@ -11,7 +11,24 @@ class m_user extends CI_Model{
 		return $this->db->get_where('posisiuser');
 	}
 
+		function JumlahUserPosisi($id)
+			{   
+			    $query = $this->db->get_where('user', array('user_posisi' => $id));
+			    if($query->num_rows()>0)
+			    {
+			      return $query->num_rows();
+			    }
+			    else
+			    {
+			      return 0;
+			    }
+			}
 	
+	function idToPosisi($id){
+		$query= $this->db->get_where('posisiuser', array('posisiuser_id' => $id));
+
+		return $query->result_array();
+	}
 
 	// Mendapatkan list untuk artikel
 

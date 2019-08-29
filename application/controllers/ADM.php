@@ -41,7 +41,8 @@ class ADM extends CI_Controller {
             	$sessionData['logged_in'] = 'Done';
                 $sessionData['username'] = $sess->user_username;
                 $sessionData['pass'] = $sess->user_password;
-                $sessionData['nama'] = $sess->user_nama;             
+                $sessionData['nama'] = $sess->user_nama;
+                $sessionData['role'] = $sess->user_role;             
         
             }
                 $this->session->set_userdata($sessionData);
@@ -98,8 +99,8 @@ class ADM extends CI_Controller {
 	{	
 		$data = array(
 			'kategori' => $this->m_kategori->get_kategori(),
-			'sub' => $this->m_kategori->get_sub(),  
-			'sub_selected' => '<option>'
+			'sub' => '',  
+			'sub_selected' => ''
 		);
 
 		$this->load->view('ADM/layout/header');
@@ -134,14 +135,17 @@ class ADM extends CI_Controller {
 
 			        $file_name = $data['data']['file_name'];
 
-
+			        $id_subkategori = $this->input->post('sub');
+			        $id_kategori = $this->m_kategori->subToKategori($id_subkategori);
+			        print_r($id_kategori);
 			        $database = array(
 			            'judul' => $this->input->post('judul'),
 			            'isi' => $this->input->post('isi'),
 			            'penulis' => $_SESSION['nama'],
 			            'foto' => $file_name,
-			            'id_subkategori' => $this->input->post('sub'),
-			            'id_kategori' => $this->input->post('kategori'),
+			            'id_subkategori' => $id_subkategori,
+
+			            'id_kategori' => $id_kategori['0']['id_kategori'],
 			            'viewers' => 0 
 			            );
 
@@ -185,6 +189,9 @@ class ADM extends CI_Controller {
 
 		public function delPosisi($id)
 		{
+			if ($_SESSION['user_role'] != 1) {
+				# code...
+			}
 			$idPosisi = array('posisiuser_id' => $id);
 			$this->m_user->delPosisi($idPosisi,'posisiuser');
 			redirect(base_url('ADM/regPosisi'));

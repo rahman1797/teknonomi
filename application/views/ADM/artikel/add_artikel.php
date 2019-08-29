@@ -7,10 +7,7 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card" id="round">
-                        <div class="header" align="center">
-                            <h2><strong>Input Artikel</strong></h2>
-                            <p></p>
-                        </div>
+                        
                         
                         <div class="body">
 
@@ -32,11 +29,7 @@
 
 
 
-
-
-
-
-                                <div class="form-group form-float">
+                                 <!-- <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control show-tick" name="kategori" id="kategori">
                                             <option value="">-- Pilih Kategori --</option>
@@ -47,8 +40,44 @@
                                             ?>
                                         </select>
                                     </div>
+                                </div> -->
+
+
+
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <select class="form-control show-tick" name="sub" id="sub" data-live-search="true">
+                                            <option>- Pilih Kategori -</option>
+                                            <?php 
+                                                foreach ($kategori as $k) {
+                                                    echo "<optgroup label=$k->kategori_nama>";
+                                                        $sub = $this->m_kategori->get_sub($k->kategori_id);
+                                                        $idKategori = $k->kategori_id;
+                                                        foreach ($sub as $s) { ?>
+                                                            
+                                                            <option value="<?php echo $s['subkategori_id'] ?>"><?php echo $s['subkategori_nama'] ?></option>
+                                                
+                                                         <?php }
+
+                                                    echo "</optgroup>";
+                                                    // echo "<input type='hidden' name='kategori' value='$idKategori'>";
+                                                }
+                                            ?>
+                                        </select>
+                                        
+                                    </div>
                                 </div>
 
+                              <!--   <select>
+                                    <optgroup label="AAAAAAAAA">
+
+                                        <option>TEST</option>
+                                        <option>TEST</option>
+                                        <option>TEST</option>
+                                        <option>TEST</option>
+                                        </optgroup>
+                                    </ul>
+                                </select>
 
                                 <div class="form-group form-float">
                                     <div class="form-line">
@@ -64,7 +93,7 @@
                                             ?>
                                         </select>
                                     </div>
-                                </div>
+                                </div> -->
 
 
 
@@ -99,7 +128,7 @@
 
 <script>
       $('#summernote').summernote({
-
+        height : 300,
         toolbar: [
             [ 'font', [ 'bold', 'italic', 'underline', 'strikethrough', 'superscript', 'subscript'] ],
             [ 'fontname', [ 'fontname' ] ],

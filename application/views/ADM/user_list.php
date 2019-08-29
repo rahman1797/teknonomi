@@ -38,11 +38,12 @@
                                         <?php 
                                        
                                             foreach($listUser as $lu){ 
+                                                $idToPosisi = $this->m_user->idToPosisi($lu->user_posisi);
                                             ?>
                                             <tr>
                                                 <td><?php echo $lu->user_nama ?></td>
                                                 <td><?php echo $lu->user_username ?></td>
-                                                <td><?php echo $lu->user_posisi ?></td>
+                                                <td><?php echo $idToPosisi['0']['posisiuser_nama'] ?></td>
                                                 <td><?php echo $lu->user_jeniskelamin ?></td>
                                                 <td>
                                                     <a href="javascript:void(0)"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>

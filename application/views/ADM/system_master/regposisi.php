@@ -37,7 +37,7 @@
                                             ?>
                                             <tr>
                                                 <td><?php echo $lp->posisiuser_nama ?></td>
-                                                <td><?php echo "0" ?></td>
+                                                <td><?php echo $this->m_user->jumlahUserPosisi($lp->posisiuser_id) ?></td>
                                                 <td>
 
 

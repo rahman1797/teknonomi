@@ -14,13 +14,14 @@
                         
                         <div class="body">
                             <div class="table-responsive">
-                                <table id="refAng" class="table table-bordered table-striped table-hover js-basic-example dataTable round_edge">
+                                <table id="refAng" class="table table-bordered table-striped js-basic-example dataTable round_edge">
                                     <thead>
                                         <tr>
+                                            <th>Foto</th>
                                             <th>Judul</th>
                                             <th>Penulis</th>
                                             <th>Tanggal</th>
-                                            <th>Foto</th>
+                                            
                                             <th>Kategori</th>
                                             <th>Sub kategori</th>
                                             <th>Viewers</th>
@@ -29,10 +30,11 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
+                                            <th>Foto</th>
                                             <th>Judul</th>
                                             <th>Penulis</th>
                                             <th>Tanggal</th>
-                                            <th>Foto</th>
+                                            
                                             <th>Kategori</th>
                                             <th>Sub kategori</th>
                                             <th>Viewers</th>
@@ -48,12 +50,13 @@
                                                 $idTosubKategori = $this->m_user->getartikelsubKategori($la->id_kategori);
                                             ?>
                                             <tr>
-                                                <td><?php echo $la->judul ?></td>
-                                                <td><?php echo $la->penulis ?></td>
-                                                <td><?php echo $la->tanggal_dibuat ?></td>
                                                 <td>
                                                     <img style="width: 70px" src="../assets/images/artikel/<?php echo $la->foto ?>">
                                                 </td>
+                                                <td><?php echo $la->judul ?></td>
+                                                <td><?php echo $la->penulis ?></td>
+                                                <td><?php echo $la->tanggal_dibuat ?></td>
+                                                
                                                 <td><?php echo $idToKategori['0']['kategori_nama'] ?></td>
                                                 <td><?php echo $idTosubKategori['0']['subkategori_nama'] ?></td>
                                                 <td><?php echo $la->viewers ?></td>

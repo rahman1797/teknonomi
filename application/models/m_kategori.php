@@ -72,9 +72,17 @@ class m_kategori extends CI_Model{
 		 return $this->db->get('kategori')->result();
 	}
 
-	public function get_sub() {
-		$this->db->join('kategori', 'subkategori.id_kategori = kategori.kategori_id');
-        return $this->db->get('subkategori')->result();
+	public function get_sub($id) {
+		// $this->db->join('kategori', 'subkategori.id_kategori = kategori.kategori_id');
+        $query = $this->db->get_where('subkategori', array('id_kategori' => $id));
+
+    	return $query->result_array();
+	}
+
+	public function subToKategori($id){
+		$query = $this->db->get_where('subkategori', array('subkategori_id' => $id));
+
+    	return $query->result_array();
 	}
 
 	
