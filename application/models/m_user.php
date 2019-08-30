@@ -1,5 +1,5 @@
 <?php
-class M_user extends CI_Model{	
+class m_user extends CI_Model{	
 
 	function getuserList(){
 		return $this->db->get_where('user');

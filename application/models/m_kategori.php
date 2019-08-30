@@ -1,5 +1,5 @@
 <?php
-class M_kategori extends CI_Model{	
+class m_kategori extends CI_Model{	
 
 
 	function getKategori(){

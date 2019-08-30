@@ -1,6 +1,6 @@
 	<!-- Headline -->
 	<div class="container">
-		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8" style="margin-top: 15px">
+		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
 			<div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
 				<span class="text-uppercase cl2 p-r-8">
 					Trending Now:
@@ -30,9 +30,93 @@
 		</div>
 	</div>
 		
+	<!-- Feature post -->
+	<section class="bg0">
+		<div class="container">
+			<div class="row m-rl--1">
+				<?php foreach (array_slice($mostpopular, 0,1) as $k) { ?>
+				<div class="col-md-6 p-rl-1 p-b-2">
+					<div class="bg-img1 size-a-3 how1 pos-relative" style="background-image: url(<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>);">
+						<a href="<?php echo site_url('artikel/detail/'.$this->m_artikel->getMostPopular()->id) ?>" class="dis-block how1-child1 trans-03"></a>
+
+						<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+							<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+								<?php echo  $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+							</a>
+
+							<h3 class="how1-child2 m-t-14 m-b-10">
+								<a href="<?php echo site_url('artikel/detail/'.$this->m_artikel->getArtikelByID('1')->id) ?>" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+									<?php echo $k->judul ?>
+								</a>
+							</h3>
+
+							<span class="how1-child2">
+								<span class="f1-s-4 cl11">
+									<?php echo $k->penulis ?>
+								</span>
+
+								<span class="f1-s-3 cl11 m-rl-3">
+									<i class="far fa-eye"> <?php echo $k->viewers ?></i>
+								</span>
+
+								<span class="f1-s-3 cl11">
+									<i class="far fa-calendar-alt"> <?php echo $k->tanggal_dibuat ?></i>
+								</span>
+							</span>
+						</div>
+					</div>
+				</div>
+			<?php } 
+			?>
+				<div class="col-md-6 p-rl-1">
+					<div class="row m-rl--1">
+						<?php foreach (array_slice($mostpopular, 1,1) as $k) { ?>
+						<div class="col-12 p-rl-1 p-b-2">
+							<div class="bg-img1 size-a-4 how1 pos-relative" style="background-image: url(<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>);">
+								<a href="<?php echo site_url('artikel/detail/'.$this->m_artikel->getArtikelByID('2')->id) ?>l" class="dis-block how1-child1 trans-03"></a>
+
+								<div class="flex-col-e-s s-full p-rl-25 p-tb-24">
+									<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+										<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+									</a>
+
+									<h3 class="how1-child2 m-t-14">
+										<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="how-txt1 size-a-7 f1-l-2 cl0 hov-cl10 trans-03">
+											<?php echo $k->judul ?>
+										</a>
+									</h3>
+								</div>
+							</div>
+						</div>
+						<?php }
+						foreach (array_slice($mostpopular, 2,2) as $k) {
+						?>
+						<div class="col-sm-6 p-rl-1 p-b-2">
+							<div class="bg-img1 size-a-5 how1 pos-relative" style="background-image: url(<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>);">
+								<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="dis-block how1-child1 trans-03"></a>
+
+								<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
+									<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
+										<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+									</a>
+
+									<h3 class="how1-child2 m-t-14">
+										<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+											<?php echo $k->judul ?>
+										</a>
+									</h3>
+								</div>
+							</div>
+						</div>
+					<?php } ?>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<!-- Post -->
-	<section class="bg0 p-t-15">
+	<section class="bg0 p-t-70">
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8">
@@ -113,7 +197,7 @@
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
-															-
+															<i class="far fa-eye"> <?php echo $k->viewers ?> </i>
 														</span>
 
 														<span class="f1-s-3">
@@ -146,7 +230,7 @@
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
-															-
+															<i class="far fa-eye"> <?php echo $k->viewers ?></i>
 														</span>
 
 														<span class="f1-s-3">
@@ -514,7 +598,7 @@
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
-															-
+															<i class="far fa-eye"> <?php echo $this->m_artikel->getMostPopularByKategori('2')->viewers ?> </i>
 														</span>
 
 														<span class="f1-s-3">
@@ -550,7 +634,7 @@
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
-															-
+															<i class="far fa-eye"> <?php echo $k->viewers ?></i>
 														</span>
 
 														<span class="f1-s-3">
@@ -923,7 +1007,7 @@
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
-															-
+															<i class="far fa-eye"> <?php echo $k->viewers ?></i>
 														</span>
 
 														<span class="f1-s-3">
@@ -1421,6 +1505,30 @@
 				<div class="col-md-10 col-lg-4">
 					<div class="p-l-10 p-rl-0-sr991 p-b-20">
 						<!--  -->
+						<div>
+							<div class="how2 how2-cl4 flex-s-c">
+								<h3 class="f1-m-2 cl3 tab01-title">
+									Most Popular
+								</h3>
+							</div>
+
+							<ul class="p-t-35">
+
+								<?php $no = 1;
+								 foreach(array_slice($popular, 0, 4) as $a ) { ?>
+									<li class="flex-wr-sb-s p-b-22">
+									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
+										<?php
+										echo $no;
+											$no++;
+										 ?>
+									</div>
+
+									<a href="<?php echo site_url('Artikel/detail/'.$a->id) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+										<?php echo $a->judul; ?>
+									</a>
+								</li>
+								<?php } ?>
 
 
 						<!--  -->
