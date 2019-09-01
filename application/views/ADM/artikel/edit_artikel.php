@@ -11,7 +11,9 @@
                         
                         <div class="body">
                         
-                        <?php foreach ($artikel as $a) { ?>
+                        <?php foreach ($artikel as $a) { 
+                            $idTosubKategori = $this->m_user->getartikelsubKategori($a->id_kategori);
+                            ?>
 
                             <form id="form_validation" method="post" enctype="multipart/form-data" action="<?php echo site_url('ADM/editArtikel') ?>" name="userfile">
                                 <div class="form-group form-float">
@@ -49,7 +51,7 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control show-tick" name="sub" id="sub" data-live-search="true">
-                                            <option>- Pilih Kategori -</option>
+                                            <option value="$a->id_subkategori"> <?php echo $idTosubKategori['0']['subkategori_nama'] ?> </option>
                                             <?php 
                                                 foreach ($kategori as $k) {
                                                     echo "<optgroup label=$k->kategori_nama>";
@@ -98,7 +100,7 @@
                                 </div> -->
                                 
                                 <div class="form-group form-float">
-                                    <textarea class="form-control no-resize" required cols="30" rows="5" id="summernote" name="isi"></textarea>
+                                    <textarea class="form-control no-resize" required cols="30" rows="5" id="summernote" name="isi"><?php echo $a->isi ?></textarea>
                                 </div> 
                                 
                                 
