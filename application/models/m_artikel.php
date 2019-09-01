@@ -154,4 +154,16 @@ class m_artikel extends CI_Model{
 
 	}
 
+	function hapusData($where,$table){
+		$this->db->where($where);
+		$this->db->delete($table);
+	}
+
+	function updateData($where,$data,$table)
+	{
+		$this->db->where($where);
+		$this->db->update($table,$data);
+	}
+
+
 }

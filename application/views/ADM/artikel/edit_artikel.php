@@ -19,6 +19,10 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="judul" value="<?php echo $a->judul ?>" required>
+                                        <input type="hidden" class="form-control" name="kategori" value="<?php echo $a->id_kategori ?>">
+                                        <input type="hidden" class="form-control" name="id" value="<?php echo $a->id ?>">
+                                        <input type="hidden" class="form-control" name="subkategori" value="<?php echo $a->id_subkategori ?>">
+                                        <input type="hidden" class="form-control" name="tanggal_dibuat" value="<?php echo $a->tanggal_dibuat ?>">
                                         <label class="form-label">Masukkan Judul Artikel</label>
                                     </div>
                                 </div>
@@ -26,7 +30,7 @@
                                 <img style="width: 50%" src="../assets/images/artikel/<?php echo $a->foto ?>">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="file" class="form-control" name="userfile" value="<?php echo $a->foto ?>" required>
+                                        <input type="file" class="form-control" name="userfile" value="<?php echo $a->foto ?>">
                                     </div>
                                     <font color="red">*Format : jpg, jpeg, dan png (Max 10mb)</font>
                                 </div>

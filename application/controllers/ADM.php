@@ -81,6 +81,12 @@ class ADM extends CI_Controller {
 		$this->load->view('ADM/layout/footer');
 	}
 
+	 function hapusArtikel($id){
+	    $where = array('id' => $id);
+	    $this->m_artikel->hapusData($where,'artikel');
+	    redirect('ADM/listArtikel');
+  }
+
 	public function addArtikelPage()
 	{	
 		$data = array(
@@ -164,6 +170,32 @@ class ADM extends CI_Controller {
 		$this->load->view('ADM/layout/header');
 		$this->load->view('ADM/artikel/edit_artikel', $data);
 		$this->load->view('ADM/layout/footer');
+	}
+
+	 function editArtikel(){
+	  //fungsi uplod
+	  $id = $this->input->post('id');
+	  $judul = $this->input->post('judul');
+	  $kategori = $this->input->post('kategori');
+	  $subkategori = $this->input->post('subkategori');
+	  $isi = $this->input->post('isi');
+	  $tanggal_dibuat = $this->input->post('tanggal_dibuat');
+	 
+
+	  $data = array(
+	    'judul' => $judul,
+	    'id_kategori' => $kategori,
+	    'id_subkategori' => $subkategori,
+	    'isi' => $isi,
+	    'tanggal_dibuat' => $tanggal_dibuat
+	  );
+
+	  $where = array(
+	    'id' => $id
+	  );
+
+	  $this->m_artikel->updateData($where,$data,'artikel');
+	  redirect('ADM/listArtikel');
 	}
 
 // END MANAGE ARTIKEL

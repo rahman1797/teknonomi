@@ -64,7 +64,7 @@
                                                 <td>
                                                     <a href="<?php echo base_url('ADM/editArtikelPage?id_artikel='.$id_artikel) ?>"><button class="btn btn-info" id="round"><i class="material-icons">edit</i>Edit</button></a>
                                                     <a href="<?php echo base_url('artikel/detail/'.$la->id) ?>"><button class="btn btn-info" id="round">Go to Post</button></a>
-                                                    <a href="javascript:void(0)"><button class="btn btn-danger" id="round" onclick="return notYet()"><i class="material-icons">delete</i>Delete</button></a>
+                                                    <button class="btn btn-danger" id="round" data-toggle="modal" data-target="#ModalHapus" onclick="set_id(<?php echo $la->id ?>)"><i class="material-icons">delete</i>Delete</button>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -81,10 +81,43 @@
         </div>
     </section>
 
+       <!-- Modal Hapus-->
+                      <div id="ModalHapus" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" class="modal fade text-left">
+                        <div role="document" class="modal-dialog">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h4 id="exampleModalLabel" class="modal-title">Hapus Data</h4>
+                              <button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">×</span></button>
+                            </div>
+                            <div class="modal-body">
+                              <p>Apakah anda yakin ingin menghapus data ini?</p>
+                              <div class="text-center">
+                              <i class="far fa-times-circle fa-4x mb-3 animated bounce" style="color: #D60C0C"></i>
+                            </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" data-dismiss="modal" class="btn btn-secondary">Tutup</button>
+                              <button type="submit" class="btn btn-danger"  onclick='deletep()'>Ya</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 
 <script type="text/javascript">
+
+    
+    var p_id;
+    function set_id(id) {
+        p_id = id;
+
+    }
+
+    function deletep(){
+        window.location.href =  "<?php echo base_url();?>ADM/hapusArtikel/"+p_id;
+    }
 
     function notYet() {
         alert('this function is under progress');

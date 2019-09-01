@@ -11,7 +11,7 @@ class m_user extends CI_Model{
 		return $this->db->get_where('posisiuser');
 	}
 
-		function JumlahUserPosisi($id)
+	function JumlahUserPosisi($id)
 			{   
 			    $query = $this->db->get_where('user', array('user_posisi' => $id));
 			    if($query->num_rows()>0)
@@ -33,6 +33,7 @@ class m_user extends CI_Model{
 	// Mendapatkan list untuk artikel
 
 	function getartikelList(){
+		$this->db->order_by('tanggal_dibuat', 'DESC');
 		return $this->db->get_where('artikel');
 	}
 
@@ -50,12 +51,6 @@ class m_user extends CI_Model{
 	 	$query = $this->db->get_where('subkategori', array('subkategori_id' => $id_subkategori));
 	 	return $query->result_array();
 	 }
-
-
-
-
-
-
 
 
 	function cekLogin($table,$where){		
