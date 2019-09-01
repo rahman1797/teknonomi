@@ -2,7 +2,15 @@
 class m_user extends CI_Model{	
 
 	function getuserList(){
-		return $this->db->get_where('user');
+		$this->db->select('*');
+		$this->db->where('user_role', 'admin');
+		$query = $this->db->get('user');
+		if($query->num_rows()>0)
+		{
+			return $query->result();
+		} else{
+			return false;
+		}
 	}
 
 	// Mendapatkan posisi untuk user

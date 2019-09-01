@@ -62,7 +62,7 @@ class ADM extends CI_Controller {
 	public function listUser()
 	{
 		$data = array(
-			'listUser' => $this->m_user->getuserList()->result()
+			'listUser' => $this->m_user->getuserList()
 		);
 		$this->load->view('ADM/layout/header');
 		$this->load->view('ADM/user_list', $data);
@@ -173,13 +173,13 @@ class ADM extends CI_Controller {
 	}
 
 	 function editArtikel(){
-	  //fungsi uplod
-	  $id = $this->input->post('id');
-	  $judul = $this->input->post('judul');
-	  $kategori = $this->input->post('kategori');
-	  $subkategori = $this->input->post('subkategori');
-	  $isi = $this->input->post('isi');
-	  $tanggal_dibuat = $this->input->post('tanggal_dibuat');
+
+	 	$id = $this->input->post('id');
+	  	$judul = $this->input->post('judul');
+	  	$kategori = $this->input->post('kategori');
+	  	$subkategori = $this->input->post('subkategori');
+	  	$isi = $this->input->post('isi');
+	  	$tanggal_dibuat = $this->input->post('tanggal_dibuat');
 	 
 
 	  $data = array(
@@ -193,8 +193,32 @@ class ADM extends CI_Controller {
 	  $where = array(
 	    'id' => $id
 	  );
-
 	  $this->m_artikel->updateData($where,$data,'artikel');
+
+	  $time = time();
+	  $config = array(
+	      'upload_path' => "assets/images/artikel/",
+	      'allowed_types' => "gif|jpg|png|jpeg",
+	      'overwrite' => TRUE,
+	      'max_size' => "10000", 
+	      'file_name' => "$time"
+	      );
+		$this->load->library('upload', $config); 
+		$this->upload->initialize($config);
+		if ($this->upload->do_upload('userfile')) {
+			$data['error'] = false;
+			$upload_data = $this->upload->data();
+			$data['data'] = $upload_data;
+			$data['msg'] = 'Image Successfully Uploaded.';
+			$foto = array(
+				'foto' => $upload_data['file_name']
+			);
+			$this->m_artikel->updateData($where,$foto,'artikel');
+		}  else {
+			echo "Terjadi kesalahan";
+			$error = array('error' => $this->upload->display_errors());
+			print_r($error);
+		}		
 	  redirect('ADM/listArtikel');
 	}
 

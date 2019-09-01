@@ -23,8 +23,14 @@ class Artikel extends CI_Controller {
 		$this->load->view('element/footer', $data);
 	}
 
-	public function detail($id) {
-	    $where = array('id' => $id);
+	public function detail($id) {		
+    	$viewers = $this->m_artikel->getArtikelByID($id)->viewers;
+    	$viewers = $viewers++;
+    	$where = array('id' => $id);
+    	$updateViewers = array(
+    		'viewers' => $viewers
+    	);
+    	$this->m_artikel->updateData($where,$updateViewers,'artikel');
 	    $data = array(
 	        'detail' => $this->m_artikel->getArtikelByID($id),
 	        'popular' => $this->m_artikel->getArtikelDesc(),

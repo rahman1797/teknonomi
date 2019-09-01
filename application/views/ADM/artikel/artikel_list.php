@@ -19,9 +19,7 @@
                                         <tr>
                                             <th>Foto</th>
                                             <th>Judul</th>
-                                            <th>Penulis</th>
-                                            <th>Tanggal</th>
-                                            
+                                            <th>Tanggal</th>                                          
                                             <th>Kategori</th>
                                             <th>Sub kategori</th>
                                             <th>Viewers</th>
@@ -32,9 +30,7 @@
                                         <tr>
                                             <th>Foto</th>
                                             <th>Judul</th>
-                                            <th>Penulis</th>
-                                            <th>Tanggal</th>
-                                            
+                                            <th>Tanggal</th>                                            
                                             <th>Kategori</th>
                                             <th>Sub kategori</th>
                                             <th>Viewers</th>
@@ -55,9 +51,7 @@
                                                     <img style="width: 70px" src="../assets/images/artikel/<?php echo $la->foto ?>">
                                                 </td>
                                                 <td><?php echo $la->judul ?></td>
-                                                <td><?php echo $la->penulis ?></td>
                                                 <td><?php echo $la->tanggal_dibuat ?></td>
-                                                
                                                 <td><?php echo $idToKategori['0']['kategori_nama'] ?></td>
                                                 <td><?php echo $idTosubKategori['0']['subkategori_nama'] ?></td>
                                                 <td><?php echo $la->viewers ?></td>
