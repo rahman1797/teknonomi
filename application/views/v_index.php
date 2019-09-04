@@ -2,23 +2,7 @@
 	<div class="container">
 		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8" style="margin-top: 15px">
 			<div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
-				<span class="text-uppercase cl2 p-r-8">
-					Trending Now:
-				</span>
-
-				<span class="dis-inline-block cl6 slide100-txt pos-relative size-w-0" data-in="fadeInDown" data-out="fadeOutDown">
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Teknonomi Under Construction
-					</span>
-					
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Teknonomi Under Construction
-					</span>
-
-					<span class="dis-inline-block slide100-txt-item animated visible-false">
-						Teknonomi Under Construction
-					</span>
-				</span>
+				
 			</div>
 
 			<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
@@ -117,7 +101,8 @@
 														</span>
 
 														<span class="f1-s-3">
-															<i class="far fa-calendar-alt"> <?php echo $k->tanggal_dibuat ?> </i>
+																<?php $d=strtotime($k->tanggal_dibuat); 
+																echo date("M-d", $d); ?> 
 														</span>
 													</span>
 												</div>
@@ -149,8 +134,8 @@
 															-
 														</span>
 
-														<span class="f1-s-3">
-															<i class="far fa-calendar-alt"> <?php echo $k->tanggal_dibuat ?></i>
+														<span class="f1-s-3"> <?php $d=strtotime($k->tanggal_dibuat);
+																					echo date("M-d", $d); ?>
 														</span>
 													</span>
 												</div>
@@ -187,7 +172,8 @@
 														</span>
 
 														<span class="f1-s-3">
-															Feb 18
+															 <?php $d=strtotime($this->m_artikel->getMostPopularBySub('1')->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
 														</span>
 													</span>
 												</div>
@@ -349,7 +335,7 @@
 
 													<span class="cl8">
 														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
-															Celebrity
+															Konservasi
 														</a>
 
 														<span class="f1-s-3 m-rl-3">
@@ -517,8 +503,10 @@
 															-
 														</span>
 
-														<span class="f1-s-3">
-															<i class="far fa-calendar-alt"> <?php echo $this->m_artikel->getMostPopularByKategori('2')->tanggal_dibuat ?> </i>
+														<span class="f1-s-3"> <?php 
+															$d=strtotime($this->m_artikel->getMostPopularByKategori('2')->tanggal_dibuat);
+															echo date("M-d", $d);
+															 ?>
 														</span>
 													</span>
 												</div>
@@ -553,8 +541,10 @@
 															-
 														</span>
 
-														<span class="f1-s-3">
-															<i class="far fa-calendar-alt"> <?php echo $k->tanggal_dibuat ?></i>
+														<span class="f1-s-3"> <?php 
+															$d=strtotime($k->tanggal_dibuat);
+															echo date("M-d", $d);
+															 ?>
 														</span>
 													</span>
 												</div>
@@ -838,7 +828,7 @@
 							</div>
 						</div>
 
-						<!-- Industri -->
+						<!-- tri -->
 						<div class="tab01 p-b-20">
 							<div class="tab01-head how2 how2-cl3 bocl12 flex-s-c m-r-10 m-r-0-sr991">
 								<!-- Brand tab -->
@@ -860,21 +850,21 @@
 										<a class="nav-link" data-toggle="tab" href="#tab3-3" role="tab">Kapal</a>
 									</li>
 
-									<li class="nav-item">
+									<!-- <li class="nav-item">
 										<a class="nav-link" data-toggle="tab" href="#tab3-4" role="tab">Militer</a>
 									</li>
-
+									
 									<li class="nav-item">
 										<a class="nav-link" data-toggle="tab" href="#tab3-5" role="tab">Pertanian</a>
 									</li>
-
+									
 									<li class="nav-item">
 										<a class="nav-link" data-toggle="tab" href="#tab3-6" role="tab">Makanan</a>
 									</li>
-
+									
 									<li class="nav-item">
 										<a class="nav-link" data-toggle="tab" href="#tab3-7" role="tab">Pelumas</a>
-									</li>
+									</li> -->
 
 									<li class="nav-item-more dropdown dis-none">
 										<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
@@ -927,7 +917,8 @@
 														</span>
 
 														<span class="f1-s-3">
-															<i class="far fa-calendar-alt"> Feb 18</i>
+															 <?php $d=strtotime($k->tanggal_dibuat);
+																echo date("M-d", $d); ?>
 														</span>
 													</span>
 												</div>
@@ -1135,7 +1126,7 @@
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
 												<a href="blog-detail-01.html" class="size-w-1 wrap-pic-w hov1 trans-03">
-													<img src="<?php echo base_url(); ?>assets/template/images/noimage.jpg" alt="IMG">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/noimage.png" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
@@ -1440,36 +1431,33 @@
 
 							<ul class="p-t-35">
 								<li class="flex-wr-sb-c p-b-20">
-									<a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-facebook fs-16 cl0 hov-cl0">
+									<a href="https://www.facebook.com/teknonomi/" class="size-a-8 flex-c-c borad-3 size-a-8 bg-facebook fs-16 cl0 hov-cl0">
 										<span class="fab fa-facebook-f"></span>
 									</a>
 
 									<div class="size-w-3 flex-wr-sb-c">
-										<span class="f1-s-8 cl3 p-r-20">
-											
-										</span>
+										
 
-										<a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
-											
+										<a href="https://www.facebook.com/teknonomi/" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+											Teknonomi Media
 										</a>
 									</div>
 								</li>
 
 								<li class="flex-wr-sb-c p-b-20">
-									<a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-twitter fs-16 cl0 hov-cl0">
+									<a href="https://twitter.com/teknonomi1" class="size-a-8 flex-c-c borad-3 size-a-8 bg-twitter fs-16 cl0 hov-cl0">
 										<span class="fab fa-twitter"></span>
 									</a>
 
 									<div class="size-w-3 flex-wr-sb-c">
-										<span class="f1-s-8 cl3 p-r-20">
-											
-										</span>
+										
 
-										<a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
-											
+										<a href="https://twitter.com/teknonomi1" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+											@teknonomi1
 										</a>
 									</div>
 								</li>
+
 
 								<li class="flex-wr-sb-c p-b-20">
 									<a href="#" class="size-a-8 flex-c-c borad-3 size-a-8 bg-youtube fs-16 cl0 hov-cl0">
@@ -1477,12 +1465,8 @@
 									</a>
 
 									<div class="size-w-3 flex-wr-sb-c">
-										<span class="f1-s-8 cl3 p-r-20">
-											
-										</span>
-
 										<a href="#" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
-											
+											Teknonomi Media
 										</a>
 									</div>
 								</li>
@@ -1532,7 +1516,7 @@
 
 									<span class="cl8">
 										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											oleh <?php echo $a->penulis ?>
+											<?php echo $this->m_kategori->getSubByID($a->id_subkategori)->subkategori_nama ?>
 										</a>
 
 										<span class="f1-s-3 m-rl-3">
@@ -1540,7 +1524,9 @@
 										</span>
 
 										<span class="f1-s-3">
-											Feb 18
+											<?php $d=strtotime($a->tanggal_dibuat);
+											echo date("M-d", $d);
+											 ?>
 										</span>
 									</span>
 								</div>
@@ -1553,45 +1539,45 @@
 				<div class="col-md-10 col-lg-4">
 					<div class="p-l-10 p-rl-0-sr991 p-b-20">
 						<!-- Video -->
-						<div class="p-b-55">
+						<!-- <div class="p-b-55">
 							<div class="how2 how2-cl4 flex-s-c m-b-35">
 								<h3 class="f1-m-2 cl3 tab01-title">
 									Featured Video
 								</h3>
 							</div>
-
+						
 							<div>
 								<div class="wrap-pic-w pos-relative">
-									<img src="<?php echo base_url(); ?>assets/template/images/video-01.jpg" alt="IMG">
-
+									<img src="<?php //echo base_url(); ?>assets/template/images/video-01.jpg" alt="IMG">
+						
 									<button class="s-full ab-t-l flex-c-c fs-32 cl0 hov-cl10 trans-03" data-toggle="modal" data-target="#modal-video-01">
 										<span class="fab fa-youtube"></span>
 									</button>
 								</div>
-
+						
 								<div class="p-tb-16 p-rl-25 bg3">
 									<h5 class="p-b-5">
 										<a href="#" class="f1-m-3 cl0 hov-cl10 trans-03">
 											Music lorem ipsum dolor sit amet consectetur 
 										</a>
 									</h5>
-
+						
 									<span class="cl15">
 										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
 											by John Alvarado
 										</a>
-
+						
 										<span class="f1-s-3 m-rl-3">
 											-
 										</span>
-
+						
 										<span class="f1-s-3">
 											Feb 18
 										</span>
 									</span>
 								</div>
 							</div>	
-						</div>
+						</div> -->
 						
 					</div>
 				</div>
