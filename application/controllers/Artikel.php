@@ -25,7 +25,6 @@ class Artikel extends CI_Controller {
 
 	public function detail($id) {		
     	$viewers = $this->m_artikel->getArtikelByID($id)->viewers;
-    	$viewers = $viewers++;
     	$where = array('id' => $id);
     	$updateViewers = array(
     		'viewers' => $viewers + 1
