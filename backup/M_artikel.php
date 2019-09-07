@@ -95,7 +95,7 @@ class m_artikel extends CI_Model{
 	function getPopularByKategoriVer2($id_kategori){
 		$this->db->select('*');
 		$this->db->where('id_kategori', $id_kategori);
-		$this->db->order_by('tanggal_dibuat', 'DESC');
+		$this->db->order_by('viewers', 'DESC');
 		$query = $this->db->get('artikel');
 		if($query->num_rows()>0)
 		{
@@ -108,7 +108,7 @@ class m_artikel extends CI_Model{
 	function getPopularBySubVer2($id_subkategori){
 		$this->db->select('*');
 		$this->db->where('id_subkategori', $id_subkategori);
-		$this->db->order_by('tanggal_dibuat', 'DESC');
+		$this->db->order_by('viewers', 'DESC');
 		$query = $this->db->get('artikel');
 		if($query->num_rows()>0)
 		{

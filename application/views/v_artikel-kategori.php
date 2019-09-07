@@ -52,13 +52,7 @@
 							</h3>
 
 							<span class="how1-child2">
-								<span class="f1-s-4 cl11">
-									<?php echo $k->penulis ?>
-								</span>
-
-								<span class="f1-s-3 cl11 m-rl-3">
-									-
-								</span>
+								
 
 								<span class="f1-s-3 cl11">
 									Feb 16
@@ -118,13 +112,6 @@
 									</h5>
 
 									<span class="cl8">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by <?php echo $k->penulis ?>
-										</a>
-
-										<span class="f1-s-3 m-rl-3">
-											<i class="far fa-eye"> <?php echo $k->viewers ?></i>
-										</span>
 
 										<span class="f1-s-3">
 											Feb 18
