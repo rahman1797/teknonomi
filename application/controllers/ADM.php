@@ -138,7 +138,8 @@ class ADM extends CI_Controller {
 			            'id_subkategori' => $id_subkategori,
 
 			            'id_kategori' => $id_kategori['0']['id_kategori'],
-			            'viewers' => 0 
+			            'viewers' => 0,
+			            'slug' => slug($this->input->post('judul', TRUE))
 			            );
 
 			        $result = $this->db->insert('artikel', $database);
@@ -180,6 +181,7 @@ class ADM extends CI_Controller {
 	  	$subkategori = $this->input->post('subkategori');
 	  	$isi = $this->input->post('isi');
 	  	$tanggal_dibuat = $this->input->post('tanggal_dibuat');
+	  	$slug = slug($this->input->post('judul', TRUE));
 	 
 
 	  $data = array(
@@ -187,7 +189,8 @@ class ADM extends CI_Controller {
 	    'id_kategori' => $kategori,
 	    'id_subkategori' => $subkategori,
 	    'isi' => $isi,
-	    'tanggal_dibuat' => $tanggal_dibuat
+	    'tanggal_dibuat' => $tanggal_dibuat,
+	    'slug' => $slug
 	  );
 
 	  $where = array(

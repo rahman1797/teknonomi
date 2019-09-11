@@ -80,19 +80,19 @@
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul?>  
 														</a>
 													</h5>
 
 													<span class="cl8">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-4 cl8 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-4 cl8 hov-cl10 trans-03">
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?> 
 														</a>
 
@@ -114,13 +114,13 @@
 											foreach (array_slice($popularByKategori, 1,3) as $k) {?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img style="width: 100px;height: 70px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -153,7 +153,7 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?> 
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
@@ -186,16 +186,16 @@
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<?php 
 											$artikel = $this->m_artikel->getPopularBySubVer2('1');
-											foreach (array_slice($artikel, 1,3) as $k) { ?> ?>
+											foreach (array_slice($artikel, 1,3) as $k) {  ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -230,7 +230,7 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
@@ -265,13 +265,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) {  ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -306,7 +306,7 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
@@ -342,14 +342,14 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
-															<?php echo $k->foto ?>
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
 														</a>
 													</h5>
 
@@ -383,13 +383,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -418,13 +418,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -511,13 +511,13 @@
 												foreach (array_slice($popularByKategori, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul?>  
 														</a>
 													</h5>
@@ -547,13 +547,13 @@
 												foreach (array_slice($popularByKategori, 1,3) as $k) { ?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img style="width: 100px;height: 70px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -588,13 +588,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -625,13 +625,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -668,13 +668,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -706,13 +706,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -749,13 +749,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -787,13 +787,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->foto ?>
 														</a>
 													</h5>
@@ -829,7 +829,7 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
@@ -866,13 +866,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -970,13 +970,13 @@
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img style="width: 320px;height: 190px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?> 
 														</a>
 													</h5>
@@ -1006,13 +1006,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img style="width: 100px;height: 80px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1050,7 +1050,7 @@
 								
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															You wish lorem ipsum dolor sit amet consectetur 
 														</a>
 													</h5>
@@ -1075,13 +1075,13 @@
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
 											Item post	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/template/images/post-16.jpg" alt="IMG">
 												</a>
 								
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															Donec metus orci, malesuada et lectus vitae
 														</a>
 													</h5>
@@ -1104,13 +1104,13 @@
 											
 											Item post
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/template/images/post-17.jpg" alt="IMG">
 												</a>
 								
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															Donec metus orci, malesuada et lectus vitae
 														</a>
 													</h5>
@@ -1133,13 +1133,13 @@
 								
 											Item post
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/template/images/post-18.jpg" alt="IMG">
 												</a>
 								
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															Donec metus orci, malesuada et lectus vitae
 														</a>
 													</h5>
@@ -1238,13 +1238,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1273,13 +1273,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/template/images/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1314,13 +1314,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1349,13 +1349,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1388,13 +1388,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1423,13 +1423,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1462,13 +1462,13 @@
 											foreach (array_slice($artikel, 0,1) as $k) { ?>
 											<!-- Item post -->	
 											<div class="m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="p-t-20">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1497,13 +1497,13 @@
 											foreach (array_slice($artikel, 1,3) as $k) { ?>
 											<!-- Item post -->	
 											<div class="flex-wr-sb-s m-b-30">
-												<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
 													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 												</a>
 
 												<div class="size-w-2">
 													<h5 class="p-b-5">
-														<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
 															<?php echo $k->judul ?>
 														</a>
 													</h5>
@@ -1578,6 +1578,20 @@
 
 										<a href="https://twitter.com/teknonomi1" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
 											@teknonomi1
+										</a>
+									</div>
+								</li>
+
+								<li class="flex-wr-sb-c p-b-20">
+									<a href="https://twitter.com/teknonomi1" class="size-a-8 flex-c-c borad-3 size-a-8 bg-twitter fs-16 cl0 hov-cl0">
+										<span class="fab fa-instagram"></span>
+									</a>
+
+									<div class="size-w-3 flex-wr-sb-c">
+										
+
+										<a href="https://www.instagram.com/teknonomi/?hl=id" class="f1-s-9 text-uppercase cl3 hov-cl10 trans-03">
+											@teknonomi
 										</a>
 									</div>
 								</li>

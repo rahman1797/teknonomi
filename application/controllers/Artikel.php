@@ -23,17 +23,16 @@ class Artikel extends CI_Controller {
 		$this->load->view('element/footer', $data);
 	}
 
-	public function detail($id) {		
-    	$viewers = $this->m_artikel->getArtikelByID($id)->viewers;
-    	$where = array('id' => $id);
+	public function detail($slug) {		
+    	$viewers = $this->m_artikel->getArtikelBySlug($slug)->viewers;
+    	$where = array('slug' => $slug);
     	$updateViewers = array(
     		'viewers' => $viewers + 1
     	);
-
-
     	$this->m_artikel->updateData($where,$updateViewers,'artikel');
 	    $data = array(
-	        'detail' => $this->m_artikel->getArtikelByID($id),
+	        //'detail' => $this->m_artikel->getArtikelByID($id),
+	        'detail' => $this->m_artikel->getArtikelBySlug($slug),
 	        'popular' => $this->m_artikel->getArtikelDesc(),
 	        'kategori' => $this->m_kategori->getKategori(),
 			'subkategori' => $this->m_kategori->getSub(),

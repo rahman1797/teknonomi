@@ -23,19 +23,19 @@
 						</a>
 					</div>
 
-					<div class="right-topbar">
+					<!-- <div class="right-topbar">
 						<a href="https://www.facebook.com/teknonomi/">
 							<i class="fab fa-facebook-f"></i>
 						</a>
-
+					
 						<a href="https://twitter.com/teknonomi1">
 							<i class="fab fa-twitter"></i>
 						</a>
-
+					
 						<a href="https://www.instagram.com/teknonomi/?hl=id">
 							<i class="fab fa-instagram"></i>
 						</a>
-					</div>
+					</div> -->
 				</div>
 			</div>
 
