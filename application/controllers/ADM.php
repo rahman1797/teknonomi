@@ -1,6 +1,5 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 class ADM extends CI_Controller {
 	 function __construct(){
 	    parent::__construct();    
@@ -208,20 +207,23 @@ class ADM extends CI_Controller {
 	      );
 		$this->load->library('upload', $config); 
 		$this->upload->initialize($config);
-		if ($this->upload->do_upload('userfile')) {
-			$data['error'] = false;
-			$upload_data = $this->upload->data();
-			$data['data'] = $upload_data;
-			$data['msg'] = 'Image Successfully Uploaded.';
-			$foto = array(
-				'foto' => $upload_data['file_name']
-			);
-			$this->m_artikel->updateData($where,$foto,'artikel');
-		}  else {
-			echo "Terjadi kesalahan";
-			$error = array('error' => $this->upload->display_errors());
-			print_r($error);
-		}		
+		if ($this->input->post('username')) {
+			if ($this->upload->do_upload('userfile')) {
+				$data['error'] = false;
+				$upload_data = $this->upload->data();
+				$data['data'] = $upload_data;
+				$data['msg'] = 'Image Successfully Uploaded.';
+				$foto = array(
+					'foto' => $upload_data['file_name']
+				);
+				$this->m_artikel->updateData($where,$foto,'artikel');
+			} 
+		 	else {
+				echo "Terjadi kesalahan";
+				$error = array('error' => $this->upload->display_errors());
+				print_r($error);
+			}		
+		}
 	  redirect('ADM/listArtikel');
 	}
 
