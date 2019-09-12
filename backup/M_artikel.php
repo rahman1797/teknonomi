@@ -32,6 +32,13 @@ class m_artikel extends CI_Model{
 		return $query->row();
 	}
 
+	function getArtikelBySlug($slug){
+		$this->db->select('*');
+		$this->db->where('slug', $slug);
+		$query = $this->db->get('artikel');
+		return $query->row();
+	}	
+
 	function getMostPopular(){
 		$this->db->select('*');
 		$this->db->select_max('viewers');

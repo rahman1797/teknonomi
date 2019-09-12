@@ -39,37 +39,7 @@
 						</div>
 					</div>
 
-					<div class="col-sm-6 col-lg-4 p-b-20">
-						<div class="size-h-3 flex-s-c">
-							<h5 class="f1-m-7 cl0">
-								Popular Posts
-							</h5>
-						</div>
-
-						<ul>
-							<?php foreach(array_slice($popular, 0, 3) as $k ) { ?>
-							<li class="flex-wr-sb-s p-b-20">
-								<a href="#" class="size-w-4 wrap-pic-w hov1 trans-03">
-									<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
-								</a>
-
-								<div class="size-w-5">
-									<h6 class="p-b-5">
-										<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03">
-											<?php echo $k->judul ?>
-										</a>
-									</h6>
-
-									<span class="f1-s-3 cl6">
-										Feb 17
-									</span>
-								</div>
-							</li>
-						<?php } ?>
-						</ul>
-					</div>
-
-					<div class="col-sm-6 col-lg-4 p-b-20">
+					<div class="col-sm-6 col-lg-4 p-b-20" style="margin-left: 100px">
 						<div class="size-h-3 flex-s-c">
 							<h5 class="f1-m-7 cl0">
 								Category
@@ -80,7 +50,7 @@
 							<?php foreach ($kategori as $k) {
 							 ?>
 							<li class="how-bor1 p-rl-5 p-tb-10">
-								<a href="#" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
+								<a href="<?php echo site_url('Artikel/kategori/'.$k->kategori_id) ?>" class="f1-s-5 cl11 hov-cl10 trans-03 p-tb-8">
 									 <?php echo $k->kategori_nama ?>  
 									 (<?php echo $this->m_kategori->getNumberKategori($k->kategori_id); ?>)
 

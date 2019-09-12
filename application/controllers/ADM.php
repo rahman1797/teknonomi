@@ -129,7 +129,7 @@ class ADM extends CI_Controller {
 
 			        $id_subkategori = $this->input->post('sub');
 			        $id_kategori = $this->m_kategori->subToKategori($id_subkategori);
-			        print_r($id_kategori);
+			        /*print_r($id_kategori);*/
 			        $database = array(
 			            'judul' => $this->input->post('judul'),
 			            'isi' => $this->input->post('isi'),
