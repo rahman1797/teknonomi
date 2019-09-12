@@ -176,41 +176,43 @@ class ADM extends CI_Controller {
 
 	 	$id = $this->input->post('id');
 	  	$judul = $this->input->post('judul');
-	  	$kategori = $this->input->post('kategori');
+	  	// $kategori = $this->input->post('kategori');
 	  	$subkategori = $this->input->post('sub');
+	  	$id_kategori = $this->input->post('kategori');
 
-	  	$kategori = $this->db->get_where('subkategori', array('subkategori_id' => $subkategori))->result_array();
 
-	  	$id_kategori = $kategori['0']['id_kategori'];
+	  	if (isset($subkategori)) {
+	  		$kategori = $this->db->get_where('subkategori', array('subkategori_id' => $subkategori))->result_array();
+	  		$id_kategori = $kategori['0']['id_kategori'];
+	  	}	  	
 	  	
 	  	$isi = $this->input->post('isi');
 	  	$tanggal_dibuat = $this->input->post('tanggal_dibuat');
 	  	$slug = slug($this->input->post('judul', TRUE));
 	 
-	  	// echo($id_kategori);
-
-	  $data = array(
-	    'judul' => $judul,
-	    'id_kategori' => $id_kategori,
-	    'id_subkategori' => $subkategori,
-	    'isi' => $isi,
-	    'tanggal_dibuat' => $tanggal_dibuat,
-	    'slug' => $slug
-	  );
+	 //Update Data selain foto
+		  $data = array(
+		    'judul' => $judul,
+		    'id_kategori' => $id_kategori,
+		    'id_subkategori' => $subkategori,
+		    'isi' => $isi,
+		    'tanggal_dibuat' => $tanggal_dibuat,
+		    'slug' => $slug
+		  );
 
 	  $where = array(
 	    'id' => $id
 	  );
 	  $this->m_artikel->updateData($where, $data,'artikel');
 
-
-		  $time = time();
+	//Upload File gambar jika gambar ingin di Ubah	
+	  	$time = time();
 		  $config = array(
 		      'upload_path' => "assets/images/artikel/",
 		      'allowed_types' => "gif|jpg|png|jpeg",
 		      'overwrite' => TRUE,
 		      'max_size' => "10000", 
-		      'file_name' => "$time"
+		      'file_name' => $time
 		      );
 			$this->load->library('upload', $config); 
 			$this->upload->initialize($config);
@@ -229,9 +231,8 @@ class ADM extends CI_Controller {
 				echo "Terjadi kesalahan";
 				$error = array('error' => $this->upload->display_errors());
 				print_r($error);
-			}		
+			}	
 		
-		// print_r($kategori);
 	  redirect(base_url('ADM/listArtikel'));
 	}
 

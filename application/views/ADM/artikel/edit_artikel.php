@@ -1,5 +1,3 @@
- 
-
       <section class="content">
         <div class="container-fluid">
         
@@ -19,10 +17,12 @@
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="judul" value="<?php echo $a->judul ?>" required>
-                                        <!-- <input type="hidden" class="form-control" name="kategori" value="<?php echo $a->id_kategori ?>"> -->
+                                        
+                                        <input type="hidden" class="form-control" name="kategori" value="<?php echo $a->id_kategori ?>">
+                                        
                                         <input type="hidden" class="form-control" name="id" value="<?php echo $a->id ?>">
-                                        <!-- <input type="hidden" class="form-control" name="subkategori" value="<?php echo $a->id_subkategori ?>">
-                                        <input type="hidden" class="form-control" name="tanggal_dibuat" value="<?php echo $a->tanggal_dibuat ?>"> -->
+                                        <input type="hidden" class="form-control" name="subkategori" value="<?php echo $a->id_subkategori ?>">
+                                        <input type="hidden" class="form-control" name="tanggal_dibuat" value="<?php echo $a->tanggal_dibuat ?>">
                                         <label class="form-label">Masukkan Judul Artikel</label>
                                     </div>
                                 </div>
@@ -36,26 +36,11 @@
                                 </div>
 
 
-
-
-                                 <!-- <div class="form-group form-float">
-                                    <div class="form-line">
-                                        <select class="form-control show-tick" name="kategori" id="kategori">
-                                            <option value="">-- Pilih Kategori --</option>
-                                            <?php 
-                                                foreach ($kategori as $k) {
-                                                    echo "<option value='$k->kategori_id'>".$k->kategori_nama ."</option>";
-                                                }
-                                            ?>
-                                        </select>
-                                    </div>
-                                </div> -->
-
-
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <select class="form-control show-tick" name="sub" id="sub" data-live-search="true">
-                                            <option value="$a->id_subkategori"> <?php echo $idTosubKategori['0']['subkategori_nama'] ?> </option>
+                                            <option value="<?php echo $a->id_subkategori ?> "><?php echo $idTosubKategori['0']['subkategori_nama'] ?> </option>
+                                           
                                             <?php 
                                                 foreach ($kategori as $k) {
                                                     echo "<optgroup label=$k->kategori_nama>";
