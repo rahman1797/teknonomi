@@ -57,7 +57,7 @@
                                                 <td><?php echo $la->viewers ?></td>
                                                 <td>
                                                     <a href="<?php echo base_url('ADM/editArtikelPage?id_artikel='.$id_artikel) ?>"><button class="btn btn-info" id="round"><i class="material-icons">edit</i>Edit</button></a>
-                                                    <a href="<?php echo base_url('artikel/detail/'.$la->id) ?>"><button class="btn btn-info" id="round">Go to Post</button></a>
+                                                    <a href="<?php echo base_url('artikel/detail/'.$la->slug) ?>"><button class="btn btn-info" id="round">Go to Post</button></a>
                                                     <button class="btn btn-danger" id="round" data-toggle="modal" data-target="#ModalHapus" onclick="set_id(<?php echo $la->id ?>)"><i class="material-icons">delete</i>Delete</button>
                                                 </td>
                                             </tr>
