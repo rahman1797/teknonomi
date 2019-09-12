@@ -177,15 +177,20 @@ class ADM extends CI_Controller {
 	 	$id = $this->input->post('id');
 	  	$judul = $this->input->post('judul');
 	  	$kategori = $this->input->post('kategori');
-	  	$subkategori = $this->input->post('subkategori');
+	  	$subkategori = $this->input->post('sub');
+
+	  	$kategori = $this->db->get_where('subkategori', array('subkategori_id' => $subkategori))->result_array();
+	  	
+	  	$id_kategori = $kategori['0']['id_kategori'];
 	  	$isi = $this->input->post('isi');
 	  	$tanggal_dibuat = $this->input->post('tanggal_dibuat');
 	  	$slug = slug($this->input->post('judul', TRUE));
 	 
+	  	// echo($id_kategori);
 
 	  $data = array(
 	    'judul' => $judul,
-	    'id_kategori' => $kategori,
+	    'id_kategori' => $id_kategori,
 	    'id_subkategori' => $subkategori,
 	    'isi' => $isi,
 	    'tanggal_dibuat' => $tanggal_dibuat,
@@ -195,19 +200,20 @@ class ADM extends CI_Controller {
 	  $where = array(
 	    'id' => $id
 	  );
-	  $this->m_artikel->updateData($where,$data,'artikel');
+	  $this->m_artikel->updateData($where, $data,'artikel');
 
-	  $time = time();
-	  $config = array(
-	      'upload_path' => "assets/images/artikel/",
-	      'allowed_types' => "gif|jpg|png|jpeg",
-	      'overwrite' => TRUE,
-	      'max_size' => "10000", 
-	      'file_name' => "$time"
-	      );
-		$this->load->library('upload', $config); 
-		$this->upload->initialize($config);
-		if ($this->input->post('username')) {
+	  if ($this->input->post('userfile')) {
+		  $time = time();
+		  $config = array(
+		      'upload_path' => "assets/images/artikel/",
+		      'allowed_types' => "gif|jpg|png|jpeg",
+		      'overwrite' => TRUE,
+		      'max_size' => "10000", 
+		      'file_name' => "$time"
+		      );
+			$this->load->library('upload', $config); 
+			$this->upload->initialize($config);
+		
 			if ($this->upload->do_upload('userfile')) {
 				$data['error'] = false;
 				$upload_data = $this->upload->data();
@@ -224,7 +230,8 @@ class ADM extends CI_Controller {
 				print_r($error);
 			}		
 		}
-	  redirect('ADM/listArtikel');
+		// print_r($kategori);
+	  print_r($_POST);
 	}
 
 // END MANAGE ARTIKEL

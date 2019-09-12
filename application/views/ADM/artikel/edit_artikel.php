@@ -12,17 +12,17 @@
                         <div class="body">
                         
                         <?php foreach ($artikel as $a) { 
-                            $idTosubKategori = $this->m_user->getartikelsubKategori($a->id_kategori);
+                            $idTosubKategori = $this->m_user->getartikelsubKategori($a->id_subkategori);
                             ?>
 
                             <form id="form_validation" method="post" enctype="multipart/form-data" action="<?php echo site_url('ADM/editArtikel') ?>" name="userfile">
                                 <div class="form-group form-float">
                                     <div class="form-line">
                                         <input type="text" class="form-control" name="judul" value="<?php echo $a->judul ?>" required>
-                                        <input type="hidden" class="form-control" name="kategori" value="<?php echo $a->id_kategori ?>">
+                                        <!-- <input type="hidden" class="form-control" name="kategori" value="<?php echo $a->id_kategori ?>"> -->
                                         <input type="hidden" class="form-control" name="id" value="<?php echo $a->id ?>">
-                                        <input type="hidden" class="form-control" name="subkategori" value="<?php echo $a->id_subkategori ?>">
-                                        <input type="hidden" class="form-control" name="tanggal_dibuat" value="<?php echo $a->tanggal_dibuat ?>">
+                                        <!-- <input type="hidden" class="form-control" name="subkategori" value="<?php echo $a->id_subkategori ?>">
+                                        <input type="hidden" class="form-control" name="tanggal_dibuat" value="<?php echo $a->tanggal_dibuat ?>"> -->
                                         <label class="form-label">Masukkan Judul Artikel</label>
                                     </div>
                                 </div>
