@@ -180,8 +180,9 @@ class ADM extends CI_Controller {
 	  	$subkategori = $this->input->post('sub');
 
 	  	$kategori = $this->db->get_where('subkategori', array('subkategori_id' => $subkategori))->result_array();
-	  	
+
 	  	$id_kategori = $kategori['0']['id_kategori'];
+	  	
 	  	$isi = $this->input->post('isi');
 	  	$tanggal_dibuat = $this->input->post('tanggal_dibuat');
 	  	$slug = slug($this->input->post('judul', TRUE));
@@ -202,7 +203,7 @@ class ADM extends CI_Controller {
 	  );
 	  $this->m_artikel->updateData($where, $data,'artikel');
 
-	  if ($this->input->post('userfile')) {
+
 		  $time = time();
 		  $config = array(
 		      'upload_path' => "assets/images/artikel/",
@@ -229,9 +230,9 @@ class ADM extends CI_Controller {
 				$error = array('error' => $this->upload->display_errors());
 				print_r($error);
 			}		
-		}
+		
 		// print_r($kategori);
-	  print_r($_POST);
+	  redirect(base_url('ADM/listArtikel'));
 	}
 
 // END MANAGE ARTIKEL
