@@ -39,7 +39,7 @@
                                                 <td><?php echo $lk->kategori_nama ?></td>
                                                 <td><?php echo $this->m_kategori->getNumberSubKategori($lk->kategori_id) ?></td>
                                                 <td>
-                                                    <a href="<?php echo site_url();?>/System_master/subkategori?id=<?php print($lk->kategori_id);?>" class="btn btn-info"></a>
+                                                    <a href="<?php echo site_url();?>/System_master/subkategori?id=<?php print($lk->kategori_id);?>" class="btn btn-info" id='round'>Sub Kategori</a>
 
                                                     <a href="<?php echo site_url();?>/System_master/delKategori/<?php print($lk->kategori_id);?>"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>
                                                 </td>
