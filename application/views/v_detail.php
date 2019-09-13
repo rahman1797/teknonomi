@@ -62,7 +62,7 @@
 							<!-- <p class="f1-s-11 cl6 p-b-25" style="text-align: justify;">
 							</p> -->
 							<!-- Share -->
-							<div class="flex-s-s">
+							<div class="flex-s-s mt-20">
 								<span class="f1-s-12 cl5 p-t-1 m-r-15">
 									Share:
 								</span>
@@ -102,7 +102,7 @@
 									foreach ($subByKategori as $k) {
 								 ?>
 								<li class="how-bor3 p-rl-4">
-									<a href="#" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
+									<a href="<?php echo site_url('Artikel/subkategori/'.$k->subkategori_id) ?>" class="dis-block f1-s-10 text-uppercase cl2 hov-cl10 trans-03 p-tb-13">
 										<?php echo $k->subkategori_nama; ?>
 									</a>
 								</li>

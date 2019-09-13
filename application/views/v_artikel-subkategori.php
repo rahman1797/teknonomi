@@ -49,16 +49,11 @@
 									</h5>
 
 									<div class="cl8 p-b-18">
-										<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-											by <?php echo $k->penulis ?>
-										</a>
-
-										<span class="f1-s-3 m-rl-3">
-											-
-										</span>
+										
 
 										<span class="f1-s-3">
-											Feb 18
+											<?php $d=strtotime($k->tanggal_dibuat);
+												echo date("M-d", $d); ?>
 										</span>
 									</div>
 
@@ -66,7 +61,7 @@
 										<?php 	echo substr($k->isi,60,110); ?>
 									</p>
 
-									<a href="<?php echo site_url('artikel/detail/'.$k->id) ?>" class="f1-s-1 cl9 hov-cl10 trans-03">
+									<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-1 cl9 hov-cl10 trans-03">
 										Read More
 										<i class="m-l-2 fa fa-long-arrow-alt-right"></i>
 									</a>

@@ -120,12 +120,15 @@ class ADM extends CI_Controller {
 
 			     if ($this->upload->do_upload('userfile')) { //use this function
 
+			        $file_name = time();
+
 			        $data['error'] = false;
 			        $upload_data = $this->upload->data();
 			        $data['data'] = $upload_data;
 			        $data['msg'] = 'Image Successfully Uploaded.';
 
-			        $file_name = $data['data']['file_name'];
+			        /*$file_name = $data['data']['file_name'];*/
+
 
 			        $id_subkategori = $this->input->post('sub');
 			        $id_kategori = $this->m_kategori->subToKategori($id_subkategori);
@@ -134,7 +137,7 @@ class ADM extends CI_Controller {
 			            'judul' => $this->input->post('judul'),
 			            'isi' => $this->input->post('isi'),
 			            'penulis' => $_SESSION['nama'],
-			            'foto' => $file_name,
+			            'foto' => $upload_data['file_name'],
 			            'id_subkategori' => $id_subkategori,
 
 			            'id_kategori' => $id_kategori['0']['id_kategori'],
