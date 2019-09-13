@@ -51,6 +51,12 @@ class m_kategori extends CI_Model{
 	  return $num_rows = $this->db->count_all_results();
 	}
 
+	//Mendapatkan jumlah sub kategori yang terdaftar dengan kategori tertentu
+	function getNumberSubKategori($id) {   
+		    $query = $this->db->get_where('subkategori', array('id_kategori' => $id));
+		    return $query->num_rows();
+		}
+
 
 	// Mendapatkan kategori untuk artikel
 
