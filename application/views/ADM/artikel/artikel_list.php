@@ -43,7 +43,7 @@
                                        
                                             foreach($listArtikel as $la){ 
                                                 $idToKategori = $this->m_user->getartikelKategori($la->id_kategori);
-                                                $idTosubKategori = $this->m_user->getartikelsubKategori($la->id_kategori);
+                                                $idTosubKategori = $this->m_user->getartikelsubKategori($la->id_subkategori);
                                                 $id_artikel = $la->id;
                                             ?>
                                             <tr>
