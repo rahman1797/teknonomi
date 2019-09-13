@@ -6,10 +6,12 @@
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card" id="round">
-                        <div class="header" align="center">
-                            <h2><strong>Registered Position</strong></h2>
+                        <div class="header">
+                            <h2><?php $namaKategori = $this->m_kategori->getKategoriById($_GET['id']);
+                            echo 'Sub Kategori Terdaftar Dari Kategori : ' . $namaKategori->kategori_nama;
+                             ?></h2>
                             <p></p>
-                            <button class="btn btn-lg btn-info waves-effect" data-toggle="modal" data-target="#ModalAnggota" id="round">Add New Admin</button>  
+                            <button class="btn btn-lg btn-info waves-effect" data-toggle="modal" data-target="#ModalSub" id="round">Tambah Sub Kategori</button>  
                         </div>
                         
                         <div class="body">
@@ -17,15 +19,13 @@
                                 <table id="refTable" class="table table-bordered table-striped table-hover js-basic-example dataTable round_edge">
                                     <thead>
                                         <tr>
-                                            <th>Nama Posisi</th>
-                                            <th>Total User</th>
+                                            <th>Nama Sub Kategori</th>
                                             <th>Kelola</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Nama Posisi</th>
-                                            <th>Total User</th>
+                                            <th>Nama Sub Kategori</th>
                                             <th>Kelola</th>
                                         </tr>
                                     </tfoot>
@@ -33,15 +33,12 @@
 
                                         <?php 
                                        
-                                            foreach($listPosisi as $lp){ 
+                                            foreach($listsubkategori as $lsk){ 
                                             ?>
                                             <tr>
-                                                <td><?php echo $lp->posisiuser_nama ?></td>
-                                                <td><?php echo $this->m_user->jumlahUserPosisi($lp->posisiuser_id) ?></td>
+                                                <td><?php echo $lsk->subkategori_nama ?></td>
                                                 <td>
-
-
-                                                    <a href="<?php echo site_url();?>/ADM/delPosisi/<?php print($lp->posisiuser_id);?>"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>
+                                                    <a href="<?php echo site_url();?>/System_master/delSubKategori/<?php print($lsk->subkategori_id);?>"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>
                                                 </td>
                                             </tr>
                                         <?php } ?>
@@ -58,27 +55,26 @@
         </div>
     </section>
 
-
-
- <!-- Modal Tambah Anggota -->
-            <div class="modal fade" id="ModalAnggota" tabindex="-1" role="dialog">
+<!-- Modal Tambah Kategori -->
+            <div class="modal fade" id="ModalSub" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" id="round">
                        <center>
                         <div class="modal-body">
-                          <!-- Form Angggota -->
+                          <!-- Form Kategori -->
                     
-                            <form id="form_validation" name="formPosisi" class="formPosisi" method="POST" style="margin: 20px" onsubmit="return submitPosisi()">
+                            <form id="form_validation" name="formSub" class="formSub" method="POST" style="margin: 20px" onsubmit="return submitSubKategori()">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="namaposisi" id="namaposisi" required>
-                                        <label class="form-label">Nama Posisi</label>
+                                        <input type="hidden" name="idKategori" value="<?php echo $_GET['id'] ?>">
+                                        <input type="text" class="form-control" name="namaSubKategori" id="namaSubKategori" required>
+                                        <label class="form-label">Nama SubKategori</label>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary waves-effect btn-lg" type="submit" id="round">Simpan</button>
                             </form>
 
-                            <!-- #END# Form Anggota -->
+                            <!-- #END# Form Kategori -->
                         </div>
                         </center>
                     </div>
@@ -91,21 +87,21 @@
 
 <script type="text/javascript">
 
-     function submitPosisi() {
+     function submitSubKategori() {
 
-         var data = $('.formPosisi').serialize();
-         var nama = document.formPosisi.namaposisi.value;  
-
+         var data = $('.formSub').serialize();
+         var nama = document.formSub.namaSubKategori.value;  
+         alert(data);
              if(nama != ""){            
                 $.ajax({
                     type: 'POST',
                     data: data,
-                    url: "<?php echo base_url('ADM/addPosisi') ?>",
+                    url: "<?php echo base_url('System_master/addSubKategori') ?>",
                     success: function() {
                         Swal.fire({
                           position: 'top-end',
                           type: 'success',
-                          title: 'Berhasil menambah Anggota',
+                          title: 'Berhasil menambah Kategori',
                           showConfirmButton: false,
                           timer: 1500
                         }).then(function(){

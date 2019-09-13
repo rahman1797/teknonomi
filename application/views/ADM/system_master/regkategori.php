@@ -7,9 +7,9 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card" id="round">
                         <div class="header" align="center">
-                            <h2><strong>Registered Position</strong></h2>
+                            <h2><strong></strong></h2>
                             <p></p>
-                            <button class="btn btn-lg btn-info waves-effect" data-toggle="modal" data-target="#ModalAnggota" id="round">Add New Admin</button>  
+                            <button class="btn btn-lg btn-info waves-effect" data-toggle="modal" data-target="#ModalAnggota" id="round">Tambah Kategori Baru</button>  
                         </div>
                         
                         <div class="body">
@@ -39,6 +39,7 @@
                                                 <td><?php echo $lk->kategori_nama ?></td>
                                                 <td><?php echo $this->m_kategori->getNumberSubKategori($lk->kategori_id) ?></td>
                                                 <td>
+                                                    <a href="<?php echo site_url();?>/System_master/subkategori?id=<?php print($lk->kategori_id);?>" class="btn btn-info"></a>
 
                                                     <a href="<?php echo site_url();?>/System_master/delKategori/<?php print($lk->kategori_id);?>"><button class="btn btn-danger" id="round" onclick="return delConfirm()">Delete</button></a>
                                                 </td>
@@ -59,25 +60,25 @@
 
 
 
- <!-- Modal Tambah Anggota -->
+ <!-- Modal Tambah Kategori -->
             <div class="modal fade" id="ModalAnggota" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content" id="round">
                        <center>
                         <div class="modal-body">
-                          <!-- Form Angggota -->
+                          <!-- Form Kategori -->
                     
-                            <form id="form_validation" name="formPosisi" class="formPosisi" method="POST" style="margin: 20px" onsubmit="return submitPosisi()">
+                            <form id="form_validation" name="formKategori" class="formKategori" method="POST" style="margin: 20px" onsubmit="return submitKategori()">
                                 <div class="form-group form-float">
                                     <div class="form-line">
-                                        <input type="text" class="form-control" name="namaposisi" id="namaposisi" required>
-                                        <label class="form-label">Nama Posisi</label>
+                                        <input type="text" class="form-control" name="namaKategori" id="namaKategori" required>
+                                        <label class="form-label">Nama Kategori</label>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary waves-effect btn-lg" type="submit" id="round">Simpan</button>
                             </form>
 
-                            <!-- #END# Form Anggota -->
+                            <!-- #END# Form Kategori -->
                         </div>
                         </center>
                     </div>
@@ -90,21 +91,21 @@
 
 <script type="text/javascript">
 
-     function submitPosisi() {
+     function submitKategori() {
 
-         var data = $('.formPosisi').serialize();
-         var nama = document.formPosisi.namaposisi.value;  
+         var data = $('.formKategori').serialize();
+         var nama = document.formKategori.namaKategori.value;  
 
              if(nama != ""){            
                 $.ajax({
                     type: 'POST',
                     data: data,
-                    url: "<?php echo base_url('ADM/addPosisi') ?>",
+                    url: "<?php echo base_url('System_master/addKategori') ?>",
                     success: function() {
                         Swal.fire({
                           position: 'top-end',
                           type: 'success',
-                          title: 'Berhasil menambah Anggota',
+                          title: 'Berhasil menambah Kategori',
                           showConfirmButton: false,
                           timer: 1500
                         }).then(function(){
