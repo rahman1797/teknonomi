@@ -1530,6 +1530,439 @@
 								</div>
 							</div>
 						</div>
+
+						<!-- TIK -->
+						<div class="tab01 p-b-20">
+							<div class="tab01-head how2 how2-cl1 bocl12 flex-s-c m-r-10 m-r-0-sr991">
+								<!-- Brand tab -->
+								<h3 class="f1-m-2 cl12 tab01-title">
+									Teknologi dan Informasi
+								</h3>
+
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist">
+									<li class="nav-item">
+										<a class="nav-link active" data-toggle="tab" href="#tab4-1" role="tab">All</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#tab4-2" role="tab">Telekomunikasi</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#tab4-3" role="tab">Siber</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#tab4-4" role="tab">Gadget</a>
+									</li>
+
+									<li class="nav-item">
+										<a class="nav-link" data-toggle="tab" href="#tab4-5" role="tab">Hardware</a>
+									</li>
+
+									<li class="nav-item-more dropdown dis-none">
+										<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+											<i class="fa fa-ellipsis-h"></i>
+										</a>
+
+										<ul class="dropdown-menu">
+											
+										</ul>
+									</li>
+								</ul>
+
+								<!--  -->
+								<a href="<?php echo site_url('Artikel/kategori/5') ?>" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+									View all
+									<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+								</a>
+							</div>
+								
+
+							<!-- Tab panes TIK -->
+							<div class="tab-content p-t-35">
+								<!-- - -->
+								<div class="tab-pane fade show active" id="tab4-1" role="tabpanel">
+									<div class="row">
+										<?php $popularByKategori = $this->m_artikel->getPopularByKategoriVer2('5');
+										foreach (array_slice($popularByKategori, 0,1) as $k) { ?>
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $k->judul?>  
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?> 
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+																<?php $d=strtotime($k->tanggal_dibuat); 
+																echo date("M-d", $d); ?> 
+														</span>
+													</span>
+												</div>
+											</div>
+										</div>
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php } 
+											$popularByKategori = $this->m_artikel->getPopularByKategoriVer2('5');
+											foreach (array_slice($popularByKategori, 1,3) as $k) {?>
+											<!-- Item post -->	
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img style="width: 100px;height: 70px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3"> <?php $d=strtotime($k->tanggal_dibuat);
+																					echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+
+								<!-- Telekomunikasi - TIK -->
+								<div class="tab-pane fade" id="tab4-2" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php $artikel = $this->m_artikel->getPopularBySubVer2('17');
+											foreach (array_slice($artikel, 0,1) as $k) { ?> 
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															 <?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$artikel = $this->m_artikel->getPopularBySubVer2('17');
+											foreach (array_slice($artikel, 1,3) as $k) {  ?>
+											<!-- Item post -->
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															<?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+									</div>
+								</div>
+
+								<!-- Siber - TIK -->
+								<div class="tab-pane fade" id="tab4-3" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$artikel = $this->m_artikel->getPopularBySubVer2('18');
+											foreach (array_slice($artikel, 0,1) as $k) { ?>
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('2')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															<?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php $artikel = $this->m_artikel->getPopularBySubVer2('18');
+											foreach (array_slice($artikel, 1,3) as $k) {  ?>
+											<!-- Item post -->
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															<?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+									</div>
+								</div>
+
+								<!-- Gadget - TIK -->
+								<div class="tab-pane fade" id="tab4-4" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$artikel = $this->m_artikel->getPopularBySubVer2('19');
+											foreach (array_slice($artikel, 0,1) as $k) { ?>
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularBySub('3')->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															<?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$artikel = $this->m_artikel->getPopularBySubVer2('19');
+											foreach (array_slice($artikel, 1,3) as $k) { ?>
+											<!-- Item post -->
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															<?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+									</div>
+								</div>
+
+								<!-- Hardware - TIK -->
+								<div class="tab-pane fade" id="tab4-5" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php 
+											$artikel = $this->m_artikel->getPopularBySubVer2('20');
+											foreach (array_slice($artikel, 0,1) as $k) { ?>
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															<?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php  $artikel = $this->m_artikel->getPopularBySubVer2('20');
+											foreach (array_slice($artikel, 1,3) as $k) { ?>
+											<!-- Item post -->
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														<span class="f1-s-3 m-rl-3">
+															-
+														</span>
+
+														<span class="f1-s-3">
+															<?php $d=strtotime($k->tanggal_dibuat);
+																	echo date("M-d", $d); ?>
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
 					</div>
 				</div>
 
@@ -1625,7 +2058,7 @@
 		</div>
 	</div>
 
-<!-- Latest -->
+<!-- Latest
 	<section class="bg0 p-t-60 p-b-35">
 		<div class="container">
 			<div class="row justify-content-center">
@@ -1638,7 +2071,7 @@
 
 					<div class="row p-t-35">
 						<div class="col-sm-6 p-r-25 p-r-15-sr991">
-							<!-- Item latest -->	
+							Item latest	
 							<div class="m-b-45">
 								<iframe width="460" height="315" src="https://www.youtube.com/embed/bzE3OQx2xAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
@@ -1651,4 +2084,4 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
