@@ -2050,7 +2050,7 @@
 	</section>
 
 	<!-- Banner -->
-	<div class="container">
+	<div class="container" style="margin-bottom: 15px">
 		<div class="flex-c-c">
 			<a href="#">
 				<img class="max-w-full" src="<?php echo base_url(); ?>assets/template/images/icons/banner-ad.jpg" alt="IMG">

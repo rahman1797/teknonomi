@@ -114,4 +114,12 @@ class m_user extends CI_Model{
 			return false;
 		}
 	}
+
+	function getPosisiByID($id){
+		$this->db->select('*');
+		$this->db->where('posisiuser_id', $id);
+		$query = $this->db->get('posisiuser');
+		return $query->row();
+	}
+
 }
