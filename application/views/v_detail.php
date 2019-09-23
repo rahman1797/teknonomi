@@ -48,7 +48,7 @@
 									<span class="m-rl-3">-</span>
 
 									<span>
-										<?php echo $detail->tanggal_dibuat ?>
+										<!-- <?php //echo $detail->tanggal_dibuat ?> -->
 									</span>
 								</span>
 							</div>
