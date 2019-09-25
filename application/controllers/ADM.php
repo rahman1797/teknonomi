@@ -131,17 +131,16 @@ class ADM extends CI_Controller {
 
 			        $id_subkategori = $this->input->post('sub');
 			        $id_kategori = $this->m_kategori->subToKategori($id_subkategori);
-			        /*print_r($id_kategori);*/
 			        $database = array(
 			            'judul' => $this->input->post('judul'),
 			            'isi' => $this->input->post('isi'),
 			            'penulis' => $_SESSION['nama'],
 			            'foto' => $upload_data['file_name'],
 			            'id_subkategori' => $id_subkategori,
-
 			            'id_kategori' => $id_kategori['0']['id_kategori'],
 			            'viewers' => 0,
-			            'slug' => slug($this->input->post('judul', TRUE))
+			            'slug' => slug($this->input->post('judul', TRUE)),
+			            'tanggal_dibuat' => date('Y-m-d')
 			            );
 
 			        $result = $this->db->insert('artikel', $database);
