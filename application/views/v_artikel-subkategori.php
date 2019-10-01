@@ -43,7 +43,7 @@
 
 								<div class="size-w-9 w-full-sr575 m-b-25">
 									<h5 class="p-b-12">
-										<a href="blog-detail-02.html" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
+										<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="f1-l-1 cl2 hov-cl10 trans-03 respon2">
 											<?php echo $k->judul ?> 
 										</a>
 									</h5>
@@ -99,7 +99,7 @@
 										 ?>
 									</div>
 
-									<a href="<?php echo site_url('Artikel/detail/'.$a->id) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+									<a href="<?php echo site_url('Artikel/detail/'.$a->slug) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
 										<?php echo $a->judul; ?>
 									</a>
 								</li>

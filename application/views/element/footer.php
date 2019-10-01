@@ -7,7 +7,7 @@
 				<span class="f1-s-1 cl0 txt-center">
 					Copyright © 2019 
 
-					<a href="#" class="f1-s-1 cl10 hov-link1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->Teknonomi</a>
+					<a href="www.teknonomi.com" class="f1-s-1 cl10 hov-link1"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->teknonomi.com</a> All rights reserved | Powered by <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 				</span>
 			</div>

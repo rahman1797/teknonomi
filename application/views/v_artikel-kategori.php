@@ -15,12 +15,12 @@
 				</span>
 			</div>
 
-			<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+			<!-- <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
 				<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search">
 				<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
 					<i class="zmdi zmdi-search"></i>
 				</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 
@@ -46,7 +46,7 @@
 							</a>
 
 							<h3 class="how1-child2 m-t-14 m-b-10">
-								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
+								<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="how-txt1 size-a-6 f1-l-1 cl0 hov-cl10 trans-03">
 									<?php echo $k->judul ?>
 								</a>
 							</h3>
@@ -68,7 +68,7 @@
 						<?php foreach (array_slice($artikel, 2,4) as $k) { ?>
 						<div class="col-sm-6 p-rl-1 p-b-2">
 							<div class="bg-img1 size-a-14 how1 pos-relative" style="background-image: url(<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>);">
-								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="dis-block how1-child1 trans-03"></a>
+								<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="dis-block how1-child1 trans-03"></a>
 
 								<div class="flex-col-e-s s-full p-rl-25 p-tb-20">
 									<a href="#" class="dis-block how1-child2 f1-s-2 cl0 bo-all-1 bocl0 hov-btn1 trans-03 p-rl-5 p-t-2">
@@ -76,7 +76,7 @@
 									</a>
 
 									<h3 class="how1-child2 m-t-14">
-										<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
+										<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="how-txt1 size-h-1 f1-m-1 cl0 hov-cl10 trans-03">
 											<?php echo $k->judul ?>
 										</a>
 									</h3>
@@ -100,13 +100,13 @@
 						<div class="col-sm-6 p-r-25 p-r-15-sr991">
 							<!-- Item latest -->	
 							<div class="m-b-45">
-								<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="wrap-pic-w hov1 trans-03">
+								<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
 									<img style="width: 350px;height: 200px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 								</a>
 
 								<div class="p-t-16">
 									<h5 class="p-b-5">
-										<a href="<?php echo site_url('Artikel/detail/'.$k->id) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+										<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
 											<?php echo $k->judul ?>
 										</a>
 									</h5>
@@ -152,7 +152,7 @@
 										 ?>
 									</div>
 
-									<a href="<?php echo site_url('Artikel/detail/'.$a->id) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
+									<a href="<?php echo site_url('Artikel/detail/'.$a->slug) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
 										<?php echo $a->judul; ?>
 									</a>
 								</li>
