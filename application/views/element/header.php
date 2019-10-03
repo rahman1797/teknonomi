@@ -125,7 +125,7 @@
 			<div class="wrap-logo container">
 				<!-- Logo desktop -->		
 				<div class="logo">
-					<a href="index.html"><img  src="<?php echo base_url(); ?>assets/images/icons/newlogo.bmp" alt="LOGO"></a>
+					<a href="index.html"><img style="height: 120px; width: 700px" src="<?php echo base_url(); ?>assets/images/icons/newlogo.bmp" alt="LOGO"></a>
 				</div>	
 
 				<!-- Banner -->
