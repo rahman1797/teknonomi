@@ -5,7 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/template/images/icons/favicon.png"/>
+<!-- 	<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/template/images/icons/favicon.png"/> -->
+<link rel="icon" type="image/png" href="<?php echo base_url(); ?>assets/images/icons/iconteknonomi.jpg"/>
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/template/vendor/bootstrap/css/bootstrap.min.css">
 	<script src="<?php echo base_url(); ?>assets/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
