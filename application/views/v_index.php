@@ -1986,7 +1986,7 @@
 
 						<!--  -->
 						<div class="flex-c-s p-t-8">
-							<a href="#">
+							<a href=" https://web.facebook.com/marskitchenfoodanddrink-106584990713371/">
 								<img class="max-w-full" style="height: 270px; width: 250px" src="<?php echo base_url(); ?>assets/images/banner/banner1.png" alt="IMG">
 							</a>
 						</div>

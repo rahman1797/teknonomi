@@ -2,7 +2,7 @@
 	<div class="container">
 		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8">
 			<div class="f2-s-1 p-r-30 m-tb-6">
-				<a href="index.html" class="breadcrumb-item f1-s-3 cl9">
+				<!-- <a href="index.html" class="breadcrumb-item f1-s-3 cl9">
 					Beranda
 				</a>
 
@@ -12,7 +12,7 @@
 
 				<span class="breadcrumb-item f1-s-3 cl9">
 					Energi
-				</span>
+				</span> -->
 			</div>
 
 			<!-- <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
