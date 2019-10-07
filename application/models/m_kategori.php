@@ -4,6 +4,7 @@ class m_kategori extends CI_Model{
 
 	function getKategori(){
 		$this->db->select('*');
+		$this->db->order_by('kategori_nama');
 		$query = $this->db->get('kategori');
 		if($query->num_rows()>0)
 		{
