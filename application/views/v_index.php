@@ -1870,6 +1870,112 @@
 							</div>
 						</div>
 
+						<!-- Perspektif -->
+						<div class="tab01 p-b-20">
+							<div class="tab01-head how2 how2-cl2 bocl12 flex-s-c m-r-10 m-r-0-sr991">
+								<!-- Brand tab -->
+								<h3 class="f1-m-2 cl13 tab01-title">
+									Perspektif
+								</h3>
+
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist">
+									
+
+									<li class="nav-item-more dropdown dis-none">
+										<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+											<i class="fa fa-ellipsis-h"></i>
+										</a>
+
+										<ul class="dropdown-menu">
+											
+										</ul>
+									</li>
+								</ul>
+
+								<!--  -->
+								<a href="<?php echo site_url('Artikel/kategori/6') ?>" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+									View all
+									<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+								</a>
+							</div>
+								
+
+							<!-- Tab panes Jasa-->
+							<div class="tab-content p-t-35">
+								<!-- most popular jasa -->
+								<div class="tab-pane fade show active" id="tab2-1" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php $popularByKategori = $this->m_artikel->getPopularByKategoriVer2('6');
+												foreach (array_slice($popularByKategori, 0,1) as $k) { ?>
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $k->judul?>  
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('6')->id) ?>" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?> 
+														</a>
+
+														  <span class="f1-s-3 m-rl-3">
+															
+														</span>
+
+														<span class="f1-s-3">
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php $popularByKategori = $this->m_artikel->getPopularByKategoriVer2('6');
+												foreach (array_slice($popularByKategori, 1,3) as $k) { ?>
+											<!-- Item post -->	
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img style="width: 100px;height: 70px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														  <span class="f1-s-3 m-rl-3">
+															
+														</span>
+
+														<span class="f1-s-3">
+														</span>
+													</span>
+												</div>
+											</div>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
 				</div>
 
@@ -1881,7 +1987,7 @@
 						<!--  -->
 						<div class="flex-c-s p-t-8">
 							<a href="#">
-								<img class="max-w-full" src="<?php echo base_url(); ?>assets/template/images/icons/sidebar-ads.jpg" alt="IMG">
+								<img class="max-w-full" style="height: 270px; width: 250px" src="<?php echo base_url(); ?>assets/images/banner/banner1.png" alt="IMG">
 							</a>
 						</div>
 						

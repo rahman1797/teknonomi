@@ -43,7 +43,7 @@
 			<div class="wrap-header-mobile">
 				<!-- Logo moblie -->		
 				<div class="logo-mobile">
-					<a href="index.html"><img style="width: 60%"  src="<?php echo base_url(); ?>assets/images/icons/newlogo.bmp" alt="IMG-LOGO"></a>
+					<a href="index.html"><img style="width: 60%"  src="<?php echo base_url(); ?>assets/images/icons/logofix.jpg" alt="IMG-LOGO"></a>
 				</div>
 
 				<!-- Button show menu -->
@@ -93,10 +93,6 @@
 					<li>
 						<a href="<?php echo site_url('Artikel') ?>">Beranda</a>
 					</li>
-
-					<li>
-						<a href="<?php echo site_url('Artikel') ?>">Video</a>
-					</li>
 					
 					<?php 
 						foreach ($kategori as $k) {
@@ -125,7 +121,7 @@
 			<div class="wrap-logo container">
 				<!-- Logo desktop -->		
 				<div class="logo">
-					<a href="index.html"><img style="height: 120px; width: 700px" src="<?php echo base_url(); ?>assets/images/icons/newlogo.bmp" alt="LOGO"></a>
+					<a href="index.html"><img style="height: 100px; width: 700px" src="<?php echo base_url(); ?>assets/images/icons/logofix.jpg" alt="LOGO"></a>
 				</div>	
 
 				<!-- Banner -->
@@ -140,7 +136,7 @@
 					<!-- Menu desktop -->
 					<nav class="menu-desktop">
 						<a class="logo-stick" href="index.html">
-							<img  style="height: 300px;width: 700px" src="<?php echo base_url(); ?>assets/images/icons/newlogo.bmp" alt="LOGO">
+							<img  style="height: 300px;width: 700px" src="<?php echo base_url(); ?>assets/images/icons/logofix.jpg" alt="LOGO">
 						</a>
 
 						<ul class="main-menu">
