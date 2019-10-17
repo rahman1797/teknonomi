@@ -52,8 +52,8 @@
 										
 
 										<span class="f1-s-3">
-											<?php $d=strtotime($k->tanggal_dibuat);
-												echo date("M-d", $d); ?>
+											<?php //$d=strtotime($k->tanggal_dibuat);
+												//echo date("M-d", $d); ?>
 										</span>
 									</div>
 
@@ -80,32 +80,6 @@
 				<div class="col-md-10 col-lg-4 p-b-80">
 					<div class="p-l-10 p-rl-0-sr991">							
 
-						<!-- Most Popular -->
-						<div class="p-b-23">
-							<div class="how2 how2-cl4 flex-s-c">
-								<h3 class="f1-m-2 cl3 tab01-title">
-									Most Popular
-								</h3>
-							</div>
-
-							<ul class="p-t-35">
-								<?php $no = 1;
-								 foreach(array_slice($popular, 0, 4) as $a ) { ?>
-									<li class="flex-wr-sb-s p-b-22">
-									<div class="size-a-8 flex-c-c borad-3 size-a-8 bg9 f1-m-4 cl0 m-b-6">
-										<?php
-										echo $no;
-											$no++;
-										 ?>
-									</div>
-
-									<a href="<?php echo site_url('Artikel/detail/'.$a->slug) ?>" class="size-w-3 f1-s-7 cl3 hov-cl10 trans-03">
-										<?php echo $a->judul; ?>
-									</a>
-								</li>
-								<?php } ?>
-							</ul>
-						</div>
 
 						<!--  -->
 						<div class="flex-c-s p-b-50">

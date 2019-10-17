@@ -43,7 +43,7 @@
 			<div class="wrap-header-mobile">
 				<!-- Logo moblie -->		
 				<div class="logo-mobile">
-					<a href="index.html"><img style="width: 60%"  src="<?php echo base_url(); ?>assets/images/icons/logofix.jpg" alt="IMG-LOGO"></a>
+					<a href="<?php echo site_url('Artikel') ?>"><img style="width: 60%"  src="<?php echo base_url(); ?>assets/images/icons/logofix.jpg" alt="IMG-LOGO"></a>
 				</div>
 
 				<!-- Button show menu -->
@@ -121,7 +121,7 @@
 			<div class="wrap-logo container">
 				<!-- Logo desktop -->		
 				<div class="logo">
-					<a href="index.html"><img style="height: 100px; width: 700px" src="<?php echo base_url(); ?>assets/images/icons/logofix.jpg" alt="LOGO"></a>
+					<a href="<?php echo site_url('Artikel') ?>"><img style="height: 100px; width: 700px" src="<?php echo base_url(); ?>assets/images/icons/logofix.jpg" alt="LOGO"></a>
 				</div>	
 
 				<!-- Banner -->
@@ -142,9 +142,6 @@
 						<ul class="main-menu">
 							<li class="">
 								<a href="<?php echo site_url('Artikel') ?>">Beranda</a>
-							</li>
-							<li>
-								<a href="#">Video</a>
 							</li>
 							<?php foreach ($kategori as $k) { ?>
 							<li>
