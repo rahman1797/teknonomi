@@ -5,12 +5,12 @@
 				
 			</div>
 
-			<div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
+			<!-- <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
 				<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search">
 				<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
 					<i class="zmdi zmdi-search"></i>
 				</button>
-			</div>
+			</div> -->
 		</div>
 	</div>
 		
@@ -96,14 +96,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?> 
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-																<?php $d=strtotime($k->tanggal_dibuat); 
-																echo date("M-d", $d); ?> 
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -130,12 +127,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3"> <?php $d=strtotime($k->tanggal_dibuat);
-																					echo date("M-d", $d); ?>
+														<span class="f1-s-3"> 
 														</span>
 													</span>
 												</div>
@@ -169,8 +165,8 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
@@ -205,13 +201,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
 														</span>
 													</span>
 												</div>
@@ -246,14 +240,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -281,14 +272,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -322,14 +310,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -358,14 +343,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -399,14 +381,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -434,14 +413,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -479,7 +455,7 @@
 										<a class="nav-link" data-toggle="tab" href="#tab2-4" role="tab">Transportasi</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#tab2-5" role="tab">Logistik</a>
+										<a class="nav-link" data-toggle="tab" href="#tab2-5" role="tab">Infrastruktur</a>
 									</li>
 
 									<li class="nav-item-more dropdown dis-none">
@@ -527,14 +503,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?> 
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3"> <?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+														<span class="f1-s-3">
 														</span>
 													</span>
 												</div>
@@ -563,14 +536,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3"> <?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+														<span class="f1-s-3">
 														</span>
 													</span>
 												</div>
@@ -604,15 +574,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -641,15 +608,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -684,15 +648,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -722,15 +683,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -765,15 +723,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -803,15 +758,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -820,7 +772,7 @@
 										</div>
 									</div>
 								</div>
-								<!-- logistik - jasa -->
+								<!-- Infrastruktur - jasa -->
 								<div class="tab-pane fade" id="tab2-5" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
@@ -845,15 +797,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -882,15 +831,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php 
-															$d=strtotime($k->tanggal_dibuat);
-															echo date("M-d", $d);
-															 ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -921,7 +867,7 @@
 									</li>
 									
 									<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#tab3-3" role="tab">Kapal</a>
+										<a class="nav-link" data-toggle="tab" href="#tab3-3" role="tab">Perkapalan</a>
 									</li> -->
 
 									<li class="nav-item">
@@ -937,7 +883,7 @@
 									</li>
 									
 									<li class="nav-item">
-										<a class="nav-link" data-toggle="tab" href="#tab3-7" role="tab">Pelumas</a>
+										<a class="nav-link" data-toggle="tab" href="#tab3-7" role="tab">Elektronik</a>
 									</li>
 
 									<li class="nav-item-more dropdown dis-none">
@@ -986,13 +932,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															 <?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
 														</span>
 													</span>
 												</div>
@@ -1022,13 +966,11 @@
 														<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
 														</span>
 													</span>
 												</div>
@@ -1060,8 +1002,8 @@
 															Hotels
 														</a>
 								
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 								
 														<span class="f1-s-3">
@@ -1091,8 +1033,8 @@
 															Beachs
 														</a>
 								
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 								
 														<span class="f1-s-3">
@@ -1120,8 +1062,8 @@
 															Flight
 														</a>
 								
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 								
 														<span class="f1-s-3">
@@ -1149,8 +1091,8 @@
 															Culture
 														</a>
 								
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 								
 														<span class="f1-s-3">
@@ -1163,7 +1105,7 @@
 									</div>
 								</div> -->
 
-								<!-- kapal- industri -->
+								<!-- Perkapalan- industri -->
 								<!-- <div class="tab-pane fade" id="tab3-3" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
@@ -1182,11 +1124,11 @@
 								
 													<span class="cl8">
 														<a href="#" class="f1-s-4 cl8 hov-cl10 trans-03">
-															Kapal
+															Perkapalan
 														</a>
 								
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 								
 														<span class="f1-s-3">
@@ -1216,8 +1158,8 @@
 															Medis
 														</a>
 								
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 								
 														<span class="f1-s-3">
@@ -1254,13 +1196,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
 														</span>
 													</span>
 												</div>
@@ -1289,13 +1229,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
+															  
 														</span>
 													</span>
 												</div>
@@ -1330,13 +1269,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
+															  
 														</span>
 													</span>
 												</div>
@@ -1365,13 +1303,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
+															  
 														</span>
 													</span>
 												</div>
@@ -1404,13 +1341,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
+															  
 														</span>
 													</span>
 												</div>
@@ -1439,13 +1375,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
+															  
 														</span>
 													</span>
 												</div>
@@ -1454,7 +1389,7 @@
 										</div>
 									</div>
 								</div>
-								<!-- Pelumas - industri -->
+								<!-- Elektronik - industri -->
 								<div class="tab-pane fade" id="tab3-7" role="tabpanel">
 									<div class="row">
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
@@ -1478,13 +1413,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
+															  
 														</span>
 													</span>
 												</div>
@@ -1513,13 +1447,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																echo date("M-d", $d); ?>
+															  
 														</span>
 													</span>
 												</div>
@@ -1606,14 +1539,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?> 
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-																<?php $d=strtotime($k->tanggal_dibuat); 
-																echo date("M-d", $d); ?> 
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1640,12 +1570,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3"> <?php $d=strtotime($k->tanggal_dibuat);
-																					echo date("M-d", $d); ?>
+														<span class="f1-s-3"> 
 														</span>
 													</span>
 												</div>
@@ -1679,13 +1608,12 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
 														<span class="f1-s-3">
-															 <?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
+															 
 														</span>
 													</span>
 												</div>
@@ -1715,14 +1643,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1756,14 +1681,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1791,14 +1713,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1832,14 +1751,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1868,14 +1784,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1909,14 +1822,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1944,14 +1854,11 @@
 															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
 														</a>
 
-														<span class="f1-s-3 m-rl-3">
-															-
+														  <span class="f1-s-3 m-rl-3">
+															
 														</span>
 
-														<span class="f1-s-3">
-															<?php $d=strtotime($k->tanggal_dibuat);
-																	echo date("M-d", $d); ?>
-														</span>
+														<span class="f1-s-3"></span>
 													</span>
 												</div>
 											</div>
@@ -1960,6 +1867,112 @@
 									</div>
 								</div>
 
+							</div>
+						</div>
+
+						<!-- Perspektif -->
+						<div class="tab01 p-b-20">
+							<div class="tab01-head how2 how2-cl2 bocl12 flex-s-c m-r-10 m-r-0-sr991">
+								<!-- Brand tab -->
+								<h3 class="f1-m-2 cl13 tab01-title">
+									Perspektif
+								</h3>
+
+								<!-- Nav tabs -->
+								<ul class="nav nav-tabs" role="tablist">
+									
+
+									<li class="nav-item-more dropdown dis-none">
+										<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">
+											<i class="fa fa-ellipsis-h"></i>
+										</a>
+
+										<ul class="dropdown-menu">
+											
+										</ul>
+									</li>
+								</ul>
+
+								<!--  -->
+								<a href="<?php echo site_url('Artikel/kategori/6') ?>" class="tab01-link f1-s-1 cl9 hov-cl10 trans-03">
+									View all
+									<i class="fs-12 m-l-5 fa fa-caret-right"></i>
+								</a>
+							</div>
+								
+
+							<!-- Tab panes Jasa-->
+							<div class="tab-content p-t-35">
+								<!-- most popular jasa -->
+								<div class="tab-pane fade show active" id="tab2-1" role="tabpanel">
+									<div class="row">
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php $popularByKategori = $this->m_artikel->getPopularByKategoriVer2('6');
+												foreach (array_slice($popularByKategori, 0,1) as $k) { ?>
+											<!-- Item post -->	
+											<div class="m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="wrap-pic-w hov1 trans-03">
+													<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="p-t-20">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-m-3 cl2 hov-cl10 trans-03">
+															<?php echo $k->judul?>  
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="<?php echo site_url('Artikel/detail/'.$this->m_artikel->getMostPopularByKategori('6')->id) ?>" class="f1-s-4 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?> 
+														</a>
+
+														  <span class="f1-s-3 m-rl-3">
+															
+														</span>
+
+														<span class="f1-s-3">
+														</span>
+													</span>
+												</div>
+											</div>
+										<?php } ?>
+										</div>
+
+										<div class="col-sm-6 p-r-25 p-r-15-sr991">
+											<?php $popularByKategori = $this->m_artikel->getPopularByKategoriVer2('6');
+												foreach (array_slice($popularByKategori, 1,3) as $k) { ?>
+											<!-- Item post -->	
+											<div class="flex-wr-sb-s m-b-30">
+												<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="size-w-1 wrap-pic-w hov1 trans-03">
+													<img style="width: 100px;height: 70px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+												</a>
+
+												<div class="size-w-2">
+													<h5 class="p-b-5">
+														<a href="<?php echo site_url('artikel/detail/'.$k->slug) ?>" class="f1-s-5 cl3 hov-cl10 trans-03">
+															<?php echo $k->judul ?>
+														</a>
+													</h5>
+
+													<span class="cl8">
+														<a href="#" class="f1-s-6 cl8 hov-cl10 trans-03">
+															<?php echo $this->m_kategori->getSubByID($k->id_subkategori)->subkategori_nama ?>
+														</a>
+
+														  <span class="f1-s-3 m-rl-3">
+															
+														</span>
+
+														<span class="f1-s-3">
+														</span>
+													</span>
+												</div>
+											</div>
+											<?php } ?>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 
@@ -1973,8 +1986,8 @@
 
 						<!--  -->
 						<div class="flex-c-s p-t-8">
-							<a href="#">
-								<img class="max-w-full" src="<?php echo base_url(); ?>assets/template/images/icons/sidebar-ads.jpg" alt="IMG">
+							<a href=" https://web.facebook.com/marskitchenfoodanddrink-106584990713371/">
+								<img class="max-w-full" style="height: 270px; width: 250px" src="<?php echo base_url(); ?>assets/images/banner/banner1.png" alt="IMG">
 							</a>
 						</div>
 						

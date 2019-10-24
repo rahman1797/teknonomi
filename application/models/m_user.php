@@ -106,6 +106,7 @@ class m_user extends CI_Model{
 
 	function getUser(){
 		$this->db->select('*');
+		$this->db->order_by('user_urutan','ASC');
 		$query = $this->db->get('user');
 		if($query->num_rows()>0)
 		{
