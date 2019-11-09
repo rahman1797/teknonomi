@@ -61,6 +61,7 @@ class m_artikel extends CI_Model{
 
 	function getArtikelBySub($sub){
 		$this->db->select('*');
+		$this->db->order_by('id', 'DESC');
 		$this->db->where('id_subkategori', $sub);
 		$query = $this->db->get('artikel');
 		if($query->num_rows()>0)
@@ -150,7 +151,7 @@ class m_artikel extends CI_Model{
 	function getArtikelByKategori($id_kategori){
 		$this->db->select('*');
 		$this->db->where('id_kategori', $id_kategori);
-		$this->db->order_by('viewers', 'DESC');
+		$this->db->order_by('id', 'DESC');
 		$query = $this->db->get('artikel');
 		if($query->num_rows()>0)
 		{

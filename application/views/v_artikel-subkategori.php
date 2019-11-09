@@ -34,11 +34,11 @@
 				<div class="col-md-10 col-lg-8 p-b-80">
 					<div class="p-r-10 p-r-0-sr991">
 						<div class="m-t--40 p-b-40">
-							<?php foreach ($artikel as $k) { ?>
+							<?php foreach (array_slice($artikel, 0,6) as $k) { ?>
 							<!-- Item post -->
 							<div class="flex-wr-sb-s p-t-40 p-b-15 how-bor2">
-								<a href="blog-detail-02.html" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
-									<img src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
+								<a href="<?php echo site_url('Artikel/detail/'.$k->slug) ?>" class="size-w-8 wrap-pic-w hov1 trans-03 w-full-sr575 m-b-25">
+									<img style="height: 500px;width: 500px" src="<?php echo base_url(); ?>assets/images/artikel/<?php echo $k->foto ?>" alt="IMG">
 								</a>
 
 								<div class="size-w-9 w-full-sr575 m-b-25">

@@ -126,7 +126,7 @@
 
 				<!-- Banner -->
 				<div class="banner-header">
-					<a href="#"><img src="<?php echo base_url(); ?>assets/template/images/icons/banner-ad.jpg" alt="IMG"></a>
+					
 				</div>
 			</div>	
 			

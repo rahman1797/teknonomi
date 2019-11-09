@@ -96,7 +96,7 @@
 			<div class="row justify-content-center">
 				<div class="col-md-10 col-lg-8 p-b-80">
 					<div class="row">
-						<?php foreach (array_slice($artikel, 6) as $k) { ?>
+						<?php foreach (array_slice($artikel, 6,12) as $k) { ?>
 						<div class="col-sm-6 p-r-25 p-r-15-sr991">
 							<!-- Item latest -->	
 							<div class="m-b-45">
