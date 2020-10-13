@@ -1,25 +1,8 @@
-	<!-- Headline -->
-	<div class="container">
-		<div class="bg0 flex-wr-sb-c p-rl-20 p-tb-8" style="margin-top: 15px">
-			<div class="f2-s-1 p-r-30 size-w-0 m-tb-6 flex-wr-s-c">
-				
-			</div>
-
-			<!-- <div class="pos-relative size-a-2 bo-1-rad-22 of-hidden bocl11 m-tb-6">
-				<input class="f1-s-1 cl6 plh9 s-full p-l-25 p-r-45" type="text" name="search" placeholder="Search">
-				<button class="flex-c-c size-a-1 ab-t-r fs-20 cl2 hov-cl10 trans-03">
-					<i class="zmdi zmdi-search"></i>
-				</button>
-			</div> -->
-		</div>
-	</div>
-		
-
 	<!-- Post -->
 	<section class="bg0 p-t-6">
 		<div class="container">
 			<div class="row justify-content-center">
-				<div class="col-md-10 col-lg-8">
+				<div class="col-md-12 col-lg-11">
 					<div class="p-b-20">
 						<!-- Energi -->
 						<div class="tab01 p-b-20">
@@ -58,7 +41,7 @@
 							<div class="tab-content p-t-35">
 								<!-- - -->
 								<div class="tab-pane fade show active" id="tab1-1" role="tabpanel">
-									<div class="row">
+									<div class="row"> AAAAAAAAAAAAAAAAAA
 										<?php $popularByKategori = $this->m_artikel->getPopularByKategoriVer2('1');
 										foreach (array_slice($popularByKategori, 0,1) as $k) { ?>
 										<div class="col-sm-6 p-r-25 p-r-15-sr991">
@@ -574,7 +557,7 @@
 						<!--  -->
 						<div class="flex-c-s p-t-8">
 							<a href=" https://web.facebook.com/marskitchenfoodanddrink-106584990713371/">
-								<img class="max-w-full" style="height: 270px; width: 250px" src="<?php echo base_url(); ?>assets/images/banner/banner1.png" alt="IMG">
+								<img class="max-w-full" style="height: 200px; width: 200px" src="<?php echo base_url(); ?>assets/images/banner/banner1.png" alt="IMG">
 							</a>
 						</div>
 						
